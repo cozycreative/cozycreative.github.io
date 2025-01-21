@@ -1,0 +1,11 @@
+title: Phone Call
+description: Your phone rings unexpectedly. It's your friend inviting you to join them at the movies.
+
+choices:
+  - description: Accept the invitation
+    outcomes:
+      - type: trigger_event
+        event: watch_movie
+  - description: Decline politely
+    outcomes:
+      - type: end_event

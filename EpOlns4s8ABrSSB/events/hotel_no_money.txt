@@ -1,0 +1,8 @@
+title: No Money, No Room
+description: The receptionist looks at you politely but firmly. “Our rooms start at $500 per night,” she says. Seeing your hesitation, she adds, “Perhaps you’d like to return when you’re better prepared.”
+
+choices:
+  - description: Leave the hotel lobby.
+    outcomes:
+      - type: change_location
+        destination: hotel

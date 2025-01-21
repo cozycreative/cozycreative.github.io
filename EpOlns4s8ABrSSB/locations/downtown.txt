@@ -1,0 +1,13 @@
+name: Downtown
+description: Downtown is alive with energy, skyscrapers towering above bustling sidewalks. A mix of businesspeople, tourists, and street performers fills the streets. Opportunities abound, if you know where to look.
+
+choices:
+  - description: Visit the Cinema.
+    outcomes:
+      - type: change_location
+        destination: cinema
+
+  - description: Visit the Luxury Hotel.
+    outcomes:
+      - type: change_location
+        destination: hotel
