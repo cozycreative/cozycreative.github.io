@@ -1,4 +1,4 @@
-title: Character Creation
+name: Character Creation
 description: Welcome to the city! Let’s create your character.
 
 inputs:
