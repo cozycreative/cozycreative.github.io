@@ -1,0 +1,41 @@
+title: Character Creation
+description: Welcome to the city! Let’s create your character.
+
+inputs:
+  - variable: name_input
+    type: text
+    text: "What is your name?"
+
+  - variable: gender_choice
+    type: single_choice
+    text: "Choose your gender."
+    options:
+      - Male
+      - Female
+      - Non-Binary
+
+  - variable: trait_selection
+    type: multiple_choice
+    text: "Select two traits that best describe your character."
+    options:
+      - Intelligent
+      - Athletic
+      - Charismatic
+      - Creative
+    max_selection: 2
+
+  - variable: stat_allocation
+    type: scale
+    text: "Distribute 10 points among your core attributes."
+    options:
+      - Strength
+      - Intelligence
+      - Charisma
+      - Dexterity
+    total_points: 10
+
+final_button:
+  text: "Finish Character Creation"
+  outcome:
+    type: location
+    element: downtown
