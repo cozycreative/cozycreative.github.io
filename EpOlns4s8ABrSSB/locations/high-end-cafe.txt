@@ -1,5 +1,5 @@
-name: High-End Café
-description: The café radiates sophistication. The aroma of freshly brewed coffee mixes with the gentle hum of conversations. Plush seating and delicate pastries signal that this is not a place for just anyone.
+name: High-End Cafe
+description: The cafe radiates sophistication. The aroma of freshly brewed coffee mixes with the gentle hum of conversations. Plush seating and delicate pastries signal that this is not a place for just anyone.
 
 choices:
   - description: Order a premium coffee.
@@ -15,17 +15,17 @@ choices:
         stat: happiness
         value: +5
 
-  - description: Ask about the café’s secret menu.
+  - description: Ask about the cafe’s secret menu.
     conditions:
       reputation: 15
     outcomes:
       - type: message
         text: "The barista smirks and whispers the details of their exclusive offerings. You'll need connections to order these."
 
-  - description: Look around the café.
+  - description: Look around the cafe.
     outcomes:
       - type: message
-        text: "The café is filled with well-dressed patrons. A quiet corner holds a small bookshelf for those who wish to read."
+        text: "The cafe is filled with well-dressed patrons. A quiet corner holds a small bookshelf for those who wish to read."
 
   - description: Go back outside to Downtown.
     outcomes:

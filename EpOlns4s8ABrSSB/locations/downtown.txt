@@ -15,4 +15,4 @@ choices:
   - description: Visit the High-End Cafe.
     outcomes:
       - type: change_location
-        destination: high_end_cafe
+        destination: high-end-cafe
