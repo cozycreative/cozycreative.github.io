@@ -16,3 +16,8 @@ choices:
     outcomes:
       - type: change_location
         destination: high-end-cafe
+
+  - description: Create Your Character
+    outcomes:
+      - type: trigger_generation
+        generation: character
