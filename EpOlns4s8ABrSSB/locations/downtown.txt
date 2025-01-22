@@ -12,7 +12,7 @@ choices:
       - type: change_location
         destination: hotel
 
-  - description: Visit the High-End Café.
+  - description: Visit the High-End Cafe.
     outcomes:
       - type: change_location
         destination: high_end_cafe
