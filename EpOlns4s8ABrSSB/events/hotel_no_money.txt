@@ -4,5 +4,4 @@ description: The receptionist looks at you politely but firmly. “Our rooms sta
 choices:
   - description: Leave the hotel lobby.
     outcomes:
-      - type: change_location
-        destination: hotel
+      - type: end_event

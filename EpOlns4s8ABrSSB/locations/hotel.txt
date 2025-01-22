@@ -17,7 +17,7 @@ choices:
   - description: Answer your ringing phone.
     outcomes:
       - type: trigger_event
-        event: phone_call
+        event: insurance_phone_call
 
   - description: Go back outside to Downtown.
     outcomes:

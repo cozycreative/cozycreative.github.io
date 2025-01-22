@@ -1,0 +1,42 @@
+title: Unexpected Phone Call
+description: Your phone rings unexpectedly. The screen shows an unknown number.
+
+screens:
+  - id: start
+    text: "Your phone rings. Who could it be?"
+    choices:
+      - description: "Answer the phone."
+        next_screen: answer
+      - description: "Ignore it."
+        outcomes:
+          - type: update_stat
+            stat: stress
+            value: +5
+          - type: end_event
+
+  - id: answer
+    text: "You answer the phone. A voice on the other end says, 'Hello, do you have a moment to talk about your car's extended warranty?'"
+    choices:
+      - description: "Hang up immediately."
+        outcomes:
+          - type: message
+            text: "You hang up, annoyed."
+          - type: end_event
+      - description: "Let them continue."
+        next_screen: continue_warranty
+
+  - id: continue_warranty
+    text: "The person drones on about coverage options. You struggle to stay polite."
+    choices:
+      - description: "Politely decline and hang up."
+        outcomes:
+          - type: update_stat
+            stat: politeness
+            value: +5
+          - type: end_event
+      - description: "Interrupt them and end the call."
+        outcomes:
+          - type: update_stat
+            stat: assertiveness
+            value: +5
+          - type: end_event
