@@ -20,17 +20,15 @@ screens:
     choices:
       - description: "Count casual clothes"
         outcomes:
-          - type: set_condition
-            condition: has_clean_clothes
-            value: true
+          - type: add_to_inventory
+            item: casual_clothes
           - type: update_time
             minutes: 2
           - type: end_event
       - description: "Check professional wear"
         outcomes:
-          - type: set_condition
-            condition: has_professional_clothes
-            value: true
+          - type: add_to_inventory
+            item: professional_clothes
           - type: update_time
             minutes: 2
           - type: end_event
@@ -46,17 +44,17 @@ screens:
     choices:
       - description: "Count dirty clothes"
         outcomes:
-          - type: set_condition
-            condition: needs_laundry
-            value: true
+          - type: add_to_inventory
+            item: dirty_clothes
+            quantity: 5
           - type: update_time
             minutes: 2
           - type: end_event
       - description: "Sort laundry"
         outcomes:
-          - type: set_condition
-            condition: laundry_sorted
-            value: true
+          - type: add_to_inventory
+            item: sorted_laundry
+            quantity: 3
           - type: update_time
             minutes: 5
           - type: end_event
@@ -68,9 +66,8 @@ screens:
     choices:
       - description: "Check basic needs"
         outcomes:
-          - type: set_condition
-            condition: knows_wardrobe_needs
-            value: true
+          - type: add_to_inventory
+            item: wardrobe_list
           - type: update_time
             minutes: 5
           - type: end_event
@@ -78,9 +75,8 @@ screens:
         conditions:
           money: 50
         outcomes:
-          - type: set_condition
-            condition: planning_clothes_shopping
-            value: true
+          - type: add_to_inventory
+            item: shopping_list
           - type: update_time
             minutes: 10
           - type: end_event
@@ -92,9 +88,8 @@ screens:
     choices:
       - description: "Assess modeling outfits"
         outcomes:
-          - type: set_condition
-            condition: has_modeling_outfits
-            value: true
+          - type: add_to_inventory
+            item: modeling_outfits
           - type: update_time
             minutes: 5
           - type: end_event
@@ -102,9 +97,8 @@ screens:
         conditions:
           modeling_interest: true
         outcomes:
-          - type: set_condition
-            condition: planned_casting_outfit
-            value: true
+          - type: add_to_inventory
+            item: casting_outfit
           - type: update_time
             minutes: 10
           - type: end_event

@@ -27,9 +27,8 @@ screens:
           - type: update_stat
             stat: money
             value: -200
-          - type: update_inventory
+          - type: add_to_inventory
             item: bath_basic_membership
-            value: +1
           - type: update_time
             minutes: 10
           - type: end_event
@@ -49,9 +48,8 @@ screens:
           - type: update_stat
             stat: money
             value: -350
-          - type: update_inventory
+          - type: add_to_inventory
             item: bath_premium_membership
-            value: +1
           - type: update_time
             minutes: 10
           - type: end_event

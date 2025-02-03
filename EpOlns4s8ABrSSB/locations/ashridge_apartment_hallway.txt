@@ -35,9 +35,8 @@ choices:
     conditions:
       has_inventory: coat
     outcomes:
-      - type: update_inventory
+      - type: remove_from_inventory
         item: coat
-        value: -1
       - type: set_condition
         condition: coat_stored
         value: true
@@ -48,9 +47,8 @@ choices:
     conditions:
       condition: coat_stored: true
     outcomes:
-      - type: update_inventory
+      - type: add_to_inventory
         item: coat
-        value: +1
       - type: set_condition
         condition: coat_stored
         value: false
@@ -62,9 +60,8 @@ choices:
       has_inventory: light_bulb
       condition: light_broken: true
     outcomes:
-      - type: update_inventory
+      - type: remove_from_inventory
         item: light_bulb
-        value: -1
       - type: set_condition
         condition: light_broken
         value: false

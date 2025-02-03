@@ -17,7 +17,6 @@ screens:
         outcomes:
           - type: end_event
 
-
   - id: show_jewelry
     text: "The shopkeeper pulls out a jeweler's loupe and examines your jewelry piece carefully."
     choices:
@@ -26,9 +25,8 @@ screens:
           - type: update_stat
             stat: money
             value: +50
-          - type: update_inventory
+          - type: remove_from_inventory
             item: jewelry
-            value: -1
           - type: end_event
       - description: "Try to negotiate"
         conditions:
@@ -46,9 +44,9 @@ screens:
           - type: update_stat
             stat: money
             value: +75
-          - type: update_inventory
+          - type: remove_from_inventory
             item: jewelry
-            value: -1
+            quantity: 1
           - type: update_stat
             stat: haggling_skill
             value: +1
@@ -65,9 +63,8 @@ screens:
           - type: update_stat
             stat: money
             value: +25
-          - type: update_inventory
+          - type: remove_from_inventory
             item: tools
-            value: -1
           - type: end_event
       - description: "Try to negotiate"
         conditions:
@@ -85,9 +82,9 @@ screens:
           - type: update_stat
             stat: money
             value: +35
-          - type: update_inventory
+          - type: remove_from_inventory
             item: tools
-            value: -1
+            quantity: 1
           - type: update_stat
             stat: haggling_skill
             value: +1

@@ -14,7 +14,7 @@ screens:
           - type: end_event
 
   - id: time_remaining
-    text: "The receptionist checks your membership expiration. 'Your premium membership is valid for [X] more days. Would you like to know anything else?'"
+    text: "The receptionist checks your membership expiration. 'Your premium membership is still valid. Would you like to know anything else?'"
     choices:
       - description: "Review premium benefits"
         next_screen: benefits

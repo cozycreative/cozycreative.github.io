@@ -29,12 +29,10 @@ choices:
       - type: update_stat
         stat: money
         value: -4
-      - type: update_inventory
+      - type: remove_from_inventory
         item: wet_clothes
-        value: -1
-      - type: update_inventory
+      - type: add_to_inventory
         item: clean_clothes
-        value: +1
       - type: update_time
         minutes: 30
       - type: message
@@ -47,9 +45,8 @@ choices:
       - type: update_stat
         stat: money
         value: -8
-      - type: update_inventory
+      - type: add_to_inventory
         item: detergent
-        value: +1
       - type: message
         text: "You purchase a box of detergent from the vending machine."
 
@@ -60,9 +57,8 @@ choices:
       - type: update_stat
         stat: money
         value: -6
-      - type: update_inventory
+      - type: add_to_inventory
         item: fabric_softener
-        value: +1
       - type: message
         text: "You purchase fabric softener from the vending machine."
 

@@ -20,25 +20,28 @@ screens:
     choices:
       - description: "Check basic ingredients"
         outcomes:
-          - type: set_condition
-            condition: has_basic_ingredients
-            value: true
+          - type: add_to_inventory
+            item: basic_ingredients
+            quantity: 1
+            at_home: true
           - type: update_time
             minutes: 2
           - type: end_event
       - description: "Check snack foods"
         outcomes:
-          - type: set_condition
-            condition: has_snack_food
-            value: true
+          - type: add_to_inventory
+            item: snack_food
+            quantity: 3
+            at_home: true
           - type: update_time
             minutes: 2
           - type: end_event
       - description: "Check microwave meals"
         outcomes:
-          - type: set_condition
-            condition: has_microwave_meals
-            value: true
+          - type: add_to_inventory
+            item: microwave_meal
+            quantity: 2
+            at_home: true
           - type: update_time
             minutes: 2
           - type: end_event
@@ -50,25 +53,28 @@ screens:
     choices:
       - description: "Check pots and pans"
         outcomes:
-          - type: set_condition
-            condition: has_cookware
-            value: true
+          - type: add_to_inventory
+            item: cookware
+            quantity: 1
+            at_home: true
           - type: update_time
             minutes: 2
           - type: end_event
       - description: "Check utensils"
         outcomes:
-          - type: set_condition
-            condition: has_utensils
-            value: true
+          - type: add_to_inventory
+            item: utensils
+            quantity: 1
+            at_home: true
           - type: update_time
             minutes: 2
           - type: end_event
       - description: "Check appliances"
         outcomes:
-          - type: set_condition
-            condition: knows_appliances
-            value: true
+          - type: add_to_inventory
+            item: kitchen_appliances
+            quantity: 1
+            at_home: true
           - type: update_time
             minutes: 2
           - type: end_event
@@ -80,25 +86,28 @@ screens:
     choices:
       - description: "Check dish soap"
         outcomes:
-          - type: set_condition
-            condition: has_dish_soap
-            value: true
+          - type: add_to_inventory
+            item: dish_soap
+            quantity: 1
+            at_home: true
           - type: update_time
             minutes: 1
           - type: end_event
       - description: "Check sponges"
         outcomes:
-          - type: set_condition
-            condition: has_sponges
-            value: true
+          - type: add_to_inventory
+            item: sponges
+            quantity: 2
+            at_home: true
           - type: update_time
             minutes: 1
           - type: end_event
       - description: "Check surface cleaner"
         outcomes:
-          - type: set_condition
-            condition: has_surface_cleaner
-            value: true
+          - type: add_to_inventory
+            item: surface_cleaner
+            quantity: 1
+            at_home: true
           - type: update_time
             minutes: 1
           - type: end_event

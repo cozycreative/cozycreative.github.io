@@ -5,9 +5,9 @@ choices:
     conditions:
       has_inventory: cigarettes
     outcomes:
-      - type: update_inventory
+      - type: remove_from_inventory
         item: cigarettes
-        value: -1
+        quantity: 1
       - type: update_stat
         stat: stress
         value: -10

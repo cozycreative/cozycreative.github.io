@@ -20,27 +20,26 @@ screens:
     choices:
       - description: "Count ingredients"
         outcomes:
-          - type: set_condition
-            condition: knows_fresh_ingredients
-            value: true
+          - type: add_to_inventory
+            item: fresh_ingredients
+            quantity: 5
           - type: update_time
             minutes: 2
           - type: end_event
       - description: "Plan healthy meal"
         conditions:
-          has_inventory: fresh_ingredients
+          has_inventory:
+            fresh_ingredients: 3
         outcomes:
-          - type: set_condition
-            condition: meal_planned
-            value: true
+          - type: add_to_inventory
+            item: meal_plan
           - type: update_time
             minutes: 5
           - type: end_event
       - description: "Check expiration dates"
         outcomes:
-          - type: set_condition
-            condition: checked_food_dates
-            value: true
+          - type: add_to_inventory
+            item: food_expiry_list
           - type: update_time
             minutes: 3
           - type: end_event
@@ -52,9 +51,9 @@ screens:
     choices:
       - description: "Check containers"
         outcomes:
-          - type: set_condition
-            condition: has_leftovers
-            value: true
+          - type: add_to_inventory
+            item: leftovers
+            quantity: 2
           - type: update_time
             minutes: 2
           - type: end_event
@@ -62,9 +61,8 @@ screens:
         conditions:
           has_old_food: true
         outcomes:
-          - type: set_condition
-            condition: fridge_cleaned
-            value: true
+          - type: remove_from_inventory
+            item: old_food
           - type: update_time
             minutes: 5
           - type: end_event
@@ -76,25 +74,25 @@ screens:
     choices:
       - description: "Check water bottles"
         outcomes:
-          - type: set_condition
-            condition: has_water
-            value: true
+          - type: add_to_inventory
+            item: water_bottle
+            quantity: 6
           - type: update_time
             minutes: 1
           - type: end_event
       - description: "Check milk"
         outcomes:
-          - type: set_condition
-            condition: has_milk
-            value: true
+          - type: add_to_inventory
+            item: milk
+            quantity: 1
           - type: update_time
             minutes: 1
           - type: end_event
       - description: "Check juice"
         outcomes:
-          - type: set_condition
-            condition: has_juice
-            value: true
+          - type: add_to_inventory
+            item: juice
+            quantity: 2
           - type: update_time
             minutes: 1
           - type: end_event

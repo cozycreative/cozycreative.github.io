@@ -33,9 +33,9 @@ choices:
     conditions:
       money: 10
     outcomes:
-      - type: update_inventory
+      - type: add_to_inventory
         item: cigarettes
-        value: +1
+        quantity: 10
       - type: update_stat
         stat: money
         value: -10
@@ -46,9 +46,8 @@ choices:
     conditions:
       money: 5
     outcomes:
-      - type: update_inventory
+      - type: add_to_inventory
         item: towel
-        value: +1
       - type: update_stat
         stat: money
         value: -5
@@ -59,9 +58,8 @@ choices:
     conditions:
       money: 50
     outcomes:
-      - type: update_inventory
+      - type: add_to_inventory
         item: jewelry
-        value: +1
       - type: update_stat
         stat: money
         value: -50
@@ -72,9 +70,8 @@ choices:
     conditions:
       money: 100
     outcomes:
-      - type: update_inventory
+      - type: add_to_inventory
         item: professional_clothes
-        value: +1
       - type: update_stat
         stat: money
         value: -100
@@ -85,9 +82,8 @@ choices:
     conditions:
       money: 120
     outcomes:
-      - type: update_inventory
+      - type: add_to_inventory
         item: fashionable_clothes
-        value: +1
       - type: update_stat
         stat: money
         value: -120
@@ -98,9 +94,8 @@ choices:
     conditions:
       money: 80
     outcomes:
-      - type: update_inventory
+      - type: add_to_inventory
         item: sporty_clothes
-        value: +1
       - type: update_stat
         stat: money
         value: -80
@@ -111,9 +106,9 @@ choices:
     conditions:
       money: 30
     outcomes:
-      - type: update_inventory
+      - type: add_to_inventory
         item: skincare_products
-        value: +1
+        quantity: 1
       - type: update_stat
         stat: money
         value: -30
@@ -125,9 +120,8 @@ choices:
     conditions:
       money: 60
     outcomes:
-      - type: update_inventory
+      - type: add_to_inventory
         item: tools
-        value: +1
       - type: update_stat
         stat: money
         value: -60
@@ -138,27 +132,13 @@ choices:
     conditions:
       money: 150
     outcomes:
-      - type: update_inventory
+      - type: add_to_inventory
         item: phone
-        value: +1
       - type: update_stat
         stat: money
         value: -150
       - type: message
         text: "You purchase a phone."
-
-  - description: Browse Second-Hand Goods
-    outcomes:
-      - type: trigger_event
-        event: browse_market_used_items
-
-  - description: Buy Used Item
-    conditions:
-      money: 20
-      event_active: good_deal
-    outcomes:
-      - type: trigger_event
-        event: purchase_market_used_item
 
   - description: Haggle with Vendors
     conditions:
