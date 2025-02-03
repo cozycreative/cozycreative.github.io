@@ -1,10 +1,11 @@
 name: Bedroom
-description: Your bedroom is modestly furnished with a single bed covered in basic linens, a wooden wardrobe for your clothes, and a small bedside table with an alarm clock. A small window provides some natural light, and there's a full-length mirror on the wall.
+description: Your bedroom is modestly furnished with a single bed covered in basic linens, a wooden wardrobe for your clothes, and a small bedside table. A small window provides some natural light, and there's a full-length mirror on the wall.
 
 choices:
   - description: Sleep Through Night
     conditions:
       time_hour: 20-23
+      energy: -30
     outcomes:
       - type: trigger_event
         event: sleep_through_night
@@ -15,18 +16,26 @@ choices:
       energy: -30
     outcomes:
       - type: update_stat
-        stat: energy
-        value: +30
+        stat: is_sleeping
+        value: true
+      - type: update_stat
+        stat: sleep_quality
+        value: 80
       - type: update_time
         minutes: 90
       - type: message
         text: "You take a refreshing nap. It helps restore some energy."
 
-  - description: Quick Rest
+  - description: Rest on Bed
+    conditions:
+      energy: -20
     outcomes:
       - type: update_stat
         stat: energy
-        value: +10
+        value: +5
+      - type: update_stat
+        stat: stress
+        value: -5
       - type: update_time
         minutes: 20
       - type: message
@@ -47,19 +56,18 @@ choices:
   - description: Organize Clothes
     conditions:
       time_passed: 1440
+      energy: 10
     outcomes:
       - type: update_stat
         stat: apartment_cleanliness
         value: +10
+      - type: update_stat
+        stat: energy
+        value: -5
       - type: update_time
         minutes: 20
       - type: message
         text: "You sort through your clothes, organizing them neatly in the wardrobe."
-
-  - description: Set Alarm
-    outcomes:
-      - type: trigger_event
-        event: set_alarm
 
   - description: Check Yourself in Mirror
     outcomes:
@@ -68,15 +76,19 @@ choices:
 
   - description: Make Bed
     conditions:
-      condition: bed_made: false
+      bed_made: false
+      energy: 5
     outcomes:
       - type: update_stat
         stat: apartment_cleanliness
         value: +5
+      - type: update_stat
+        stat: energy
+        value: -2
       - type: update_time
         minutes: 5
       - type: set_condition
-        condition: bed_made: true
+        condition: bed_made
         value: true
       - type: message
         text: "You make your bed, giving the room a tidier appearance."
@@ -84,14 +96,14 @@ choices:
   - description: Clean Bedroom
     conditions:
       time_passed: 1440
-      energy: 10
+      energy: 15
     outcomes:
       - type: update_stat
         stat: apartment_cleanliness
         value: +15
       - type: update_stat
         stat: energy
-        value: -5
+        value: -10
       - type: update_time
         minutes: 15
       - type: message
@@ -107,6 +119,9 @@ choices:
       - type: update_stat
         stat: energy
         value: -15
+      - type: update_stat
+        stat: sleepiness
+        value: +10
       - type: update_time
         minutes: 60
       - type: message

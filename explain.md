@@ -40,21 +40,40 @@ choices:
     outcomes: [Results of the choice.]
 ```
 
-**Example: Downtown**
+**Example: Bathroom**
 ```
-name: Downtown
-description: Downtown is alive with energy, skyscrapers towering above bustling sidewalks. A mix of businesspeople, tourists, and street performers fills the streets. Opportunities abound, if you know where to look.
+name: Bathroom
+description: A small but functional bathroom with basic amenities.
 
 choices:
-  - description: Visit the Cinema.
+  - description: Take a Shower
+    conditions:
+      time_passed: 120
+      has_inventory: towel
     outcomes:
-      - type: change_location
-        destination: cinema
+      - type: update_stat
+        stat: dirtiness_level
+        value: -100
+      - type: update_stat
+        stat: lastShowerCycle
+        value: 0
+      - type: update_stat
+        stat: happiness
+        value: +10
+      - type: update_time
+        minutes: 20
+      - type: message
+        text: "The hot water feels great as you take a refreshing shower."
 
-  - description: Visit the Luxury Hotel.
+  - description: Use Toilet
     outcomes:
-      - type: change_location
-        destination: hotel
+      - type: update_stat
+        stat: bladder_urgency
+        value: -100
+      - type: update_time
+        minutes: 10
+      - type: message
+        text: "You use the toilet, relieving your bladder urgency."
 ```
 
 ---
@@ -70,59 +89,33 @@ choices:
      - Text displayed to the player.
      - Choices leading to outcomes, other screens, or the end of the event.
 
-**Simple Event Example: Hotel No Money**
+**Sleep Event Example**
 ```
-title: No Money, No Room
-description: The receptionist looks at you politely but firmly. "Our rooms start at $500 per night," she says. Seeing your hesitation, she adds, "Perhaps you'd like to return when you're better prepared."
-
-choices:
-  - description: Leave the hotel lobby.
-    outcomes:
-      - type: end_event
-```
-
-**Multi-Screen Event Example: Insurance Phone Call**
-```
-title: Unexpected Phone Call
-description: Your phone rings unexpectedly. The screen shows an unknown number.
+name: Sleep Through Night
+description: You get ready for bed and settle in for a full night's sleep.
 
 screens:
   - id: start
-    text: "Your phone rings. Who could it be?"
+    text: "You prepare for bed. Your body feels tired and ready for rest."
     choices:
-      - description: "Answer the phone."
-        next_screen: answer
-      - description: "Ignore it."
-        outcomes:
-          - type: update_stat
-            stat: stress
-            value: +5
-          - type: end_event
+      - description: "Go to sleep"
+        next_screen: sleep
 
-  - id: answer
-    text: "You answer the phone. A voice on the other end says, 'Hello, do you have a moment to talk about your car's extended warranty?'"
+  - id: sleep
+    text: "You climb into bed and pull up the covers."
     choices:
-      - description: "Hang up immediately."
-        outcomes:
-          - type: end_event
-      - description: "Let them continue."
-        next_screen: continue_warranty
-
-  - id: continue_warranty
-    text: "The person drones on about coverage options. You struggle to stay polite."
-    choices:
-      - description: "Politely decline and hang up."
+      - description: "Sleep until morning"
         outcomes:
           - type: update_stat
-            stat: politeness
-            value: +5
-          - type: end_event
-      - description: "Interrupt them and end the call."
-        outcomes:
+            stat: is_sleeping
+            value: true
           - type: update_stat
-            stat: assertiveness
-            value: +5
-          - type: end_event
+            stat: sleep_quality
+            value: 100
+          - type: update_time
+            minutes: 480
+          - type: next_screen
+            screen: morning
 ```
 
 ---
@@ -140,12 +133,11 @@ screens:
 - Control when choices are available.
 - Common conditions:
   - `money`: Required amount of money.
-  - `energy`: Required energy level.
+  - `energy`: Required energy level (negative value means "less than").
   - `time_hour`: Time of day (e.g., "9-17" for 9 AM to 5 PM).
   - `has_inventory`: Check for items in inventory.
-    - Single item: `has_inventory: tool`
-    - Multiple items (any): `has_inventory: electronics or jewelry or tools`
-    - Multiple items (all): `has_inventory: tool and key`
+  - `time_passed`: Time since last action (in minutes).
+  - `bowel_urgency`/`bladder_urgency`: Body need thresholds.
 
 #### **Outcomes**
 - Define what happens when a choice is made.
@@ -155,38 +147,50 @@ screens:
   - `message`: Display a message to the player.
   - `end_event`: End the current event and return to previous location.
 - Additional outcomes that can be combined with any of the above:
-  - `update_stat`: Change a player stat.
+  - `update_stat`: Change a player stat (see list below).
   - `update_inventory`: Add/remove items.
-  - `update_time`: Advance game time.
+  - `update_time`: Advance game time (in minutes).
   - `set_condition`: Set a game condition.
 
-Example of mutually exclusive outcomes:
+#### **Common Stats for update_stat**
+Body Parameters:
+- `energy`: Physical energy level (0-100)
+- `sleepiness`: Separate from energy (0-100)
+- `hunger`: Food need (0-100)
+- `hydration_level`: Water need (0-100)
+- `bladder_urgency`: Need to urinate (0-100)
+- `bowel_urgency`: Need for bowel movement (0-100)
+- `dirtiness_level`: Body cleanliness (0-100)
+- `lastShowerCycle`: Minutes since last shower
+- `calories_today`: Daily calorie intake
+- `is_sleeping`: Sleep state (true/false)
+- `sleep_quality`: Quality of current sleep (0-100)
+
+Mental Parameters:
+- `happiness`: Overall mood (0-100)
+- `stress`: Mental pressure (0-100)
+- `grooming`: Personal care level (0-100)
+
+Example of stat updates:
 ```yaml
-# Valid - single outcome type with optional updates
 outcomes:
   - type: update_stat
-    stat: money
-    value: -10
+    stat: dirtiness_level
+    value: -100  # Fully clean
+  - type: update_stat
+    stat: hydration_level
+    value: +20   # Drink water
   - type: update_time
-    minutes: 15
-  - type: message
-    text: "You spend some money and time."
-
-# Invalid - cannot combine message/location/event/end
-outcomes:
-  - type: message
-    text: "You buy something."
-  - type: change_location
-    destination: shop
+    minutes: 5   # Time cost
 ```
 
 ---
 
 ### **File Placement**
 1. **Locations**: `/locations/`
-   - Example: `/locations/downtown.txt`, `/locations/hotel.txt`
+   - Example: `/locations/ashridge_bathroom.txt`, `/locations/ashridge_kitchen.txt`
 2. **Events**: `/events/`
-   - Example: `/events/hotel_no_money.txt`, `/events/insurance_phone_call.txt`
+   - Example: `/events/sleep_through_night.txt`, `/events/check_fridge.txt`
 
 ---
 
@@ -198,9 +202,9 @@ outcomes:
 3. **Avoid Dead Ends**:
    - Always provide a way for the player to return to a location or resolve the event.
 4. **Be Specific with Event Names**:
-   - Use descriptive names that include the location (e.g., sell_items_pawnshop instead of just sell_items).
-5. **Choose Appropriate Outcome Types**:
-   - Use message for simple feedback that keeps player in same location.
-   - Use trigger_event for complex interactions requiring multiple steps.
-   - Use change_location for moving between locations.
-   - Use end_event to return from events.
+   - Use descriptive names that include the location (e.g., check_fridge instead of just check).
+5. **Always Include Time Costs**:
+   - Every action should have a realistic time cost using update_time.
+6. **Consider Body Parameters**:
+   - Actions should affect relevant body stats (hunger, energy, etc.).
+   - Use appropriate time-based conditions (time_passed) for repeated actions.

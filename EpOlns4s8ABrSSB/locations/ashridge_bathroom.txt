@@ -8,8 +8,17 @@ choices:
       has_inventory: towel
     outcomes:
       - type: update_stat
-        stat: hygiene
-        value: +30
+        stat: dirtiness_level
+        value: -100
+      - type: update_stat
+        stat: lastShowerCycle
+        value: 0
+      - type: update_stat
+        stat: happiness
+        value: +10
+      - type: update_stat
+        stat: stress
+        value: -15
       - type: update_stat
         stat: energy
         value: +10
@@ -24,34 +33,61 @@ choices:
       has_inventory: towel
     outcomes:
       - type: update_stat
-        stat: hygiene
-        value: +15
+        stat: dirtiness_level
+        value: -50
+      - type: update_stat
+        stat: lastShowerCycle
+        value: 0
+      - type: update_stat
+        stat: happiness
+        value: +5
       - type: update_time
         minutes: 5
       - type: message
         text: "You quickly rinse off under the shower. It's better than nothing."
+
+  - description: Use Toilet
+    outcomes:
+      - type: update_stat
+        stat: bladder_urgency
+        value: -100
+      - type: update_stat
+        stat: happiness
+        value: +3
+      - type: update_time
+        minutes: 10
+      - type: message
+        text: "You use the toilet, relieving your bladder urgency."
+
+  - description: Use Toilet (Bowel Movement)
+    conditions:
+      bowel_urgency: 50
+    outcomes:
+      - type: update_stat
+        stat: bowel_urgency
+        value: -100
+      - type: update_stat
+        stat: happiness
+        value: +5
+      - type: update_time
+        minutes: 15
+      - type: message
+        text: "You take care of your bowel needs."
 
   - description: Brush Teeth
     conditions:
       has_inventory: toothbrush
     outcomes:
       - type: update_stat
-        stat: hygiene
+        stat: grooming
         value: +10
+      - type: update_stat
+        stat: happiness
+        value: +2
       - type: update_time
         minutes: 3
       - type: message
         text: "You brush your teeth thoroughly. Your mouth feels fresh and clean."
-
-  - description: Use Toilet
-    outcomes:
-      - type: update_stat
-        stat: comfort
-        value: +10
-      - type: update_time
-        minutes: 5
-      - type: message
-        text: "You use the toilet. Nature calls!"
 
   - description: Check Yourself in Mirror
     outcomes:
@@ -63,15 +99,18 @@ choices:
       has_inventory: face_soap
     outcomes:
       - type: update_stat
-        stat: hygiene
+        stat: grooming
         value: +5
+      - type: update_stat
+        stat: dirtiness_level
+        value: -10
       - type: update_stat
         stat: energy
         value: +5
       - type: update_time
         minutes: 2
       - type: message
-        text: "You splash some cold water on your face. It helps you feel more awake."
+        text: "You splash some cold water on your face and wash it thoroughly. It helps you feel more awake and refreshed."
 
   - description: Clean Bathroom
     conditions:
@@ -81,6 +120,9 @@ choices:
       - type: update_stat
         stat: apartment_cleanliness
         value: +20
+      - type: update_stat
+        stat: energy
+        value: -10
       - type: update_time
         minutes: 15
       - type: message

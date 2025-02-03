@@ -2,22 +2,23 @@ name: Kitchen
 description: A small but functional kitchen with basic appliances. The fridge hums quietly in the corner, next to a basic electric stove and countertop. Cabinets line the walls, and a small window above the sink lets in some natural light.
 
 choices:
-  - description: Check Fridge
-    outcomes:
-      - type: trigger_event
-        event: check_fridge
-
   - description: Cook Simple Meal
     conditions:
       has_inventory: basic_ingredients
       energy: 10
     outcomes:
       - type: update_stat
-        stat: energy
-        value: +20
+        stat: calories_today
+        value: +500
       - type: update_stat
         stat: hunger
         value: -30
+      - type: update_stat
+        stat: energy
+        value: -5
+      - type: update_stat
+        stat: happiness
+        value: +5
       - type: update_stat
         stat: cooking_skill
         value: +1
@@ -36,14 +37,20 @@ choices:
       energy: 15
     outcomes:
       - type: update_stat
-        stat: energy
-        value: +25
+        stat: calories_today
+        value: +400
       - type: update_stat
         stat: hunger
         value: -35
       - type: update_stat
+        stat: energy
+        value: -8
+      - type: update_stat
         stat: health
         value: +5
+      - type: update_stat
+        stat: happiness
+        value: +8
       - type: update_stat
         stat: cooking_skill
         value: +2
@@ -61,11 +68,14 @@ choices:
       energy: 5
     outcomes:
       - type: update_stat
-        stat: energy
-        value: +10
+        stat: calories_today
+        value: +200
       - type: update_stat
         stat: hunger
         value: -15
+      - type: update_stat
+        stat: energy
+        value: +5
       - type: update_time
         minutes: 5
       - type: update_inventory
@@ -73,6 +83,40 @@ choices:
         value: -1
       - type: message
         text: "You fix yourself a quick snack. It takes the edge off your hunger."
+
+  - description: Heat Microwave Meal
+    conditions:
+      has_inventory: microwave_meal
+    outcomes:
+      - type: update_stat
+        stat: calories_today
+        value: +600
+      - type: update_stat
+        stat: hunger
+        value: -25
+      - type: update_stat
+        stat: happiness
+        value: -2
+      - type: update_time
+        minutes: 5
+      - type: update_inventory
+        item: microwave_meal
+        value: -1
+      - type: message
+        text: "You heat up a microwave meal. It's not the healthiest choice, but it's quick and filling."
+
+  - description: Drink Water
+    outcomes:
+      - type: update_stat
+        stat: hydration_level
+        value: +20
+      - type: update_stat
+        stat: bladder_urgency
+        value: +10
+      - type: update_time
+        minutes: 1
+      - type: message
+        text: "You drink a glass of water, helping to stay hydrated."
 
   - description: Make Coffee
     conditions:
@@ -82,7 +126,13 @@ choices:
         stat: energy
         value: +15
       - type: update_stat
-        stat: comfort
+        stat: hydration_level
+        value: +5
+      - type: update_stat
+        stat: bladder_urgency
+        value: +15
+      - type: update_stat
+        stat: happiness
         value: +5
       - type: update_time
         minutes: 5
@@ -91,6 +141,30 @@ choices:
         value: -1
       - type: message
         text: "The rich aroma of fresh coffee fills the kitchen. You feel more alert after drinking it."
+
+  - description: Make Tea
+    conditions:
+      has_inventory: tea_bags
+    outcomes:
+      - type: update_stat
+        stat: energy
+        value: +10
+      - type: update_stat
+        stat: hydration_level
+        value: +15
+      - type: update_stat
+        stat: bladder_urgency
+        value: +12
+      - type: update_stat
+        stat: stress
+        value: -5
+      - type: update_time
+        minutes: 5
+      - type: update_inventory
+        item: tea_bags
+        value: -1
+      - type: message
+        text: "You prepare a soothing cup of tea. The warm drink helps you relax."
 
   - description: Clean Kitchen
     conditions:
@@ -102,7 +176,7 @@ choices:
         value: +15
       - type: update_stat
         stat: energy
-        value: -5
+        value: -10
       - type: update_time
         minutes: 15
       - type: message
@@ -113,28 +187,15 @@ choices:
       - type: trigger_event
         event: make_shopping_list
 
+  - description: Check Fridge
+    outcomes:
+      - type: trigger_event
+        event: check_fridge
+
   - description: Check Cabinets
     outcomes:
       - type: trigger_event
         event: check_cabinets
-
-  - description: Heat Microwave Meal
-    conditions:
-      has_inventory: microwave_meal
-    outcomes:
-      - type: update_stat
-        stat: energy
-        value: +15
-      - type: update_stat
-        stat: hunger
-        value: -25
-      - type: update_time
-        minutes: 5
-      - type: update_inventory
-        item: microwave_meal
-        value: -1
-      - type: message
-        text: "You heat up a microwave meal. It's not gourmet, but it's quick and filling."
 
   - description: Go back to the Hallway
     outcomes:

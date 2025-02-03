@@ -3,43 +3,10 @@ description: You get ready for bed and settle in for a full night's sleep.
 
 screens:
   - id: start
-    text: "You prepare for bed. What would you like to do before sleeping?"
+    text: "You prepare for bed. Your body feels tired and ready for rest."
     choices:
-      - description: "Set alarm for morning"
-        next_screen: set_alarm
-      - description: "Just go to sleep"
+      - description: "Go to sleep"
         next_screen: sleep
-
-  - id: set_alarm
-    text: "You set your alarm clock. What time would you like to wake up?"
-    choices:
-      - description: "Early (6 AM)"
-        outcomes:
-          - type: set_condition
-            condition: wake_time
-            value: 6
-          - type: update_time
-            minutes: 1
-          - type: next_screen
-            screen: sleep
-      - description: "Standard (7 AM)"
-        outcomes:
-          - type: set_condition
-            condition: wake_time
-            value: 7
-          - type: update_time
-            minutes: 1
-          - type: next_screen
-            screen: sleep
-      - description: "Late (8 AM)"
-        outcomes:
-          - type: set_condition
-            condition: wake_time
-            value: 8
-          - type: update_time
-            minutes: 1
-          - type: next_screen
-            screen: sleep
 
   - id: sleep
     text: "You climb into bed and pull up the covers. The day's fatigue catches up with you as you drift off to sleep..."
@@ -47,41 +14,19 @@ screens:
       - description: "Sleep until morning"
         outcomes:
           - type: update_stat
-            stat: energy
-            value: +100
+            stat: is_sleeping
+            value: true
           - type: update_stat
-            stat: comfort
-            value: +20
+            stat: sleep_quality
+            value: 100
           - type: update_time
             minutes: 480
           - type: next_screen
             screen: morning
 
   - id: morning
-    text: "Sunlight filters through your window as you wake up. You feel rested and ready to start a new day."
+    text: "Sunlight filters through your window as you wake up. Your body feels rested after a full night's sleep."
     choices:
-      - description: "Get up immediately"
+      - description: "Get up"
         outcomes:
-          - type: update_stat
-            stat: discipline
-            value: +5
           - type: end_event
-      - description: "Snooze for 10 minutes"
-        outcomes:
-          - type: update_stat
-            stat: energy
-            value: +5
-          - type: update_stat
-            stat: discipline
-            value: -2
-          - type: update_time
-            minutes: 10
-          - type: end_event
-      - description: "Check phone before getting up"
-        conditions:
-          has_inventory: phone
-        outcomes:
-          - type: update_time
-            minutes: 5
-          - type: trigger_event
-            event: morning_phone_check
