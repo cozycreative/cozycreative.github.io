@@ -58,7 +58,7 @@ choices:
   - description: Replace Light Bulb
     conditions:
       has_inventory: light_bulb
-      condition: light_broken: true
+      light_broken: true
     outcomes:
       - type: remove_from_inventory
         item: light_bulb
