@@ -23,8 +23,6 @@ choices:
         destination: ashridge_bathroom
 
   - description: Check Mail Slot
-    conditions:
-      time_hour: 9-18
     outcomes:
       - type: trigger_event
         event: check_mail
@@ -100,15 +98,6 @@ choices:
         event: check_hallway_storage
       - type: update_time
         minutes: 2
-
-  - description: Answer Door Knock
-    conditions:
-      event_active: door_knock
-    outcomes:
-      - type: trigger_event
-        event: door_visitor
-      - type: update_time
-        minutes: 5
 
   - description: Exit to Your Apartment
     outcomes:
