@@ -1,0 +1,109 @@
+name: Socializing at Public Baths
+description: The common area of the bathhouse is a traditional place for locals to gather and chat. Various conversations are taking place.
+
+screens:
+  - id: start
+    text: "Several groups of people are relaxing and chatting in the common area. Who would you like to approach?"
+    choices:
+      - description: "Join the regulars discussing local news"
+        next_screen: local_news
+      - description: "Listen to work opportunities discussion"
+        next_screen: work_talk
+      - description: "Chat with friendly elderly patron"
+        next_screen: elder_wisdom
+      - description: "Keep to yourself"
+        outcomes:
+          - type: end_event
+
+  - id: local_news
+    text: "A group of regulars are discussing recent happenings in Ashridge. They welcome you to join their conversation."
+    choices:
+      - description: "Ask about job opportunities"
+        outcomes:
+          - type: update_stat
+            stat: social
+            value: +5
+          - type: update_time
+            minutes: 15
+          - type: set_condition
+            condition: knows_job_openings
+            value: true
+          - type: end_event
+      - description: "Discuss local events"
+        outcomes:
+          - type: update_stat
+            stat: social
+            value: +5
+          - type: update_stat
+            stat: knowledge
+            value: +5
+          - type: update_time
+            minutes: 15
+          - type: set_condition
+            condition: knows_local_events
+            value: true
+          - type: end_event
+      - description: "Politely excuse yourself"
+        outcomes:
+          - type: end_event
+
+  - id: work_talk
+    text: "Two people are discussing various job openings they've heard about. One works at the factory, the other at a downtown office."
+    choices:
+      - description: "Ask about factory work"
+        outcomes:
+          - type: update_stat
+            stat: social
+            value: +3
+          - type: update_time
+            minutes: 10
+          - type: set_condition
+            condition: knows_factory_jobs
+            value: true
+          - type: end_event
+      - description: "Inquire about office positions"
+        outcomes:
+          - type: update_stat
+            stat: social
+            value: +3
+          - type: update_time
+            minutes: 10
+          - type: set_condition
+            condition: knows_office_jobs
+            value: true
+          - type: end_event
+      - description: "Move on"
+        outcomes:
+          - type: end_event
+
+  - id: elder_wisdom
+    text: "An elderly patron who seems to know everyone in the neighborhood smiles warmly at you. 'New to Ashridge? I've lived here all my life.'"
+    choices:
+      - description: "Ask about the neighborhood's history"
+        outcomes:
+          - type: update_stat
+            stat: social
+            value: +5
+          - type: update_stat
+            stat: knowledge
+            value: +10
+          - type: update_time
+            minutes: 20
+          - type: set_condition
+            condition: knows_neighborhood_history
+            value: true
+          - type: end_event
+      - description: "Ask for life advice"
+        outcomes:
+          - type: update_stat
+            stat: social
+            value: +5
+          - type: update_stat
+            stat: wisdom
+            value: +5
+          - type: update_time
+            minutes: 20
+          - type: end_event
+      - description: "Thank them and move on"
+        outcomes:
+          - type: end_event

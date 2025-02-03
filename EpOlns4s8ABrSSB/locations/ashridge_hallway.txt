@@ -1,0 +1,23 @@
+name: Hallway
+description: A narrow corridor within the Affordable Apartment, connecting the rooms. A simple coat rack and shoe storage are placed against one wall.
+choices:
+  - description: Enter the Living Room.
+    outcomes:
+      - type: change_location
+        destination: ashridge_living_room
+  - description: Go to the Kitchen.
+    outcomes:
+      - type: change_location
+        destination: ashridge_kitchen
+  - description: Go to the Bedroom.
+    outcomes:
+      - type: change_location
+        destination: ashridge_bedroom
+  - description: Go to the Bathroom.
+    outcomes:
+      - type: change_location
+        destination: ashridge_bathroom
+  - description: Exit to the Affordable Apartment entrance.
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment

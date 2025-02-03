@@ -1,0 +1,81 @@
+name: Public Baths Membership
+description: You approach the front desk to inquire about membership options at the bathhouse.
+
+screens:
+  - id: start
+    text: "The receptionist smiles warmly. 'Interested in our membership plans? We have several options that can save you money if you visit regularly.'"
+    choices:
+      - description: "Ask about Basic Membership (200 credits/month)"
+        next_screen: basic_info
+      - description: "Ask about Premium Membership (350 credits/month)"
+        next_screen: premium_info
+      - description: "Ask about current membership status"
+        conditions:
+          has_inventory: bath_basic_membership or bath_premium_membership
+        next_screen: check_status
+      - description: "Just browsing"
+        outcomes:
+          - type: end_event
+
+  - id: basic_info
+    text: "Basic membership includes: unlimited basic baths, 20% discount on other services, and access during standard hours (6 AM - 10 PM)."
+    choices:
+      - description: "Purchase Basic Membership"
+        conditions:
+          money: 200
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: -200
+          - type: update_inventory
+            item: bath_basic_membership
+            value: +1
+          - type: update_time
+            minutes: 10
+          - type: end_event
+      - description: "Ask about Premium instead"
+        next_screen: premium_info
+      - description: "Think about it"
+        outcomes:
+          - type: end_event
+
+  - id: premium_info
+    text: "Premium membership includes: unlimited access to all facilities including sauna and steam room, 30% discount on massages, priority booking, and extended hours access (5 AM - 11 PM)."
+    choices:
+      - description: "Purchase Premium Membership"
+        conditions:
+          money: 350
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: -350
+          - type: update_inventory
+            item: bath_premium_membership
+            value: +1
+          - type: update_time
+            minutes: 10
+          - type: end_event
+      - description: "Ask about Basic instead"
+        next_screen: basic_info
+      - description: "Think about it"
+        outcomes:
+          - type: end_event
+
+  - id: check_status
+    text: "The receptionist checks your membership details in the system."
+    choices:
+      - description: "Check basic membership details"
+        conditions:
+          has_inventory: bath_basic_membership
+        outcomes:
+          - type: trigger_event
+            event: check_bath_basic_membership
+      - description: "Review premium benefits"
+        conditions:
+          has_inventory: bath_premium_membership
+        outcomes:
+          - type: trigger_event
+            event: check_bath_premium_membership
+      - description: "Done checking"
+        outcomes:
+          - type: end_event

@@ -1,0 +1,97 @@
+name: Sell Items to Pawnshop
+description: You approach the counter to sell some items. The shopkeeper adjusts his glasses, ready to examine what you have.
+
+screens:
+  - id: start
+    text: "The shopkeeper looks at you expectantly. 'What have you got for me today?'"
+    choices:
+      - description: "Show jewelry"
+        conditions:
+          has_inventory: jewelry
+        next_screen: show_jewelry
+      - description: "Show tools"
+        conditions:
+          has_inventory: tools
+        next_screen: show_tools
+      - description: "Never mind"
+        outcomes:
+          - type: end_event
+
+
+  - id: show_jewelry
+    text: "The shopkeeper pulls out a jeweler's loupe and examines your jewelry piece carefully."
+    choices:
+      - description: "Accept offer"
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: +50
+          - type: update_inventory
+            item: jewelry
+            value: -1
+          - type: end_event
+      - description: "Try to negotiate"
+        conditions:
+          haggling_skill: 2
+        next_screen: negotiate_jewelry
+      - description: "Decline offer"
+        outcomes:
+          - type: end_event
+
+  - id: negotiate_jewelry
+    text: "You make a case for your jewelry's value. The shopkeeper listens intently."
+    choices:
+      - description: "Accept new offer"
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: +75
+          - type: update_inventory
+            item: jewelry
+            value: -1
+          - type: update_stat
+            stat: haggling_skill
+            value: +1
+          - type: end_event
+      - description: "Walk away"
+        outcomes:
+          - type: end_event
+
+  - id: show_tools
+    text: "The shopkeeper tests the tools, checking their condition and functionality."
+    choices:
+      - description: "Accept offer"
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: +25
+          - type: update_inventory
+            item: tools
+            value: -1
+          - type: end_event
+      - description: "Try to negotiate"
+        conditions:
+          haggling_skill: 2
+        next_screen: negotiate_tools
+      - description: "Decline offer"
+        outcomes:
+          - type: end_event
+
+  - id: negotiate_tools
+    text: "You discuss the quality and value of your tools. The shopkeeper considers your points."
+    choices:
+      - description: "Accept new offer"
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: +35
+          - type: update_inventory
+            item: tools
+            value: -1
+          - type: update_stat
+            stat: haggling_skill
+            value: +1
+          - type: end_event
+      - description: "Walk away"
+        outcomes:
+          - type: end_event

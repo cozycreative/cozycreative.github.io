@@ -1,0 +1,43 @@
+name: Check Premium Bath Membership Status
+description: The receptionist looks up your premium membership details in the system.
+
+screens:
+  - id: start
+    text: "'Ah, one of our premium members! Let me pull up your details... Here we are. You have access to all our premium services and extended hours.'"
+    choices:
+      - description: "Check remaining time"
+        next_screen: time_remaining
+      - description: "Review premium benefits"
+        next_screen: benefits
+      - description: "Done checking"
+        outcomes:
+          - type: end_event
+
+  - id: time_remaining
+    text: "The receptionist checks your membership expiration. 'Your premium membership is valid for [X] more days. Would you like to know anything else?'"
+    choices:
+      - description: "Review premium benefits"
+        next_screen: benefits
+      - description: "Check usage statistics"
+        next_screen: usage_stats
+      - description: "Done checking"
+        outcomes:
+          - type: end_event
+
+  - id: benefits
+    text: "Premium membership benefits include:\n- Unlimited access to all facilities including steam room\n- Extended hours (5 AM - 11 PM)\n- 30% discount on massage treatments\n- Priority booking for special services\n- Access to premium-only events and facilities\n- Complimentary toiletries and towel service"
+    choices:
+      - description: "Check usage statistics"
+        next_screen: usage_stats
+      - description: "Done checking"
+        outcomes:
+          - type: end_event
+
+  - id: usage_stats
+    text: "'Let me show you your membership usage this month:\n- Bath visits: [X] times\n- Steam room sessions: [X] times\n- Massage treatments: [X] times\n- Total savings from discounts: [X] credits'"
+    choices:
+      - description: "Review benefits again"
+        next_screen: benefits
+      - description: "Done checking"
+        outcomes:
+          - type: end_event

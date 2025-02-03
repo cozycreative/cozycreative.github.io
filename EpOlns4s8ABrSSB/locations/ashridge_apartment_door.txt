@@ -1,0 +1,11 @@
+name: Apartment Door
+description: The door to your apartment on the first floor hallway.
+choices:
+  - description: Enter Your Apartment.
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment
+  - description: Go back to the First Floor Hallway.
+    outcomes:
+      - type: change_location
+        destination: ashridge_first_floor_hallway

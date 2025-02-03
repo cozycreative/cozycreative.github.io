@@ -1,0 +1,19 @@
+name: Apartment Entrance
+description: The entrance to the Affordable Apartment building. A simple doorway leading into a modest building.
+choices:
+  - description: Enter the Apartment Hallway.
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_hallway
+  - description: Go to the Laundry Room.
+    outcomes:
+      - type: change_location
+        destination: ashridge_laundry
+  - description: Go to the Courtyard.
+    outcomes:
+      - type: change_location
+        destination: ashridge_courtyard
+  - description: Exit to the Ashridge Main Street.
+    outcomes:
+      - type: change_location
+        destination: ashridge_core_hub

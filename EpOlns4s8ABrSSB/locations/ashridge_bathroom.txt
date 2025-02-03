@@ -1,0 +1,92 @@
+name: Bathroom
+description: A small but functional bathroom with a toilet, sink with mirror above it, and a shower stall. The white tiles are a bit worn but clean. Basic toiletries are arranged on a small shelf.
+
+choices:
+  - description: Take a Shower
+    conditions:
+      time_passed: 120
+      has_inventory: towel
+    outcomes:
+      - type: update_stat
+        stat: hygiene
+        value: +30
+      - type: update_stat
+        stat: energy
+        value: +10
+      - type: update_time
+        minutes: 20
+      - type: message
+        text: "The hot water feels great as you take a refreshing shower. You feel clean and energized."
+
+  - description: Quick Rinse
+    conditions:
+      time_passed: 30
+      has_inventory: towel
+    outcomes:
+      - type: update_stat
+        stat: hygiene
+        value: +15
+      - type: update_time
+        minutes: 5
+      - type: message
+        text: "You quickly rinse off under the shower. It's better than nothing."
+
+  - description: Brush Teeth
+    conditions:
+      has_inventory: toothbrush
+    outcomes:
+      - type: update_stat
+        stat: hygiene
+        value: +10
+      - type: update_time
+        minutes: 3
+      - type: message
+        text: "You brush your teeth thoroughly. Your mouth feels fresh and clean."
+
+  - description: Use Toilet
+    outcomes:
+      - type: update_stat
+        stat: comfort
+        value: +10
+      - type: update_time
+        minutes: 5
+      - type: message
+        text: "You use the toilet. Nature calls!"
+
+  - description: Check Yourself in Mirror
+    outcomes:
+      - type: trigger_event
+        event: mirror_check
+
+  - description: Wash Face
+    conditions:
+      has_inventory: face_soap
+    outcomes:
+      - type: update_stat
+        stat: hygiene
+        value: +5
+      - type: update_stat
+        stat: energy
+        value: +5
+      - type: update_time
+        minutes: 2
+      - type: message
+        text: "You splash some cold water on your face. It helps you feel more awake."
+
+  - description: Clean Bathroom
+    conditions:
+      time_passed: 1440
+      has_inventory: cleaning_supplies
+    outcomes:
+      - type: update_stat
+        stat: apartment_cleanliness
+        value: +20
+      - type: update_time
+        minutes: 15
+      - type: message
+        text: "You clean the bathroom, scrubbing the tiles and fixtures. The place looks much better now."
+
+  - description: Go back to the Hallway
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_hallway

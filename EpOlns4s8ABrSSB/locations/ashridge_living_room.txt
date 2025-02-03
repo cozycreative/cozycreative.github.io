@@ -1,0 +1,11 @@
+name: Living Room
+description: The living room is simply furnished with a sofa, a small table, and a TV area. A door leads to a small balcony.
+choices:
+  - description: Go to the Hallway.
+    outcomes:
+      - type: change_location
+        destination: ashridge_hallway
+  - description: Step onto the Balcony.
+    outcomes:
+      - type: change_location
+        destination: ashridge_balcony # Assuming balcony is intended, or courtyard if balcony is not applicable

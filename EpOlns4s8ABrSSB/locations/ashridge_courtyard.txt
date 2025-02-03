@@ -1,0 +1,11 @@
+name: Courtyard
+description: A small, shared courtyard behind the apartment building. It's a bit rundown but offers a breath of fresh air.
+choices:
+  - description: Relax in the Courtyard.
+    outcomes:
+      - type: text
+        text: You sit in the courtyard and enjoy the relative quiet.
+  - description: Go back to the Apartment Entrance.
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_entrance

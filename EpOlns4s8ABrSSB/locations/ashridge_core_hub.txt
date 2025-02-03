@@ -1,0 +1,113 @@
+name: Ashridge Main Street
+description: The bustling heart of Ashridge, where residential, commercial, and industrial areas converge. Street vendors call out their wares, while workers and residents hurry about their business. The air carries a mix of cooking aromas from the market and the distant hum of the factory. Weathered brick buildings line the street, their ground floors occupied by various shops and businesses.
+
+choices:
+  - description: Visit the Affordable Apartment
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_entrance
+
+  - description: Explore the Local Market
+    outcomes:
+      - type: change_location
+        destination: ashridge_market
+
+  - description: Relax at the Public Baths
+    outcomes:
+      - type: change_location
+        destination: public_baths
+
+  - description: Go to the Factory Complex
+    outcomes:
+      - type: change_location
+        destination: factory_complex
+
+  - description: Visit the Pawnshop
+    outcomes:
+      - type: change_location
+        destination: ashridge_pawnshop
+
+  - description: Watch Street Performance
+    conditions:
+      time_hour: 12-20
+    outcomes:
+      - type: update_stat
+        stat: happiness
+        value: +5
+      - type: update_time
+        minutes: 15
+      - type: trigger_event
+        event: street_performance
+      - type: message
+        text: "You stop to watch a talented street performer. Their act brings some color to the otherwise mundane street."
+
+  - description: Chat with Locals
+    outcomes:
+      - type: update_stat
+        stat: social
+        value: +3
+      - type: update_time
+        minutes: 10
+      - type: trigger_event
+        event: street_gossip
+      - type: message
+        text: "You exchange pleasantries with some locals, picking up bits of neighborhood gossip."
+
+  - description: Buy Street Food
+    conditions:
+      money: 5
+      time_hour: 11-20
+    outcomes:
+      - type: update_stat
+        stat: money
+        value: -5
+      - type: update_stat
+        stat: hunger
+        value: -15
+      - type: update_time
+        minutes: 10
+      - type: message
+        text: "You buy some hot street food from a vendor. It's simple but satisfying."
+
+  - description: Check Notice Board
+    outcomes:
+      - type: trigger_event
+        event: check_notices
+      - type: update_time
+        minutes: 5
+      - type: message
+        text: "You scan the community notice board for job postings, events, and local news."
+
+  - description: People Watch
+    outcomes:
+      - type: update_time
+        minutes: 15
+      - type: trigger_event
+        event: observe_street
+      - type: message
+        text: "You observe the flow of people going about their daily lives, each with their own story."
+
+  - description: Listen to Street Preacher
+    conditions:
+      time_hour: 9-17
+    outcomes:
+      - type: trigger_event
+        event: street_preacher
+      - type: update_time
+        minutes: 10
+      - type: message
+        text: "A passionate street preacher shares their message with anyone who'll listen."
+
+  - description: Help Lost Tourist
+    conditions:
+      event_active: lost_tourist
+    outcomes:
+      - type: update_stat
+        stat: karma
+        value: +5
+      - type: update_time
+        minutes: 10
+      - type: trigger_event
+        event: assist_tourist
+      - type: message
+        text: "You help a confused tourist find their way. They're grateful for your assistance."

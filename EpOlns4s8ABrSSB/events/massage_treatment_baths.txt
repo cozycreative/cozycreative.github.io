@@ -1,0 +1,94 @@
+name: Massage Treatment at Public Baths
+description: You approach the massage area of the bathhouse. Several treatment options are available, each with different benefits.
+
+screens:
+  - id: start
+    text: "The massage therapist greets you with a calm smile. 'Welcome. What type of massage would you prefer today?'"
+    choices:
+      - description: "Basic Relaxation Massage (25 credits)"
+        conditions:
+          money: 25
+        next_screen: basic_massage
+      - description: "Deep Tissue Treatment (35 credits)"
+        conditions:
+          money: 35
+        next_screen: deep_tissue
+      - description: "Luxury Full Body Treatment (50 credits)"
+        conditions:
+          money: 50
+        next_screen: luxury_treatment
+      - description: "Just browsing"
+        outcomes:
+          - type: end_event
+
+  - id: basic_massage
+    text: "The therapist prepares a simple massage table. 'This will help with basic tension and stress relief.'"
+    choices:
+      - description: "Accept treatment"
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: -25
+          - type: update_stat
+            stat: stress
+            value: -20
+          - type: update_stat
+            stat: comfort
+            value: +15
+          - type: update_time
+            minutes: 30
+          - type: end_event
+      - description: "Change my mind"
+        outcomes:
+          - type: end_event
+
+  - id: deep_tissue
+    text: "The therapist brings out special oils. 'This will help work out deeper muscle tension and knots.'"
+    choices:
+      - description: "Accept treatment"
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: -35
+          - type: update_stat
+            stat: stress
+            value: -30
+          - type: update_stat
+            stat: comfort
+            value: +25
+          - type: update_stat
+            stat: health
+            value: +5
+          - type: update_time
+            minutes: 45
+          - type: end_event
+      - description: "Change my mind"
+        outcomes:
+          - type: end_event
+
+  - id: luxury_treatment
+    text: "The therapist leads you to a private room with aromatic oils and soft music. 'This is our premium treatment, combining multiple techniques for total relaxation.'"
+    choices:
+      - description: "Accept treatment"
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: -50
+          - type: update_stat
+            stat: stress
+            value: -40
+          - type: update_stat
+            stat: comfort
+            value: +35
+          - type: update_stat
+            stat: health
+            value: +10
+          - type: update_stat
+            stat: energy
+            value: +20
+          - type: update_time
+            minutes: 60
+          - type: end_event
+      - description: "Change my mind"
+        outcomes:
+          - type: end_event

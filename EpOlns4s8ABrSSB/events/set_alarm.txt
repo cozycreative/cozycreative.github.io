@@ -1,0 +1,130 @@
+name: Set Alarm Clock
+description: You adjust your alarm clock settings for when you need to wake up.
+
+screens:
+  - id: start
+    text: "You look at your alarm clock. What would you like to set it for?"
+    choices:
+      - description: "Early morning (6 AM)"
+        next_screen: early_reason
+      - description: "Standard time (7 AM)"
+        next_screen: standard_reason
+      - description: "Late morning (8 AM)"
+        next_screen: late_reason
+      - description: "Cancel setting alarm"
+        outcomes:
+          - type: end_event
+
+  - id: early_reason
+    text: "Setting an early alarm can help you make the most of your morning. Any particular reason?"
+    choices:
+      - description: "Morning exercise"
+        outcomes:
+          - type: set_condition
+            condition: wake_time
+            value: 6
+          - type: set_condition
+            condition: planning_exercise
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Early job search"
+        outcomes:
+          - type: set_condition
+            condition: wake_time
+            value: 6
+          - type: set_condition
+            condition: planning_job_search
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Modeling casting"
+        conditions:
+          modeling_interest: true
+        outcomes:
+          - type: set_condition
+            condition: wake_time
+            value: 6
+          - type: set_condition
+            condition: preparing_for_casting
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Just being productive"
+        outcomes:
+          - type: set_condition
+            condition: wake_time
+            value: 6
+          - type: update_time
+            minutes: 1
+          - type: end_event
+
+  - id: standard_reason
+    text: "A 7 AM wake-up gives you a good start to the day. Any specific plans?"
+    choices:
+      - description: "Normal routine"
+        outcomes:
+          - type: set_condition
+            condition: wake_time
+            value: 7
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Job hunting"
+        outcomes:
+          - type: set_condition
+            condition: wake_time
+            value: 7
+          - type: set_condition
+            condition: planning_job_search
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Beauty routine"
+        conditions:
+          modeling_interest: true
+        outcomes:
+          - type: set_condition
+            condition: wake_time
+            value: 7
+          - type: set_condition
+            condition: planning_beauty_routine
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+
+  - id: late_reason
+    text: "Setting alarm for 8 AM. Any particular reason for the later start?"
+    choices:
+      - description: "Need extra rest"
+        outcomes:
+          - type: set_condition
+            condition: wake_time
+            value: 8
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Late night planned"
+        outcomes:
+          - type: set_condition
+            condition: wake_time
+            value: 8
+          - type: set_condition
+            condition: planning_late_night
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Flexible schedule"
+        outcomes:
+          - type: set_condition
+            condition: wake_time
+            value: 8
+          - type: update_time
+            minutes: 1
+          - type: end_event

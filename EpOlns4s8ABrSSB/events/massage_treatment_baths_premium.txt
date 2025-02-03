@@ -1,0 +1,94 @@
+name: Premium Massage Treatment at Public Baths
+description: You approach the massage area of the bathhouse. As a premium member, you have access to discounted rates and priority booking.
+
+screens:
+  - id: start
+    text: "The massage therapist greets you warmly. 'Welcome back! As a premium member, you get 30% off all our treatments. What would you prefer today?'"
+    choices:
+      - description: "Basic Relaxation Massage (18 credits with discount)"
+        conditions:
+          money: 18
+        next_screen: basic_massage
+      - description: "Deep Tissue Treatment (25 credits with discount)"
+        conditions:
+          money: 25
+        next_screen: deep_tissue
+      - description: "Luxury Full Body Treatment (35 credits with discount)"
+        conditions:
+          money: 35
+        next_screen: luxury_treatment
+      - description: "Just browsing"
+        outcomes:
+          - type: end_event
+
+  - id: basic_massage
+    text: "The therapist prepares a premium massage table in a private room. 'This will help with basic tension and stress relief.'"
+    choices:
+      - description: "Accept treatment"
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: -18
+          - type: update_stat
+            stat: stress
+            value: -25
+          - type: update_stat
+            stat: comfort
+            value: +20
+          - type: update_time
+            minutes: 30
+          - type: end_event
+      - description: "Change my mind"
+        outcomes:
+          - type: end_event
+
+  - id: deep_tissue
+    text: "The therapist brings out special aromatherapy oils. 'This will help work out deeper muscle tension and knots. Premium members get extra attention to problem areas.'"
+    choices:
+      - description: "Accept treatment"
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: -25
+          - type: update_stat
+            stat: stress
+            value: -35
+          - type: update_stat
+            stat: comfort
+            value: +30
+          - type: update_stat
+            stat: health
+            value: +8
+          - type: update_time
+            minutes: 45
+          - type: end_event
+      - description: "Change my mind"
+        outcomes:
+          - type: end_event
+
+  - id: luxury_treatment
+    text: "The therapist leads you to a deluxe private room with premium aromatherapy oils and soothing music. 'This is our ultimate treatment, combining multiple techniques for total relaxation. Premium members get an extended session.'"
+    choices:
+      - description: "Accept treatment"
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: -35
+          - type: update_stat
+            stat: stress
+            value: -45
+          - type: update_stat
+            stat: comfort
+            value: +40
+          - type: update_stat
+            stat: health
+            value: +15
+          - type: update_stat
+            stat: energy
+            value: +25
+          - type: update_time
+            minutes: 75
+          - type: end_event
+      - description: "Change my mind"
+        outcomes:
+          - type: end_event

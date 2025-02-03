@@ -1,0 +1,48 @@
+Variables Used as Conditions:
+- time_hour
+- has_inventory: coat
+- coat_stored
+- light_broken
+- time_passed
+- energy
+- event_active
+- rent_due
+- money
+- utilities_due
+- maintenance_needed
+- bed_made
+- knows_job_openings
+- has_inventory: clean_clothes
+- vendor_reputation
+- has_collateral
+- pawnshop_reputation
+- social
+- haggling_skill
+- bath_used
+- has_messages
+- modeling_interest
+- has_old_food
+- has_shopping_list
+- knows_fresh_ingredients
+- has_inventory: basic_ingredients
+- has_inventory: surface_cleaner
+- has_inventory: dish_soap
+- has_inventory: cookware
+- has_inventory: utensils
+- has_inventory: professional_clothes
+- has_inventory: fashionable_clothes
+- has_inventory: sporty_clothes
+- has_inventory: bath_basic_membership
+- has_inventory: bath_premium_membership
+- has_inventory: fresh_ingredients
+- has_inventory: skincare_products
+- has_inventory: jewelry
+- has_inventory: tools
+- has_inventory: phone
+
+Variables that are Updated:
+- update_stat (stats: happiness, energy, knowledge, comfort, fitness, hygiene, apartment_cleanliness, money, professionalism, style, modeling_skill, health, discipline, stress, confidence)
+- update_inventory (items: coat, light_bulb, basic_ingredients, fresh_ingredients, snack_food, coffee_beans, microwave_meal, wet_clothes, clean_clothes, detergent, fabric_softener, jewelry, tools, bath_basic_membership, bath_premium_membership, professional_clothes, fashionable_clothes, sporty_clothes, skincare_products, phone)
+- set_condition (conditions: coat_stored, light_broken, rent_paid, utilities_paid, knows_job_openings, knows_local_events, knows_factory_jobs, knows_office_jobs, knows_neighborhood_history, planning_modeling_outfits, knows_measurements, wake_time, planning_exercise, planning_job_search, preparing_for_casting, planning_beauty_routine, planning_late_night, has_inventory: basic_ingredients, has_inventory: snack_food, has_inventory: microwave_meals, has_inventory: cookware, has_inventory: utensils, knows_appliances, has_inventory: dish_soap, has_inventory: sponges, has_inventory: surface_cleaner, has_inventory: clean_clothes, has_inventory: professional_clothes, needs_laundry, laundry_sorted, knows_wardrobe_needs, planning_clothes_shopping, has_modeling_outfits, planned_casting_outfit, knows_fresh_ingredients, meal_planned, checked_food_dates, has_leftovers, fridge_cleaned, has_inventory: water, has_inventory: milk, has_inventory: juice, need_fresh_ingredients, need_basic_ingredients, need_healthy_food, need_cleaning_supplies, need_kitchen_supplies, knows_shopping_cost, prioritized_shopping, has_shopping_list, saw_agency_updates, has_modeling_emails, has_job_emails, knows_career_tips, knows_entertainment_events, knows_weather, knows_weekly_weather, knows_job_market, knows_new_businesses, modeling_interest)
+- update_time
+- trigger_event (events: check_mail, hallway_eavesdrop, check_hallway_storage, door_visitor, window_watching, neighbor_interaction, apartment_status, adjust_temperature, request_maintenance, check_apartment_mail, review_documents, morning_phone_check, read_messages, buy_fresh_ingredients, buy_basic_ingredients, buy_street_food, purchase_market_used_item, haggle_market_prices, market_vendor_chat, market_end_day_deals, buy_household_items, browse_market_produce, browse_market_used_items, browse_jewelry_pawnshop, browse_tools_pawnshop, sell_items_pawnshop, quick_loan_pawnshop, browse_special_items_pawnshop, request_item_pawnshop, shopkeeper_chat_pawnshop, haggle_pawnshop, buy_tools_pawnshop, observe_factory_workers, factory_job_search, factory_job_application, check_factory_jobs, chat_with_workers, regular_bath, member_regular_bath, premium_regular_bath, quick_wash, steam_room, premium_steam_room, massage_treatment_baths, massage_treatment_baths_premium, bathhouse_socializing, bath_membership, use_grooming_station, use_cooldown_area, check_bath_basic_membership, check_bath_premium_membership, read_laundry_notices, laundry_room_chat, check_laundry, laundry_cycle, quick_laundry_cycle, check_notices, observe_street, street_preacher, assist_tourist, street_performance, street_gossip, check_clothes, change_clothes, set_alarm, bedroom_mirror_check, mirror_check, watch_tv_news, watch_morning_show, check_fridge, make_shopping_list, check_cabinets, check_hallway_storage, door_visitor, window_watching, neighbor_interaction, apartment_status, adjust_temperature, request_maintenance, check_apartment_mail, review_documents, morning_phone_check, read_messages, buy_fresh_ingredients, buy_basic_ingredients, buy_street_food, purchase_market_used_item, haggle_market_prices, market_vendor_chat, market_end_day_deals, buy_household_items, browse_market_produce, browse_market_used_items, browse_jewelry_pawnshop, browse_tools_pawnshop, sell_items_pawnshop, quick_loan_pawnshop, browse_special_items_pawnshop, request_item_pawnshop, shopkeeper_chat_pawnshop, haggle_pawnshop, buy_tools_pawnshop, observe_factory_workers, factory_job_search, factory_job_application, check_factory_jobs, chat_with_workers, regular_bath, member_regular_bath, premium_regular_bath, quick_wash, steam_room, premium_steam_room, massage_treatment_baths, massage_treatment_baths_premium, bathhouse_socializing, bath_membership, use_grooming_station, use_cooldown_area, check_bath_basic_membership, check_bath_premium_membership, read_laundry_notices, laundry_room_chat, check_laundry, laundry_cycle, quick_laundry_cycle, check_notices, observe_street, street_preacher, assist_tourist, street_performance, street_gossip)

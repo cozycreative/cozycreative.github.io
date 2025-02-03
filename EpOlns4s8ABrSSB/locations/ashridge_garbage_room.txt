@@ -1,0 +1,7 @@
+name: Garbage Room
+description: A small, utilitarian room for waste disposal. It smells faintly of refuse.
+choices:
+  - description: Go back to the Apartment Entrance.
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_entrance

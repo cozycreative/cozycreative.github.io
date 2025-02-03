@@ -1,7 +1,0 @@
-name: Watch a Movie
-description: You settle into your seat as the lights dim. For the next two hours, you’re transported to another world. The movie is thrilling, and you leave feeling refreshed and entertained.
-
-choices:
-  - description: Return to the Cinema lobby.
-    outcomes:
-      - type: end_event

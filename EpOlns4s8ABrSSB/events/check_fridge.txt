@@ -1,0 +1,102 @@
+name: Check Refrigerator
+description: You open the fridge to check its contents and plan your meals.
+
+screens:
+  - id: start
+    text: "You open the fridge door. What would you like to check?"
+    choices:
+      - description: "Check fresh ingredients"
+        next_screen: fresh_ingredients
+      - description: "Check leftovers"
+        next_screen: leftovers
+      - description: "Check drinks"
+        next_screen: drinks
+      - description: "Close fridge"
+        outcomes:
+          - type: end_event
+
+  - id: fresh_ingredients
+    text: "You examine the fresh ingredients in your fridge."
+    choices:
+      - description: "Count ingredients"
+        outcomes:
+          - type: set_condition
+            condition: knows_fresh_ingredients
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Plan healthy meal"
+        conditions:
+          has_inventory: fresh_ingredients
+        outcomes:
+          - type: set_condition
+            condition: meal_planned
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Check expiration dates"
+        outcomes:
+          - type: set_condition
+            condition: checked_food_dates
+            value: true
+          - type: update_time
+            minutes: 3
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start
+
+  - id: leftovers
+    text: "You look through any stored leftovers."
+    choices:
+      - description: "Check containers"
+        outcomes:
+          - type: set_condition
+            condition: has_leftovers
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Throw out old food"
+        conditions:
+          has_old_food: true
+        outcomes:
+          - type: set_condition
+            condition: fridge_cleaned
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start
+
+  - id: drinks
+    text: "You examine the beverages in your fridge."
+    choices:
+      - description: "Check water bottles"
+        outcomes:
+          - type: set_condition
+            condition: has_water
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Check milk"
+        outcomes:
+          - type: set_condition
+            condition: has_milk
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Check juice"
+        outcomes:
+          - type: set_condition
+            condition: has_juice
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start

@@ -1,0 +1,142 @@
+name: Kitchen
+description: A small but functional kitchen with basic appliances. The fridge hums quietly in the corner, next to a basic electric stove and countertop. Cabinets line the walls, and a small window above the sink lets in some natural light.
+
+choices:
+  - description: Check Fridge
+    outcomes:
+      - type: trigger_event
+        event: check_fridge
+
+  - description: Cook Simple Meal
+    conditions:
+      has_inventory: basic_ingredients
+      energy: 10
+    outcomes:
+      - type: update_stat
+        stat: energy
+        value: +20
+      - type: update_stat
+        stat: hunger
+        value: -30
+      - type: update_stat
+        stat: cooking_skill
+        value: +1
+      - type: update_time
+        minutes: 20
+      - type: update_inventory
+        item: basic_ingredients
+        value: -1
+      - type: message
+        text: "You prepare a simple but satisfying meal. Nothing fancy, but it fills you up."
+
+  - description: Cook Healthy Meal
+    conditions:
+      has_inventory: fresh_ingredients
+      cooking_skill: 2
+      energy: 15
+    outcomes:
+      - type: update_stat
+        stat: energy
+        value: +25
+      - type: update_stat
+        stat: hunger
+        value: -35
+      - type: update_stat
+        stat: health
+        value: +5
+      - type: update_stat
+        stat: cooking_skill
+        value: +2
+      - type: update_time
+        minutes: 30
+      - type: update_inventory
+        item: fresh_ingredients
+        value: -1
+      - type: message
+        text: "You prepare a nutritious meal with fresh ingredients. You feel good about making healthy choices."
+
+  - description: Make Quick Snack
+    conditions:
+      has_inventory: snack_food
+      energy: 5
+    outcomes:
+      - type: update_stat
+        stat: energy
+        value: +10
+      - type: update_stat
+        stat: hunger
+        value: -15
+      - type: update_time
+        minutes: 5
+      - type: update_inventory
+        item: snack_food
+        value: -1
+      - type: message
+        text: "You fix yourself a quick snack. It takes the edge off your hunger."
+
+  - description: Make Coffee
+    conditions:
+      has_inventory: coffee_beans
+    outcomes:
+      - type: update_stat
+        stat: energy
+        value: +15
+      - type: update_stat
+        stat: comfort
+        value: +5
+      - type: update_time
+        minutes: 5
+      - type: update_inventory
+        item: coffee_beans
+        value: -1
+      - type: message
+        text: "The rich aroma of fresh coffee fills the kitchen. You feel more alert after drinking it."
+
+  - description: Clean Kitchen
+    conditions:
+      time_passed: 720
+      energy: 10
+    outcomes:
+      - type: update_stat
+        stat: apartment_cleanliness
+        value: +15
+      - type: update_stat
+        stat: energy
+        value: -5
+      - type: update_time
+        minutes: 15
+      - type: message
+        text: "You clean the kitchen, washing dishes and wiping down surfaces. Everything looks much better."
+
+  - description: Make Shopping List
+    outcomes:
+      - type: trigger_event
+        event: make_shopping_list
+
+  - description: Check Cabinets
+    outcomes:
+      - type: trigger_event
+        event: check_cabinets
+
+  - description: Heat Microwave Meal
+    conditions:
+      has_inventory: microwave_meal
+    outcomes:
+      - type: update_stat
+        stat: energy
+        value: +15
+      - type: update_stat
+        stat: hunger
+        value: -25
+      - type: update_time
+        minutes: 5
+      - type: update_inventory
+        item: microwave_meal
+        value: -1
+      - type: message
+        text: "You heat up a microwave meal. It's not gourmet, but it's quick and filling."
+
+  - description: Go back to the Hallway
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_hallway

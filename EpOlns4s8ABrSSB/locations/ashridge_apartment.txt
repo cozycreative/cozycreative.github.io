@@ -1,0 +1,129 @@
+name: Your Apartment
+description: Your modest apartment in the Ashridge district. While small, it's a place to call your own. The rent is affordable, and the location is convenient. The walls could use a fresh coat of paint, and some of the fixtures are dated, but it's clean and functional. A small thermostat on the wall controls the heating, and a window AC unit helps during summer months.
+
+choices:
+  - description: Check Apartment Status
+    outcomes:
+      - type: trigger_event
+        event: apartment_status
+      - type: update_time
+        minutes: 2
+      - type: message
+        text: "You review your apartment's condition, utilities, and upcoming maintenance needs."
+
+  - description: Pay Rent
+    conditions:
+      rent_due: true
+      money: 500
+    outcomes:
+      - type: update_stat
+        stat: money
+        value: -500
+      - type: set_condition
+        condition: rent_paid
+        value: true
+      - type: update_time
+        minutes: 5
+      - type: message
+        text: "You pay your monthly rent. It's a significant expense, but at least you have a roof over your head."
+
+  - description: Pay Utilities
+    conditions:
+      utilities_due: true
+      money: 100
+    outcomes:
+      - type: update_stat
+        stat: money
+        value: -100
+      - type: set_condition
+        condition: utilities_paid
+        value: true
+      - type: update_time
+        minutes: 5
+      - type: message
+        text: "You pay your utility bills for water, electricity, and heating."
+
+  - description: Adjust Thermostat
+    outcomes:
+      - type: trigger_event
+        event: adjust_temperature
+      - type: update_time
+        minutes: 1
+      - type: update_stat
+        stat: comfort
+        value: +5
+
+  - description: Call Maintenance
+    conditions:
+      maintenance_needed: true
+    outcomes:
+      - type: trigger_event
+        event: request_maintenance
+      - type: update_time
+        minutes: 10
+
+  - description: Check Mail
+    conditions:
+      time_hour: 9-18
+    outcomes:
+      - type: trigger_event
+        event: check_apartment_mail
+      - type: update_time
+        minutes: 2
+
+  - description: Review Bills and Notices
+    outcomes:
+      - type: trigger_event
+        event: review_documents
+      - type: update_time
+        minutes: 5
+
+  - description: General Cleaning
+    conditions:
+      energy: 20
+    outcomes:
+      - type: update_stat
+        stat: apartment_cleanliness
+        value: +25
+      - type: update_stat
+        stat: energy
+        value: -20
+      - type: update_time
+        minutes: 60
+      - type: message
+        text: "You spend an hour doing a thorough cleaning of the entire apartment."
+
+  - description: Go to the Hallway
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_hallway
+
+  - description: Go to the Living Room
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_living_room
+
+  - description: Go to the Kitchen
+    outcomes:
+      - type: change_location
+        destination: ashridge_kitchen
+
+  - description: Go to the Bedroom
+    outcomes:
+      - type: change_location
+        destination: ashridge_bedroom
+
+  - description: Go to the Bathroom
+    outcomes:
+      - type: change_location
+        destination: ashridge_bathroom
+
+  - description: Go to the Courtyard
+    outcomes:
+      - type: change_location
+        destination: ashridge_courtyard
+
+  - description: Exit Apartment to the First Floor Hallway
+    outcomes:
+      - type: change_location
+        destination: ashridge_first_floor_hallway

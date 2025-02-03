@@ -1,0 +1,111 @@
+name: Change Clothes
+description: You open your wardrobe to change your outfit.
+
+screens:
+  - id: start
+    text: "You look through your available clean clothes. What kind of outfit would you like to wear?"
+    choices:
+      - description: "Casual outfit"
+        next_screen: casual_options
+      - description: "Professional outfit"
+        conditions:
+          has_inventory: professional_clothes
+        next_screen: professional_options
+      - description: "Fashionable outfit"
+        conditions:
+          has_inventory: fashionable_clothes
+        next_screen: fashion_options
+      - description: "Close wardrobe"
+        outcomes:
+          - type: end_event
+
+  - id: casual_options
+    text: "You look through your casual clothes."
+    choices:
+      - description: "Comfortable everyday wear"
+        outcomes:
+          - type: update_stat
+            stat: appearance
+            value: +5
+          - type: update_stat
+            stat: comfort
+            value: +10
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Sporty casual"
+        conditions:
+          has_inventory: sporty_clothes
+        outcomes:
+          - type: update_stat
+            stat: appearance
+            value: +8
+          - type: update_stat
+            stat: comfort
+            value: +15
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Choose different style"
+        next_screen: start
+
+  - id: professional_options
+    text: "You examine your professional attire options."
+    choices:
+      - description: "Business casual"
+        outcomes:
+          - type: update_stat
+            stat: appearance
+            value: +10
+          - type: update_stat
+            stat: professionalism
+            value: +10
+          - type: update_time
+            minutes: 10
+          - type: end_event
+      - description: "Full professional"
+        outcomes:
+          - type: update_stat
+            stat: appearance
+            value: +15
+          - type: update_stat
+            stat: professionalism
+            value: +15
+          - type: update_time
+            minutes: 15
+          - type: end_event
+      - description: "Choose different style"
+        next_screen: start
+
+  - id: fashion_options
+    text: "You look through your more fashionable pieces."
+    choices:
+      - description: "Trendy outfit"
+        outcomes:
+          - type: update_stat
+            stat: appearance
+            value: +15
+          - type: update_stat
+            stat: style
+            value: +10
+          - type: update_time
+            minutes: 10
+          - type: end_event
+      - description: "Model-worthy look"
+        conditions:
+          modeling_interest: true
+        outcomes:
+          - type: update_stat
+            stat: appearance
+            value: +20
+          - type: update_stat
+            stat: style
+            value: +15
+          - type: update_stat
+            stat: modeling_skill
+            value: +2
+          - type: update_time
+            minutes: 15
+          - type: end_event
+      - description: "Choose different style"
+        next_screen: start

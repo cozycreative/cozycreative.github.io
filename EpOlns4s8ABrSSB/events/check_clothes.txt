@@ -1,0 +1,112 @@
+name: Check Wardrobe
+description: You open your wardrobe to check your available clothes.
+
+screens:
+  - id: start
+    text: "You examine the contents of your wardrobe. What would you like to check?"
+    choices:
+      - description: "Check clean clothes"
+        next_screen: clean_clothes
+      - description: "Check laundry needs"
+        next_screen: laundry_check
+      - description: "Assess wardrobe gaps"
+        next_screen: wardrobe_assessment
+      - description: "Close wardrobe"
+        outcomes:
+          - type: end_event
+
+  - id: clean_clothes
+    text: "You look through your clean clothes, taking inventory of what's available."
+    choices:
+      - description: "Count casual clothes"
+        outcomes:
+          - type: set_condition
+            condition: has_clean_clothes
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Check professional wear"
+        outcomes:
+          - type: set_condition
+            condition: has_professional_clothes
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Check fashion pieces"
+        conditions:
+          modeling_interest: true
+        next_screen: fashion_check
+      - description: "Check something else"
+        next_screen: start
+
+  - id: laundry_check
+    text: "You sort through clothes that need washing."
+    choices:
+      - description: "Count dirty clothes"
+        outcomes:
+          - type: set_condition
+            condition: needs_laundry
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Sort laundry"
+        outcomes:
+          - type: set_condition
+            condition: laundry_sorted
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start
+
+  - id: wardrobe_assessment
+    text: "You assess what your wardrobe might be missing."
+    choices:
+      - description: "Check basic needs"
+        outcomes:
+          - type: set_condition
+            condition: knows_wardrobe_needs
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Plan future purchases"
+        conditions:
+          money: 50
+        outcomes:
+          - type: set_condition
+            condition: planning_clothes_shopping
+            value: true
+          - type: update_time
+            minutes: 10
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start
+
+  - id: fashion_check
+    text: "You examine your more fashionable clothing pieces, considering what might work for modeling."
+    choices:
+      - description: "Assess modeling outfits"
+        outcomes:
+          - type: set_condition
+            condition: has_modeling_outfits
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Plan casting outfit"
+        conditions:
+          modeling_interest: true
+        outcomes:
+          - type: set_condition
+            condition: planned_casting_outfit
+            value: true
+          - type: update_time
+            minutes: 10
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start

@@ -1,0 +1,79 @@
+name: Watch Morning Talk Show
+description: You tune in to the morning talk show. The hosts are discussing various lifestyle topics and interviewing guests.
+
+screens:
+  - id: start
+    text: "The morning show is in full swing. What segment would you like to watch?"
+    choices:
+      - description: "Watch Lifestyle Tips"
+        next_screen: lifestyle
+      - description: "Watch Career Advice"
+        next_screen: career
+      - description: "Watch Entertainment News"
+        next_screen: entertainment
+      - description: "Turn off TV"
+        outcomes:
+          - type: end_event
+
+  - id: lifestyle
+    text: "The hosts discuss health and wellness tips with a lifestyle expert."
+    choices:
+      - description: "Watch commercial break"
+        conditions:
+          event_active: modeling_agency_commercial
+        next_screen: modeling_ad
+      - description: "Learn about wellness tips"
+        outcomes:
+          - type: update_stat
+            stat: knowledge
+            value: +5
+          - type: update_time
+            minutes: 15
+          - type: end_event
+      - description: "Watch different segment"
+        next_screen: start
+
+  - id: career
+    text: "A career coach is sharing advice about finding opportunities and personal development."
+    choices:
+      - description: "Watch commercial break"
+        conditions:
+          event_active: modeling_agency_commercial
+        next_screen: modeling_ad
+      - description: "Watch different segment"
+        next_screen: start
+
+  - id: entertainment
+    text: "The entertainment segment covers local events, celebrity news, and upcoming shows."
+    choices:
+      - description: "Watch commercial break"
+        conditions:
+          event_active: modeling_agency_commercial
+        next_screen: modeling_ad
+      - description: "Learn about local events"
+        outcomes:
+          - type: update_stat
+            stat: knowledge
+            value: +3
+          - type: set_condition
+            condition: knows_entertainment_events
+            value: true
+          - type: update_time
+            minutes: 15
+          - type: end_event
+      - description: "Watch different segment"
+        next_screen: start
+
+  - id: modeling_ad
+    text: "The show cuts to a commercial break. A glamorous advertisement plays: 'Transform your life with Downtown Modeling Agency! Our success stories include models who started just like you. Open castings this week - no experience needed! Visit our downtown office to start your modeling career today.'"
+    choices:
+      - description: "Make note of the opportunity"
+        outcomes:
+          - type: set_condition
+            condition: modeling_interest
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Continue watching show"
+        next_screen: start

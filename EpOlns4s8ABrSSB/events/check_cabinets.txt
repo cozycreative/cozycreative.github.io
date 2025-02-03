@@ -1,0 +1,106 @@
+name: Check Kitchen Cabinets
+description: You open the kitchen cabinets to check your dry goods and supplies.
+
+screens:
+  - id: start
+    text: "You open the kitchen cabinets. What would you like to check?"
+    choices:
+      - description: "Check food storage"
+        next_screen: food_storage
+      - description: "Check cooking supplies"
+        next_screen: cooking_supplies
+      - description: "Check cleaning supplies"
+        next_screen: cleaning_supplies
+      - description: "Close cabinets"
+        outcomes:
+          - type: end_event
+
+  - id: food_storage
+    text: "You examine your stored dry goods and non-perishables."
+    choices:
+      - description: "Check basic ingredients"
+        outcomes:
+          - type: set_condition
+            condition: has_basic_ingredients
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Check snack foods"
+        outcomes:
+          - type: set_condition
+            condition: has_snack_food
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Check microwave meals"
+        outcomes:
+          - type: set_condition
+            condition: has_microwave_meals
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start
+
+  - id: cooking_supplies
+    text: "You look through your cooking equipment and supplies."
+    choices:
+      - description: "Check pots and pans"
+        outcomes:
+          - type: set_condition
+            condition: has_cookware
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Check utensils"
+        outcomes:
+          - type: set_condition
+            condition: has_utensils
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Check appliances"
+        outcomes:
+          - type: set_condition
+            condition: knows_appliances
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start
+
+  - id: cleaning_supplies
+    text: "You check your kitchen cleaning supplies."
+    choices:
+      - description: "Check dish soap"
+        outcomes:
+          - type: set_condition
+            condition: has_dish_soap
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Check sponges"
+        outcomes:
+          - type: set_condition
+            condition: has_sponges
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Check surface cleaner"
+        outcomes:
+          - type: set_condition
+            condition: has_surface_cleaner
+            value: true
+          - type: update_time
+            minutes: 1
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start

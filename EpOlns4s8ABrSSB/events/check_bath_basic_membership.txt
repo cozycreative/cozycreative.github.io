@@ -1,0 +1,55 @@
+name: Check Basic Bath Membership Status
+description: The receptionist looks up your basic membership details in the system.
+
+screens:
+  - id: start
+    text: "'Let me check your basic membership status... Ah yes, here it is. Your membership includes unlimited basic baths and 20% off other services.'"
+    choices:
+      - description: "Check remaining time"
+        next_screen: time_remaining
+      - description: "Review benefits"
+        next_screen: benefits
+      - description: "Done checking"
+        outcomes:
+          - type: end_event
+
+  - id: time_remaining
+    text: "The receptionist checks your membership expiration. 'Your membership is valid for [X] more days. Would you like to know anything else?'"
+    choices:
+      - description: "Review benefits"
+        next_screen: benefits
+      - description: "Consider upgrading"
+        next_screen: upgrade_option
+      - description: "Done checking"
+        outcomes:
+          - type: end_event
+
+  - id: benefits
+    text: "Basic membership benefits include:\n- Unlimited basic baths during standard hours (6 AM - 10 PM)\n- 20% discount on additional services\n- Access to member-only events"
+    choices:
+      - description: "Consider upgrading"
+        next_screen: upgrade_option
+      - description: "Done checking"
+        outcomes:
+          - type: end_event
+
+  - id: upgrade_option
+    text: "'Interested in upgrading to premium? You'll get extended hours, unlimited steam room access, and bigger discounts on massages.'"
+    choices:
+      - description: "Upgrade to Premium"
+        conditions:
+          money: 200
+        outcomes:
+          - type: update_stat
+            stat: money
+            value: -200
+          - type: update_inventory
+            item: bath_basic_membership
+            value: -1
+          - type: update_inventory
+            item: bath_premium_membership
+            value: +1
+          - type: end_event
+      - description: "Maybe later"
+        outcomes:
+          - type: end_event

@@ -1,0 +1,194 @@
+name: Local Market
+description: A bustling market square filled with colorful stalls and the vibrant energy of commerce. Fresh produce displays create a rainbow of colors, while the aroma of street food fills the air. Vendors call out their daily specials, and hagglers engage in friendly negotiations. The market is especially busy in the morning when the produce is freshest.
+
+choices:
+  - description: Browse Fresh Produce
+    outcomes:
+      - type: trigger_event
+        event: browse_market_produce
+
+  - description: Buy Fresh Ingredients
+    conditions:
+      money: 15
+    outcomes:
+      - type: trigger_event
+        event: buy_fresh_ingredients
+
+  - description: Buy Basic Ingredients
+    conditions:
+      money: 8
+    outcomes:
+      - type: trigger_event
+        event: buy_basic_ingredients
+
+  - description: Get Street Food
+    conditions:
+      money: 5
+      time_hour: 10-20
+    outcomes:
+      - type: trigger_event
+        event: buy_street_food
+
+  - description: Buy Cigarettes
+    conditions:
+      money: 10
+    outcomes:
+      - type: update_inventory
+        item: cigarettes
+        value: +1
+      - type: update_stat
+        stat: money
+        value: -10
+      - type: message
+        text: "You purchase a pack of cigarettes."
+
+  - description: Buy Towel
+    conditions:
+      money: 5
+    outcomes:
+      - type: update_inventory
+        item: towel
+        value: +1
+      - type: update_stat
+        stat: money
+        value: -5
+      - type: message
+        text: "You purchase a towel."
+
+  - description: Buy Jewelry
+    conditions:
+      money: 50
+    outcomes:
+      - type: update_inventory
+        item: jewelry
+        value: +1
+      - type: update_stat
+        stat: money
+        value: -50
+      - type: message
+        text: "You purchase a piece of jewelry."
+
+  - description: Buy Professional Clothes
+    conditions:
+      money: 100
+    outcomes:
+      - type: update_inventory
+        item: professional_clothes
+        value: +1
+      - type: update_stat
+        stat: money
+        value: -100
+      - type: message
+        text: "You purchase a set of professional clothes."
+
+  - description: Buy Fashionable Clothes
+    conditions:
+      money: 120
+    outcomes:
+      - type: update_inventory
+        item: fashionable_clothes
+        value: +1
+      - type: update_stat
+        stat: money
+        value: -120
+      - type: message
+        text: "You purchase a set of fashionable clothes."
+
+  - description: Buy Sporty Clothes
+    conditions:
+      money: 80
+    outcomes:
+      - type: update_inventory
+        item: sporty_clothes
+        value: +1
+      - type: update_stat
+        stat: money
+        value: -80
+      - type: message
+        text: "You purchase a set of sporty clothes."
+
+  - description: Buy Skincare Products
+    conditions:
+      money: 30
+    outcomes:
+      - type: update_inventory
+        item: skincare_products
+        value: +1
+      - type: update_stat
+        stat: money
+        value: -30
+      - type: message
+        text: "You purchase skincare products."
+
+
+  - description: Buy Tools
+    conditions:
+      money: 60
+    outcomes:
+      - type: update_inventory
+        item: tools
+        value: +1
+      - type: update_stat
+        stat: money
+        value: -60
+      - type: message
+        text: "You purchase a set of tools."
+
+  - description: Buy Phone
+    conditions:
+      money: 150
+    outcomes:
+      - type: update_inventory
+        item: phone
+        value: +1
+      - type: update_stat
+        stat: money
+        value: -150
+      - type: message
+        text: "You purchase a phone."
+
+  - description: Browse Second-Hand Goods
+    outcomes:
+      - type: trigger_event
+        event: browse_market_used_items
+
+  - description: Buy Used Item
+    conditions:
+      money: 20
+      event_active: good_deal
+    outcomes:
+      - type: trigger_event
+        event: purchase_market_used_item
+
+  - description: Haggle with Vendors
+    conditions:
+      social: 3
+    outcomes:
+      - type: trigger_event
+        event: haggle_market_prices
+
+  - description: Chat with Regular Vendors
+    conditions:
+      vendor_reputation: 5
+    outcomes:
+      - type: trigger_event
+        event: market_vendor_chat
+
+  - description: Look for Special Deals
+    conditions:
+      time_hour: 17-20
+    outcomes:
+      - type: trigger_event
+        event: market_end_day_deals
+
+  - description: Buy Household Items
+    conditions:
+      money: 12
+    outcomes:
+      - type: trigger_event
+        event: buy_household_items
+
+  - description: Go back to the Ashridge Main Street
+    outcomes:
+      - type: change_location
+        destination: ashridge_core_hub

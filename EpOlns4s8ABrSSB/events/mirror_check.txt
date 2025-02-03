@@ -1,0 +1,102 @@
+name: Check Yourself in Mirror
+description: You stand in front of the bathroom mirror, examining your reflection carefully.
+
+screens:
+  - id: start
+    text: "You look at yourself in the mirror. What would you like to focus on?"
+    choices:
+      - description: "Check overall appearance"
+        next_screen: appearance_check
+      - description: "Style your hair"
+        next_screen: hair_styling
+      - description: "Check skin condition"
+        next_screen: skin_check
+      - description: "Step back from mirror"
+        outcomes:
+          - type: end_event
+
+  - id: appearance_check
+    text: "You examine your overall appearance. Your features could work well in photos - high cheekbones, expressive eyes, and good proportions. Maybe those modeling agency ads weren't so far-fetched..."
+    choices:
+      - description: "Consider modeling potential"
+        conditions:
+          modeling_interest: true
+        next_screen: modeling_thoughts
+      - description: "Make minor adjustments"
+        outcomes:
+          - type: update_stat
+            stat: appearance
+            value: +5
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Step back from mirror"
+        outcomes:
+          - type: end_event
+
+  - id: modeling_thoughts
+    text: "You think about the modeling agency advertisements you've seen. Looking at yourself now, you can see the potential. With the right presentation and opportunity..."
+    choices:
+      - description: "Feel confident about chances"
+        outcomes:
+          - type: update_stat
+            stat: confidence
+            value: +10
+          - type: set_condition
+            condition: modeling_interest
+            value: true
+          - type: end_event
+      - description: "Remain uncertain"
+        outcomes:
+          - type: end_event
+
+  - id: hair_styling
+    text: "You focus on your hair, trying different styles and arrangements."
+    choices:
+      - description: "Style carefully"
+        outcomes:
+          - type: update_stat
+            stat: appearance
+            value: +8
+          - type: update_time
+            minutes: 10
+          - type: end_event
+      - description: "Quick fix"
+        outcomes:
+          - type: update_stat
+            stat: appearance
+            value: +3
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Step back from mirror"
+        outcomes:
+          - type: end_event
+
+  - id: skin_check
+    text: "You examine your skin closely in the mirror, checking its condition."
+    choices:
+      - description: "Apply skincare products"
+        conditions:
+          has_inventory: skincare_products
+        outcomes:
+          - type: update_stat
+            stat: appearance
+            value: +10
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Wash face thoroughly"
+        outcomes:
+          - type: update_stat
+            stat: appearance
+            value: +5
+          - type: update_stat
+            stat: hygiene
+            value: +5
+          - type: update_time
+            minutes: 3
+          - type: end_event
+      - description: "Step back from mirror"
+        outcomes:
+          - type: end_event

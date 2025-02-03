@@ -1,0 +1,122 @@
+name: Make Shopping List
+description: You decide to make a list of groceries and supplies you need to buy.
+
+screens:
+  - id: start
+    text: "You take out a notepad to make a shopping list. What would you like to check first?"
+    choices:
+      - description: "Check food needs"
+        next_screen: food_needs
+      - description: "Check household needs"
+        next_screen: household_needs
+      - description: "Review current list"
+        conditions:
+          has_shopping_list: true
+        next_screen: review_list
+      - description: "Put away notepad"
+        outcomes:
+          - type: end_event
+
+  - id: food_needs
+    text: "You think about what food items you need."
+    choices:
+      - description: "List fresh ingredients"
+        conditions:
+          knows_fresh_ingredients: true
+        outcomes:
+          - type: set_condition
+            condition: need_fresh_ingredients
+            value: true
+          - type: set_condition
+            condition: has_shopping_list
+            value: true
+          - type: update_time
+            minutes: 3
+          - type: end_event
+      - description: "List basic ingredients"
+        conditions:
+          has_basic_ingredients: false
+        outcomes:
+          - type: set_condition
+            condition: need_basic_ingredients
+            value: true
+          - type: set_condition
+            condition: has_shopping_list
+            value: true
+          - type: update_time
+            minutes: 3
+          - type: end_event
+      - description: "List healthy options"
+        conditions:
+          modeling_interest: true
+        outcomes:
+          - type: set_condition
+            condition: need_healthy_food
+            value: true
+          - type: set_condition
+            condition: has_shopping_list
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Check different category"
+        next_screen: start
+
+  - id: household_needs
+    text: "You consider what household supplies you need."
+    choices:
+      - description: "List cleaning supplies"
+        conditions:
+          has_surface_cleaner: false or has_dish_soap: false
+        outcomes:
+          - type: set_condition
+            condition: need_cleaning_supplies
+            value: true
+          - type: set_condition
+            condition: has_shopping_list
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "List kitchen supplies"
+        conditions:
+          has_cookware: false or has_utensils: false
+        outcomes:
+          - type: set_condition
+            condition: need_kitchen_supplies
+            value: true
+          - type: set_condition
+            condition: has_shopping_list
+            value: true
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Check different category"
+        next_screen: start
+
+  - id: review_list
+    text: "You review your shopping list to make sure you haven't forgotten anything important."
+    choices:
+      - description: "Estimate total cost"
+        outcomes:
+          - type: set_condition
+            condition: knows_shopping_cost
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Prioritize items"
+        conditions:
+          money: -50
+        outcomes:
+          - type: set_condition
+            condition: prioritized_shopping
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Add more items"
+        next_screen: start
+      - description: "Finish list"
+        outcomes:
+          - type: end_event

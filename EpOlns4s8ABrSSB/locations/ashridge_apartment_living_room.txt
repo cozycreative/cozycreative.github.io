@@ -1,0 +1,122 @@
+name: Living Room
+description: Your living room is small but cozy. A worn but comfortable sofa sits against one wall, facing a small, old television. A coffee table with a few magazines sits in the center, and a small window lets in natural light. The walls could use a fresh coat of paint, but the space has potential.
+
+choices:
+  - description: Watch TV News
+    conditions:
+      time_hour: 6-9,18-23
+    outcomes:
+      - type: trigger_event
+        event: watch_tv_news
+
+  - description: Watch TV Shows
+    conditions:
+      time_hour: 10-23
+    outcomes:
+      - type: update_stat
+        stat: happiness
+        value: +10
+      - type: update_stat
+        stat: energy
+        value: -5
+      - type: update_time
+        minutes: 60
+      - type: message
+        text: "You spend an hour watching your favorite shows. It's a nice way to unwind."
+
+  - description: Watch Morning Talk Shows
+    conditions:
+      time_hour: 9-12
+    outcomes:
+      - type: trigger_event
+        event: watch_morning_show
+
+  - description: Watch Late Night Movies
+    conditions:
+      time_hour: 20-23
+      energy: 20
+    outcomes:
+      - type: update_stat
+        stat: happiness
+        value: +15
+      - type: update_stat
+        stat: energy
+        value: -15
+      - type: update_time
+        minutes: 120
+      - type: message
+        text: "You settle in for a movie. It's a good way to end the day."
+
+  - description: Read Magazines
+    outcomes:
+      - type: update_stat
+        stat: knowledge
+        value: +3
+      - type: update_time
+        minutes: 20
+      - type: message
+        text: "You flip through some old magazines. There are articles about jobs, lifestyle tips, and local events."
+
+  - description: Relax on Sofa
+    outcomes:
+      - type: update_stat
+        stat: energy
+        value: +10
+      - type: update_stat
+        stat: comfort
+        value: +5
+      - type: update_time
+        minutes: 30
+      - type: message
+        text: "You take some time to rest on the sofa. It helps you recharge a bit."
+
+  - description: Exercise in Living Room
+    conditions:
+      energy: 20
+    outcomes:
+      - type: update_stat
+        stat: fitness
+        value: +10
+      - type: update_stat
+        stat: energy
+        value: -15
+      - type: update_stat
+        stat: hygiene
+        value: -10
+      - type: update_time
+        minutes: 30
+      - type: message
+        text: "You do some basic exercises in your living room. Not quite a gym workout, but better than nothing."
+
+  - description: Clean Living Room
+    conditions:
+      time_passed: 1440
+      energy: 10
+    outcomes:
+      - type: update_stat
+        stat: apartment_cleanliness
+        value: +15
+      - type: update_stat
+        stat: energy
+        value: -10
+      - type: update_time
+        minutes: 20
+      - type: message
+        text: "You tidy up the living room, dusting surfaces and organizing things. The place looks more presentable now."
+
+  - description: Look Out Window
+    outcomes:
+      - type: trigger_event
+        event: window_watching
+
+  - description: Answer Door (If Someone Knocks)
+    conditions:
+      event_active: neighbor_visit
+    outcomes:
+      - type: trigger_event
+        event: neighbor_interaction
+
+  - description: Go back to the Hallway
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_hallway

@@ -1,0 +1,93 @@
+name: Check Phone in Morning
+description: You check your phone first thing in the morning, scrolling through notifications and updates.
+
+screens:
+  - id: start
+    text: "You pick up your phone, still a bit groggy. What would you like to check first?"
+    choices:
+      - description: "Check messages"
+        next_screen: messages
+      - description: "Browse social media"
+        next_screen: social_media
+      - description: "Check email"
+        next_screen: email
+      - description: "Put phone down"
+        outcomes:
+          - type: end_event
+
+  - id: messages
+    text: "You look through your messages from overnight."
+    choices:
+      - description: "Read important messages"
+        conditions:
+          has_messages: true
+        outcomes:
+          - type: trigger_event
+            event: read_messages
+      - description: "No new messages"
+        outcomes:
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start
+
+  - id: social_media
+    text: "You scroll through your social media feeds, catching up on updates."
+    choices:
+      - description: "Check modeling agency posts"
+        conditions:
+          modeling_interest: true
+        outcomes:
+          - type: set_condition
+            condition: saw_agency_updates
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Browse fashion content"
+        conditions:
+          modeling_interest: true
+        outcomes:
+          - type: update_stat
+            stat: modeling_skill
+            value: +2
+          - type: update_time
+            minutes: 10
+          - type: end_event
+      - description: "Quick feed scroll"
+        outcomes:
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start
+
+  - id: email
+    text: "You check your email inbox for any important messages."
+    choices:
+      - description: "Check modeling opportunities"
+        conditions:
+          knows_modeling_agency: true
+        outcomes:
+          - type: set_condition
+            condition: has_modeling_emails
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Check job listings"
+        outcomes:
+          - type: set_condition
+            condition: has_job_emails
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Quick inbox scan"
+        outcomes:
+          - type: update_time
+            minutes: 2
+          - type: end_event
+      - description: "Check something else"
+        next_screen: start

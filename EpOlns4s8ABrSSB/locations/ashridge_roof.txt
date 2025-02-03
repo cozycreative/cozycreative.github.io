@@ -1,0 +1,35 @@
+name: Roof
+description: The rooftop of the Affordable Apartment building. From here, you can see a panoramic view of Ashridge.
+choices:
+  - description: Smoke a Cigarette
+    conditions:
+      has_inventory: cigarettes
+    outcomes:
+      - type: update_inventory
+        item: cigarettes
+        value: -1
+      - type: update_stat
+        stat: stress
+        value: -10
+      - type: update_stat
+        stat: health
+        value: -2
+      - type: update_time
+        minutes: 10
+      - type: message
+        text: "You smoke a cigarette and take in the Ashridge skyline."
+
+  - description: Enjoy the View
+    outcomes:
+      - type: update_stat
+        stat: stress
+        value: -5
+      - type: update_time
+        minutes: 10
+      - type: message
+        text: "You look out over Ashridge, taking in the sights and sounds of the city."
+
+  - description: Go Back Downstairs
+    outcomes:
+      - type: change_location
+        destination: ashridge_first_floor_hallway

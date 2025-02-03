@@ -1,0 +1,19 @@
+name: First Floor Hallway
+description: A narrow hallway on the first floor of the Affordable Apartment building. Apartment doors line the corridor, and stairs lead up to the roof and down to the entrance.
+choices:
+  - description: Go to your Apartment Door.
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_door
+  - description: Knock on a Neighbor's Door.
+    outcomes:
+      - type: text
+        text: A friendly elderly neighbor answers the door and smiles.
+  - description: Take the Stairs to the Roof.
+    outcomes:
+      - type: change_location
+        destination: ashridge_roof
+  - description: Go Back Downstairs to the Entrance.
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_entrance

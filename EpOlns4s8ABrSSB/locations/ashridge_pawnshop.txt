@@ -1,0 +1,81 @@
+name: Pawnshop
+description: A cramped but fascinating shop packed with shelves of second-hand treasures and oddities. Glass display cases hold more valuable items, while miscellaneous goods crowd every available space. The elderly shopkeeper watches over everything with keen eyes, ready to haggle or share stories about interesting items.
+
+choices:
+  - description: Browse Electronics
+    outcomes:
+      - type: trigger_event
+        event: browse_electronics_pawnshop
+
+  - description: Check Jewelry Counter
+    outcomes:
+      - type: trigger_event
+        event: browse_jewelry_pawnshop
+
+  - description: Look at Tools
+    outcomes:
+      - type: trigger_event
+        event: browse_tools_pawnshop
+
+  - description: Sell Items
+    conditions:
+      has_inventory: electronics or jewelry or tools
+    outcomes:
+      - type: trigger_event
+        event: sell_items_pawnshop
+
+  - description: Get Quick Cash Loan
+    conditions:
+      has_collateral: true
+      pawnshop_reputation: 5
+    outcomes:
+      - type: trigger_event
+        event: quick_loan_pawnshop
+
+  - description: Check Special Items
+    conditions:
+      time_hour: 12-18
+    outcomes:
+      - type: trigger_event
+        event: browse_special_items_pawnshop
+
+  - description: Request Item Search
+    conditions:
+      pawnshop_reputation: 10
+    outcomes:
+      - type: trigger_event
+        event: request_item_pawnshop
+
+  - description: Chat with Shopkeeper
+    outcomes:
+      - type: trigger_event
+        event: shopkeeper_chat_pawnshop
+
+  - description: Negotiate Prices
+    conditions:
+      social: 5
+      haggling_skill: 2
+    outcomes:
+      - type: trigger_event
+        event: haggle_pawnshop
+
+  - description: Buy Used Electronics
+    conditions:
+      money: 50
+      event_active: electronics_deal
+    outcomes:
+      - type: trigger_event
+        event: buy_electronics_pawnshop
+
+  - description: Purchase Tools
+    conditions:
+      money: 30
+      event_active: tools_deal
+    outcomes:
+      - type: trigger_event
+        event: buy_tools_pawnshop
+
+  - description: Go back to the Ashridge Main Street
+    outcomes:
+      - type: change_location
+        destination: ashridge_core_hub

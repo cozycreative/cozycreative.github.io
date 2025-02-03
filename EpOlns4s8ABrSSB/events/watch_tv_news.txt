@@ -1,0 +1,98 @@
+name: Watch TV News
+description: You turn on the TV to catch up on current events. The local news channel is running its regular programming.
+
+screens:
+  - id: start
+    text: "The news program is in progress. Which segment interests you the most?"
+    choices:
+      - description: "Watch Local News"
+        next_screen: local_news
+      - description: "Watch Weather Forecast"
+        next_screen: weather
+      - description: "Watch Business News"
+        next_screen: business
+      - description: "Turn off TV"
+        outcomes:
+          - type: end_event
+
+  - id: local_news
+    text: "The local news segment covers various stories about the city. There's a report about new businesses opening downtown and community events."
+    choices:
+      - description: "Watch commercial break"
+        conditions:
+          event_active: modeling_agency_commercial
+        next_screen: modeling_ad
+      - description: "Focus on community events"
+        outcomes:
+          - type: set_condition
+            condition: knows_local_events
+            value: true
+          - type: update_time
+            minutes: 15
+          - type: end_event
+      - description: "Watch different segment"
+        next_screen: start
+
+  - id: modeling_ad
+    text: "During the commercial break, a professional-looking advertisement appears: 'Downtown Modeling Agency - Now Recruiting New Talent! Our agency has launched the careers of top models in major fashion markets. Open castings this week at our downtown office. No prior experience required. Join us and be part of the next generation of fashion models.'"
+    choices:
+      - description: "Note the agency details"
+        outcomes:
+          - type: set_condition
+            condition: modeling_interest
+            value: true
+          - type: update_time
+            minutes: 5
+          - type: end_event
+      - description: "Continue watching news"
+        next_screen: local_news
+
+  - id: weather
+    text: "The meteorologist presents the weather forecast for the next few days, discussing temperature trends and precipitation chances."
+    choices:
+      - description: "Watch commercial break"
+        conditions:
+          event_active: modeling_agency_commercial
+        next_screen: modeling_ad
+      - description: "Note tomorrow's weather"
+        outcomes:
+          - type: update_stat
+            stat: knowledge
+            value: +3
+          - type: set_condition
+            condition: knows_weather
+            value: true
+          - type: update_time
+            minutes: 10
+          - type: end_event
+      - description: "Check week's forecast"
+        outcomes:
+          - type: update_stat
+            stat: knowledge
+            value: +5
+          - type: set_condition
+            condition: knows_weekly_weather
+            value: true
+          - type: update_time
+            minutes: 15
+          - type: end_event
+      - description: "Watch different segment"
+        next_screen: start
+
+  - id: business
+    text: "The business segment discusses market trends, company announcements, and economic developments in the city."
+    choices:
+      - description: "Watch commercial break"
+        conditions:
+          event_active: modeling_agency_commercial
+        next_screen: modeling_ad
+      - description: "Learn about new businesses"
+        outcomes:
+          - type: set_condition
+            condition: knows_new_businesses
+            value: true
+          - type: update_time
+            minutes: 15
+          - type: end_event
+      - description: "Watch different segment"
+        next_screen: start

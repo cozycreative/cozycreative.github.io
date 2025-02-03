@@ -1,0 +1,119 @@
+name: Hallway
+description: A narrow corridor within your apartment, connecting all the rooms. A small coat rack hangs on one wall, and there's a worn welcome mat by the entrance. The flickering overhead light could use a new bulb, and you can sometimes hear muffled sounds from neighboring apartments through the thin walls.
+
+choices:
+  - description: Enter the Living Room
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment_living_room
+
+  - description: Go to the Kitchen
+    outcomes:
+      - type: change_location
+        destination: ashridge_kitchen
+
+  - description: Go to the Bedroom
+    outcomes:
+      - type: change_location
+        destination: ashridge_bedroom
+
+  - description: Go to the Bathroom
+    outcomes:
+      - type: change_location
+        destination: ashridge_bathroom
+
+  - description: Check Mail Slot
+    conditions:
+      time_hour: 9-18
+    outcomes:
+      - type: trigger_event
+        event: check_mail
+      - type: update_time
+        minutes: 2
+
+  - description: Hang Up Coat
+    conditions:
+      has_inventory: coat
+    outcomes:
+      - type: update_inventory
+        item: coat
+        value: -1
+      - type: set_condition
+        condition: coat_stored
+        value: true
+      - type: message
+        text: "You hang your coat on the rack."
+
+  - description: Take Coat
+    conditions:
+      condition: coat_stored: true
+    outcomes:
+      - type: update_inventory
+        item: coat
+        value: +1
+      - type: set_condition
+        condition: coat_stored
+        value: false
+      - type: message
+        text: "You take your coat from the rack."
+
+  - description: Replace Light Bulb
+    conditions:
+      has_inventory: light_bulb
+      condition: light_broken: true
+    outcomes:
+      - type: update_inventory
+        item: light_bulb
+        value: -1
+      - type: set_condition
+        condition: light_broken
+        value: false
+      - type: update_stat
+        stat: apartment_maintenance
+        value: +10
+      - type: message
+        text: "You replace the flickering bulb with a new one. The hallway is properly lit now."
+
+  - description: Listen at Door
+    outcomes:
+      - type: trigger_event
+        event: hallway_eavesdrop
+      - type: update_time
+        minutes: 2
+
+  - description: Clean Hallway
+    conditions:
+      time_passed: 1440
+      energy: 5
+    outcomes:
+      - type: update_stat
+        stat: apartment_cleanliness
+        value: +10
+      - type: update_stat
+        stat: energy
+        value: -5
+      - type: update_time
+        minutes: 10
+      - type: message
+        text: "You sweep the hallway floor and dust the surfaces. It looks much better."
+
+  - description: Check Storage Cabinet
+    outcomes:
+      - type: trigger_event
+        event: check_hallway_storage
+      - type: update_time
+        minutes: 2
+
+  - description: Answer Door Knock
+    conditions:
+      event_active: door_knock
+    outcomes:
+      - type: trigger_event
+        event: door_visitor
+      - type: update_time
+        minutes: 5
+
+  - description: Exit to Your Apartment
+    outcomes:
+      - type: change_location
+        destination: ashridge_apartment

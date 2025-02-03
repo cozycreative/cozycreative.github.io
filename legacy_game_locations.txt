@@ -1,0 +1,1063 @@
+# Game Locations
+
+================================================================================
+# Location from: airport.txt
+name: Airport
+description: The airport is a bustling hub with noise and activity all around. It's a large space with many people moving about, checking in for flights, waiting in lounges, and shopping at various stores. The atmosphere is a mix of anticipation and routine, as travelers prepare for their journeys or return from them.
+choices:
+  - Enter the airport
+  - Visit the Hotel "Flight"
+  - Wait for transportation
+  - Go to the highway
+  - Access the waiting lounge
+  - Enter the VIP zone
+  - Visit the checkout offices
+  - Shop at DUTY FREE
+  - Dine at the cafe
+  - Exchange currency
+  - Use the ATM
+  - Browse the bookstore
+  - Use the toilet
+  - Leave the airport
+
+================================================================================
+# Location from: apteka.txt
+name: Pharmacy
+description: A pharmacy where you can purchase various health and personal care products. The interior is lined with shelves stocked with medications, syringes, disposable napkins, and other everyday essentials.
+choices:
+  - Buy medication by prescription
+  - Purchase syringes
+  - Buy disposable napkins
+  - Purchase sanitary pads
+  - Buy tampons
+  - Purchase shaving razors
+  - Buy hair depilation products
+  - Purchase hair care products
+  - Buy pregnancy tests
+  - Purchase sleeping pills
+  - Buy suntan lotion
+  - Purchase pain medication
+  - Buy vitamins
+  - Purchase face cream
+  - Withdraw cash from a bank card
+  - Leave the pharmacy
+
+================================================================================
+# Location from: avtosalon.txt
+name: Car Dealership
+description: The car dealership showcases a variety of luxury car brands. The interior is polished and upscale, providing an environment suited for those interested in purchasing high-end vehicles. Customers can explore the selection of cars and potentially make a purchase if they meet the requirements.
+choices:
+  - Browse the selection of luxury cars
+  - Check if you have a driver's license
+  - Use the ATM available inside
+  - Leave the car dealership
+
+================================================================================
+# Location from: avtoskol.txt
+name: Driving School
+description: The driving school is a place where you can learn to drive, take exams, and obtain a driver's license. Classes are held from 9:00 AM to 8:00 PM, and the tuition fee is 30,000 rubles. The school includes classrooms where students listen to instructors teach the rules of the road. You can also practice driving under the guidance of an instructor.
+choices:
+  - Enroll in driving classes
+  - Practice driving with an instructor
+  - Attempt to pass the driver's license exam
+  - Leave the driving school
+
+================================================================================
+# Location from: balkon.txt
+name: Balcony
+description: A simple balcony attached to an apartment, offering a view of the surrounding neighborhood. During the colder months, it is chilly outside, and returning to the warmth of the apartment is advisable. In warmer months, the balcony provides a place to observe the surroundings, possibly through a telescope, and enjoy the view.
+choices:
+  - Look around from the balcony
+  - Leave the balcony
+
+================================================================================
+# Location from: bank.txt
+name: Bank
+description: The bank is a financial institution where you can handle various monetary transactions. It operates from 8:00 AM to 8:00 PM. Inside, a notice indicates that advertisements could be placed here. The bank offers services such as using an ATM, paying bills, managing deposits, taking loans, and currency exchange. Security is present to maintain decorum.
+choices:
+  - Use an ATM
+  - Pay bills for your apartment
+  - Pay for dormitory accommodation
+  - Pay a fine
+  - Put money on deposit
+  - Add money to deposit
+  - Take a loan
+  - Repay the loan
+  - Take out a loan against the security of your car
+  - Take a loan against the security of your flat
+  - Money order
+  - Currency exchange
+  - Leave the bank
+
+================================================================================
+# Location from: banya.txt
+name: Public Bath
+description: The public bath is a place open from 9:00 to 20:00 where visitors can wash themselves. It features separate sections such as a bathhouse and a laundry service. The bathhouse includes a women's hall with facilities for washing and grooming. The laundry service allows visitors to have their clothes washed and dried.
+choices:
+  - Go inside
+  - Leave
+  - Pay to wash yourself
+  - Use the laundry service
+  - Wash clothes that are on you
+  - Rinse off
+  - Look around
+
+================================================================================
+# Location from: bass.txt
+name: Swimming Pool
+description: A swimming pool area where you can relax, swim, and enjoy the water. The pool is maintained and requires a fee for entry. A medical certificate is usually needed, but arrangements can be made at a higher cost. The environment is clean, and staff, like the receptionist, are friendly.
+choices:
+  - Use the mirror
+  - Back to the pool
+  - Get the clothes out of your bag
+  - Dress up and leave
+  - Pay for a visit
+  - Jump from the tower
+  - Swim
+  - Go to the toilet
+  - Leave
+
+================================================================================
+# Location from: bedr.txt
+name: Bedroom
+description: A cozy bedroom with a bed, a wardrobe, a mirror, and a small table. The room has a comfortable atmosphere and is a place where you can relax or prepare for the day. There might be ongoing renovations, which add some clutter to the space.
+choices:
+  - Sit back and relax
+  - Get dressed
+  - Put the phone on charge
+  - Take the phone off charge
+  - Go to the living room
+  - Go to the kitchen
+  - Go to the bathroom
+  - Go to the corridor
+
+================================================================================
+# Location from: bolnica.txt
+name: Central Hospital
+description: This is the central hospital, a large medical facility where various health services are offered. The hospital includes a private clinic section, an emergency room, and maternity and general wards. The hospital is open 24 hours a day, though some services may be limited during nighttime hours.
+choices:
+  - Enter the hospital
+  - Visit the emergency room
+  - Leave the hospital
+  - Sign up for nursing courses
+  - Use the ATM within the hospital
+
+================================================================================
+# Location from: bookmag.txt
+name: Bookstore
+description: A cozy bookstore with a variety of books to choose from. The store has different sections dedicated to fiction, popular science literature, training and reference books, and literature on psychology and self-development. The ambiance is inviting, with shelves lined with books of all genres, promising a pleasant browsing experience.
+choices:
+  - Select Fiction
+  - Select Popular Science Literature
+  - Select Training and Reference Books
+  - Select Literature on psychology and self-development
+  - Pay by bank card
+  - Pay cash
+  - Continue to look for books
+  - Stop looking for books
+  - Leave
+
+================================================================================
+# Location from: bouling.txt
+name: Bowling
+description: The bowling alley is a lively and vibrant place where players can enjoy a game of bowling. The venue is part of a shopping center, providing a recreational space for people to unwind and have fun. It features multiple lanes and a welcoming atmosphere for both casual and competitive players.
+choices:
+  - Pay for a half-hour game
+  - Leave the bowling alley
+
+================================================================================
+# Location from: burger.txt
+name: Bistro/Eatery/Fast Food Cafe
+description: This location is a food establishment that varies depending on the map setting. It could be a bistro, an eatery, or a fast food network called "Fast," and there's also a cafe located in an airport. Each location offers a variety of drinks and food at different price points. The ambiance features a welcoming administrator, regardless of the player's appearance.
+choices:
+  - Quench your thirst
+  - Cheer up
+  - To Eat
+  - Go to the toilet (if not in the airport cafe)
+  - Leave or Go out
+
+================================================================================
+# Location from: bus.txt
+name: Bus
+description: You find yourself in a crowded city bus. The vehicle is packed with passengers as it makes its way through the city. The atmosphere is a mix of various sounds – the hum of the engine, snippets of conversations, and the occasional announcement over the loudspeaker. The bus is moving steadily, occasionally stopping to let passengers on and off at the designated stops.
+choices:
+  - Pay for travel
+  - Ride without a ticket
+  - Consider passengers
+  - Wait for the next stop
+
+================================================================================
+# Location from: butik.txt
+name: Boutique
+description: You find yourself in an elegant boutique, filled with a wide array of clothing options. The boutique is well-lit, with mannequins displaying the latest fashion trends. Shelves and racks are neatly organized with various types of clothing, from coats and dresses to casual wear and sleepwear. The atmosphere is chic and inviting, encouraging you to explore the different sections.
+choices:
+  - Browse coats
+  - Browse dresses and sundresses
+  - Browse clothing with skirts or shorts
+  - Browse outfits with jeans, leggings, and pants
+  - Browse house clothes
+  - Browse sleepwear
+  - Leave the boutique
+
+================================================================================
+# Location from: casino.txt
+name: Casino
+description: You find yourself in a bustling casino hall filled with the sounds of slot machines, lively chatter, and the clinking of glasses. The casino offers a variety of gaming options, including slot machines, roulette, and card tables for games such as Blackjack and Casino War. The ambiance is lively, with people gathered around the tables, eager to try their luck. The casino also features a bar where patrons can enjoy drinks and food.
+choices:
+  - Visit the bar
+  - Use the ATM
+  - Play at the slot machines
+  - Try your luck at the roulette table
+  - Join a game of Blackjack
+  - Participate in Casino War
+  - Leave the casino
+
+================================================================================
+# Location from: club.txt
+name: Night Club
+description: A vibrant night club bustling with energy and activity. The entrance is crowded with young people eager to get inside, while the interior is filled with flashing strobe lights and booming music that drowns out thoughts. The dance floor is packed with people moving to the rhythm, and the bar offers a variety of drinks. A VIP zone provides a more secluded area with a great overview of the club's happenings.
+choices:
+  - Stand in line to enter the club
+  - Go to the club past the line
+  - Leave the club
+  - Dance on the dance floor
+  - Go to the bar
+  - Go to the VIP zone
+  - Order a drink at the bar
+  - Look around the bar
+  - Relax in the VIP area
+  - Renew VIP status
+  - Order food or drinks in the VIP zone
+  - Use the restroom in the club
+
+================================================================================
+# Location from: cosmshop.txt
+name: Cosmetic Shop
+description: A brand cosmetics store located in a shopping mall. The shop is filled with various cosmetic products displayed on elegant shelves. The environment is sophisticated, with a hint of luxury in the air, and customers can browse through a range of beauty and skincare items.
+choices:
+  - Buy brand cosmetics
+  - Purchase suntan lotions
+  - Select face creams
+  - Choose brand perfumes
+  - Look at hair care products
+  - Explore hair depilation products
+  - Browse nail care products
+  - Withdraw cash from a bank card
+  - Leave the shop
+
+================================================================================
+# Location from: dk.txt
+name: City House of Culture
+description: An old but still well-preserved and recently renovated building. It operates with opening hours from 10 AM to 9 PM, with Monday being a day off. Inside, you can explore various cultural activities and courses in a structured environment that fosters learning and creativity.
+choices:
+  - Go to the House of Culture
+  - Leave
+  - Attend a performance of the local theater
+  - Participate in a chess tournament
+  - Visit the reading room
+  - Enroll in secretarial courses
+  - Take vocal lessons
+  - Attend massage training
+  - Join personal growth courses
+  - Participate in foreign language courses
+  - Join cutting and sewing courses
+  - Engage in dance training
+  - Take acting courses
+  - Join a chess club
+
+================================================================================
+# Location from: dorm.txt
+name: Dormitory
+description: This is a dormitory building that houses several types of dorms including a university dormitory, a factory dormitory, and a garment factory dormitory. Each dorm provides basic living accommodations for its residents. The dorms have corridors, shared kitchens, bathrooms, and laundry facilities. It is a bustling environment with students and workers coming and going, creating a vibrant community atmosphere.
+choices:
+  - Go inside
+  - Leave
+  - Visit the kitchen
+  - Use the bathroom
+  - Take a shower
+  - Do laundry
+  - Visit the sports room
+  - Check for acquaintances in the dorm
+
+================================================================================
+# Location from: down.txt
+name: Centre district of town
+description: The centre district of town is a bustling area filled with various attractions and activities. It is a lively place with a central square, surrounded by office buildings, banks, and a large shopping and entertainment center. The streets are lined with branded cosmetics shops, boutiques, and beauty salons. There are also numerous eateries, bistros, and luxurious restaurants. During the day, the area is vibrant with activity, and at night, trendy nightclubs attract crowds from all over the city.
+choices:
+  - Wait
+  - Go to your car
+  - Untie your dog
+  - Visit the underground station "Centra"
+  - Explore the central square
+  - Visit the shopping and entertainment center
+  - Look for work in this area
+  - Find the nearest hotel
+  - Take a walk around the area
+  - Walk to another area of the city
+
+================================================================================
+# Location from: fit.txt
+name: Fitness Center
+description: The fitness center is a well-equipped facility offering a variety of programs for physical development. It features a gym with power trainers, exercise bikes, and treadmills. There is also a swimming pool and areas for fitness, aerobics, yoga, and tennis. A dance studio with good lighting and mirrors is available for developing dance skills. Personal trainers are on hand to offer guidance and enhance the effectiveness of workouts. The center has a locker room for changing and storing belongings, and a shower area for freshening up after workouts.
+choices:
+  - Visit the ATM
+  - Buy a subscription
+  - Coordinate with the administrator to visit without a medical certificate
+  - Go to the locker room
+  - Take a shower
+  - Use the mirror
+  - Change clothes
+  - Wear sportswear
+  - Access the locker in the locker room
+  - Go to FITBAR to quench your thirst or eat
+  - Hire a personal trainer
+  - Use power trainers (strength)
+  - Use exercise bikes (endurance)
+  - Use treadmills (speed, endurance, weight loss)
+  - Swim in the pool (strength, endurance)
+  - Train in fitness (strength, endurance)
+  - Train in aerobics (agility, endurance, weight loss)
+  - Meditate in yoga (mood, agility, intelligence)
+  - Train in tennis (speed, agility, endurance)
+  - Dance in the dance studio
+  - Leave the fitness center
+
+================================================================================
+# Location from: foto.txt
+name: Photo Studio
+description: You are inside a photo studio, a professional space equipped for photography sessions. The room is well-lit, with various photography equipment and backdrops. It's a place where aspiring models come to get their pictures taken, and potentially secure modeling work.
+choices:
+  - Leave the studio
+  - Ask about the work of a model
+  - Go to the photo shoot for advertising
+
+================================================================================
+# Location from: galerey.txt
+name: Art Gallery
+description: The Art Gallery is a place where you can explore various artworks by famous artists. The gallery hosts different exhibitions including a main exposition, "Digital Art", "Invisible Fringe", and an art school where novice artists create their masterpieces. The gallery is open from 8 AM to 7 PM.
+choices:
+  - Enter the building
+  - Leave the gallery
+  - Visit the main exposition (spend 300 rubles)
+  - Visit the "Digital Art" exhibition (spend 500 rubles)
+  - Visit the "Invisible Fringe" exhibition (spend 500 rubles)
+  - Access the art school
+  - Exit the building
+
+================================================================================
+# Location from: hotel.txt
+name: Hotel
+description: The hotel features a variety of accommodations and services. Guests can explore the hallways of different hotels such as "Yuzhanka," "Intercity," and "Flight," each with unique atmospheres. A hotel room provides a personal retreat where guests can enjoy their stay, with options to relax, order room service, or explore amenities like a TV and minibar. The reception area serves as the hub for checking in and out, interacting with staff, and arranging accommodations.
+choices:
+  - Go to your room
+  - Go to the reception
+  - Leave the hotel
+  - Order food to your room
+  - Have a drink from the minibar
+  - Drink alcohol from the minibar
+  - Eat
+  - Put the phone on charge
+  - Take the phone off charge
+  - Move out of your hotel room
+  - Renew your hotel room rental
+  - Use an ATM to top up your bank card
+  - Satisfy hunger
+  - Quench your thirst
+  - Go to a bar
+  - Take a tour of the city
+  - Go shopping
+  - Go to the pool
+  - Communicate with colleagues
+  - Rest
+  - Put money into the account
+
+================================================================================
+# Location from: hram.txt
+name: Church
+description: A serene and sacred church where visitors can engage in various spiritual activities. The church is open to the public from 8 AM to 7 PM. Inside, visitors can find a tranquil atmosphere with icons and a place for prayers. The church offers opportunities for taking communion, lighting candles, and listening to sermons. It is a place of peace and reflection, inviting those who enter to connect with their spirituality.
+choices:
+  - Enter the Church
+  - Leave the Church
+  - Take communion (available only on Sundays)
+  - Prayer
+  - Light a candle (50 rubles)
+  - Donate money to the Temple
+  - Listen to the divine service (available at specific hours)
+  - Accept baptism (available under certain conditions)
+
+================================================================================
+# Location from: iluzion.txt
+name: Exhibition "Optical Illusions"
+description: A fascinating exhibition showcasing drawings that appear to come to life due to the peculiarities of human vision. The entrance to this exhibition is through a building where you can purchase a ticket. Inside, various optical illusion artworks are displayed, captivating visitors with their deceptive stillness.
+choices:
+  - Pay 300 rubles to enter the exhibition
+  - Exit the building
+  - View the next optical illusion
+  - View the previous optical illusion
+  - Finish watching and exit the building
+
+================================================================================
+# Location from: kafeBar.txt
+name: Cafe-Bar
+description: You find yourself in a cafe-bar with a lively atmosphere. The establishment offers a range of drinks and food options. The interior is stylish, with a bar counter and several tables where patrons can sit and enjoy their meals. There is also a dance floor where music plays, inviting guests to dance and have fun. The cafe is busy, with varying levels of occupancy depending on the time of day.
+choices:
+  - Order a drink at the bar
+  - Sit at a table and order food
+  - Pay your bill
+  - Use the restroom
+  - Look around and observe the surroundings
+  - Go dancing on the dance floor
+  - Leave the cafe
+
+================================================================================
+# Location from: kinoteatr.txt
+name: Cinema
+description: You find yourself in a cinema, which could be one of several locations: "Butterfly," "October," "Blockbuster," or "Oscar." The foyer is lively, with posters of current movies and a ticket counter where you can purchase tickets for the latest films. The cinema also features a small ATM for convenience. Inside, the auditorium's atmosphere varies depending on the time and day, with audiences ranging from sparse to packed. The lighting dims as the film begins, creating an immersive experience.
+choices:
+  - Go to the toilet
+  - Go to the ticket office
+  - Use the ATM
+  - Leave the cinema
+  - Buy a ticket and enter the auditorium
+  - Continue to watch the movie
+  - Leave the auditorium
+
+================================================================================
+# Location from: korr.txt
+name: Hallway
+description: You are standing in a hallway. The walls are adorned with a mirror and a telephone. There's outerwear hanging by the entrance, and the space is warmly lit, giving it a cozy atmosphere. The hallway appears to be a common area for transitioning between rooms in the apartment.
+choices:
+  - Dress up or change your outfit
+  - Leave the apartment
+  - Go to the bathroom
+  - Go to the kitchen
+  - Go to the bedroom
+  - Go to the living room
+
+================================================================================
+# Location from: kuhr.txt
+name: Kitchen
+description: The kitchen is a functional space where you can prepare and consume meals. It may have some dirty dishes in the sink, with crumbs and leftovers scattered on the table, stove, and floor. If not cleaned regularly, the kitchen can become quite messy with grease drips and dirt visible on furniture and the floor.
+choices:
+  - Clean the kitchen
+  - Order home food delivery
+  - Order pizza
+  - Cook meals
+  - Eat available food
+  - Manage medications and vitamins
+  - Charge your phone
+  - Move to another room (bedroom, living room, bathroom, corridor)
+
+================================================================================
+# Location from: lake.txt
+name: Lake
+description: A large, clean lake located beyond the forest in the city, a favorite vacation spot for residents in the summer. During winter months, it transforms into a city skating rink with hours of operation from 10:00 to 22:00. The area also features a city beach where visitors can swim, sunbathe, and participate in beach activities. A beach bar is available for refreshments, offering a variety of drinks and snacks. The surrounding environment is peaceful, making it ideal for leisurely walks along the shore.
+choices:
+  - Rent skates and skate on the city skating rink (250 rubles per hour).
+  - Swim in the lake.
+  - Sunbathe on the beach.
+  - Take a walk along the shore.
+  - Visit the beach bar for refreshments.
+  - Participate in beach activities like water slides, riding a banana boat, or jet skiing (various costs apply).
+  - Read a book if you have one with you.
+  - Go fishing at the lake.
+
+================================================================================
+# Location from: lombard.txt
+name: Pawnshop
+description: A pawnshop where customers can bring items to be evaluated and sold. The interior is filled with various objects waiting to be appraised. The pawnshop clerk is ready to assist with evaluating and handling transactions.
+choices:
+  - Hand over phone
+  - Evaluate your jewelry
+  - Sell the painting for 1000 rubles
+  - Hand over present
+  - Hand over gift
+  - Hand over chic gifts
+  - Leave the pawnshop
+
+================================================================================
+# Location from: megafon.txt
+name: MegaFon Communication Store
+description: The MegaFon Communication Store is a bustling shop offering a variety of mobile phones and accessories. Inside, the store is bright and modern, with shelves displaying different models of mobile phones ranging from simple and budget-friendly to sophisticated and high-end. Customers can also purchase accessories like power banks and pay for internet services. Large advertisements and announcements are prominently displayed, adding to the commercial atmosphere.
+choices:
+  - Withdraw cash from a bank card
+  - Buy the simplest, cheapest mobile phone
+  - Buy a budget mobile phone
+  - Buy a sophisticated mobile phone
+  - Buy a Power-Bank
+  - Top up mobile phone account
+  - Pay for Internet services
+  - Leave the store
+
+================================================================================
+# Location from: metro.txt
+name: Metro Station
+description: The metro station is a bustling hub with various entrances corresponding to different parts of the city, including "Southwest," "South," "Western," "Railway station," "North," "Central," and "East." Each entrance features a distinct design, and the metro service is available for a fee, providing access to different parts of the city. Inside, the metro carriages are filled with passengers, some standing due to the rush hours, while others sit quietly, observing the advertisements around them. The station itself is a vibrant place with musicians and beggars occasionally seen in the corridors, adding to the lively atmosphere.
+choices:
+  - Pay for subway entrance
+  - Wait for the train
+  - Leave the metro station
+  - Observe the passengers
+  - Give money to buskers or beggars
+
+================================================================================
+# Location from: musor.txt
+name: Garbage Bins
+description: A collection of garbage bins, somewhat hidden by a small metal fence. The area is not particularly pleasant, with a strong odor emanating from the bins. It's a place where you might find some discarded items of potential value.
+choices:
+  - Dig through the trash
+  - Kill rats
+  - Surrender the bottles
+  - Surrender recyclable materials
+  - Offer a "thing of value"
+  - Leave
+
+================================================================================
+# Location from: parikmaherskaia.txt
+name: Hairdressing Salon
+description: The hairdressing salon is a well-furnished space where clients can receive a variety of hair and nail services. The salon features comfortable chairs for haircuts and styling, as well as stations for manicures and nail services. The atmosphere is professional, with various tools and products neatly arranged around the salon.
+choices:
+  - Style your hair
+  - Have your hair dyed or cut
+  - Have a manicure
+  - Have your nails painted
+  - Get false nails
+  - Leave the Hairdressing salon
+
+================================================================================
+# Location from: park.txt
+name: Park
+description: The park is a serene and versatile area in the city, offering different atmospheres depending on the time of day and season. During early mornings or late evenings, the park is often empty, allowing nature's calm to take over. In contrast, afternoons can be busier with people relaxing, socializing, and enjoying the natural surroundings. The park features paths for walking, benches for resting, and is connected to other areas like a forest and a lake, offering more exploration options.
+choices:
+  - Sit on a bench and enjoy the clean air
+  - Walk through the park paths and reflect on the surroundings
+  - Visit the amusement rides (available on weekends)
+  - Go deeper into the park or to the forest
+  - Engage in sports like running
+  - Use the paid toilet facilities
+  - Leave the park
+
+================================================================================
+# Location from: pirsingsalon.txt
+name: Piercing Salon
+description: A piercing salon where you can choose various piercing options. The salon is equipped with all necessary tools and facilities for safe and professional piercing.
+choices:
+  - Eyebrow Piercing
+  - Nose Piercing
+  - Lip Piercing
+  - Tongue Piercing
+  - Belly button piercing
+  - Remove Piercing
+  - Leave
+
+================================================================================
+# Location from: pod.txt
+name: The Porch of a Multi-Storey Building
+description: The porch is part of a high-rise apartment building. It serves as an entrance hall where residents and visitors can pass through. Sometimes, you might encounter neighbors here. The porch is a simple space, with doors leading to various apartments.
+choices:
+  - Go to the apartment
+  - Go outside
+  - See who is there (if you hear noises)
+  - Interact with a homeless ginger cat (if present)
+  - Communicate with a neighbor if you meet one
+
+================================================================================
+# Location from: podval.txt
+name: Entrance to Basement
+description: It looks like this basement is rarely visited, and although the entrance is quite unattractive, you might be able to get in. The surroundings are typical of a neglected area, with a rusty lock guarding the entrance.
+choices:
+  - Enter the basement
+  - Leave
+
+================================================================================
+# Location from: poli.txt
+name: Polyclinic
+description: The Polyclinic is a place where you can access various healthcare services. The reception area is where you can make appointments with different specialists, including a Doctor, Psychotherapist, Dentist, Traumatologist, and others. The clinic is equipped with a medical examination room where nurses and doctors conduct health check-ups and tests.
+choices:
+  - Visit the Reception
+  - Go to the Doctor
+  - Go to the Psychotherapist
+  - Go to the Dentist
+  - Go to the Traumatologist
+  - View Wall Posters
+  - Leave the clinic
+
+================================================================================
+# Location from: prodmagstreet.txt
+name: Grocery Store
+description: A bustling grocery store filled with various sections offering a wide range of products. Shelves are stocked with different kinds of food, delicacies, and beverages. The store is well-lit, and there is a counter where customers can check out their purchases. Brightly colored signs advertise discounts and special offers for the day.
+choices:
+  - Purchase food servings
+  - Buy good quality food
+  - Select diet food options
+  - Explore delicacies
+  - Indulge in desserts and sweets
+  - Acquire drinks like cola or water
+  - Leave the store
+
+================================================================================
+# Location from: rayonSever.txt
+name: Northern District of Town
+description: The Northern District is a bustling area of the town with various attractions and facilities. It includes a small but cozy city park, kiosks, a grocery store, a central hospital, and an Orthodox church. The district also features a bookstore, a passport office, a large car market, car services, a cinema, a popular café, a hairdressing salon, a sauna, a laundry, a communication store, an atelier, a pet shop, a pawnshop, and a slot machine hall. There is a point of reception for recyclable materials and a warehouse terminal at the outskirts. The city prison is also located here.
+choices:
+  - Wait
+  - Go to your car (if available)
+  - Visit the Underground station "Northern"
+  - Walk to the city park
+  - Visit the grocery store or kiosks (during opening hours)
+  - Visit the central city hospital
+  - Enter the Orthodox church
+  - Visit the bookstore or passport office (during opening hours)
+  - Check out the car market or car services
+  - Watch a movie at the cinema "BLOCKBASTER"
+  - Dine at the café "Northern Lights" (during opening hours)
+  - Visit the hairdressing salon "Queen" (during opening hours)
+  - Relax at the sauna (during opening hours)
+  - Use the laundry (during opening hours)
+  - Visit the communication store "MegaFon" (during opening hours)
+  - Visit the atelier or pet shop (during opening hours)
+  - Visit the pawnshop (during opening hours)
+  - Visit the slot machine hall
+  - Recycle materials at the point of reception (during opening hours)
+  - Explore the warehouse terminal
+  - Visit the city prison
+  - Take a walk around the area
+  - Walk to another area of the city
+
+================================================================================
+# Location from: rayonVostok.txt
+name: Eastern District of Town
+description: A bustling area in the eastern part of the town featuring various amenities and services. The district has a variety of shops, markets, and entertainment options, making it a vibrant place to explore. The streets are lively with the sounds of the city, and there are plenty of places to visit, including a market, grocery store, jewelry shops, a hypermarket, a car dealership, an entertainment center, bookstores, cafes, a bath and laundry complex, hairdressing salons, a pharmacy, communication stores, a pet shop, a pawnshop, and a slot machine hall. The district is a hub of activity during the day, with many locations following specific opening hours.
+choices:
+  - Wait
+  - Go to your car
+  - Visit the underground station "Eastern"
+  - Visit the Kiosk
+  - Explore the beautiful market
+  - Shop at the Jewelry & Gift Shops
+  - Visit the hypermarket "All for the house"
+  - Check out the Car dealership
+  - Explore the entertainment center with the "Optical Illusions" exhibition
+  - Browse the bookstore
+  - Spend time at the popular Cafe "Sesame"
+  - Use the bath and laundry complex
+  - Visit competing hairdressing salons
+  - Shop at the Pharmacy
+  - Visit the communication store MegaFon
+  - Check out the Pet Shop
+  - Visit the Pawnshop
+  - Enter the Slot machine hall
+  - Go to the Point of reception of recyclable materials
+  - Walk to another area of the city
+  - Take a walk around the area
+
+================================================================================
+# Location from: rayonYug.txt
+name: South District of Town
+description: The South District of the town is a vibrant area with various shops and amenities available. During the day, the district is bustling with activity, featuring a local market surrounded by small pavilions, a bookstore, a grocery store, and a public bath. There are also entertainment options like the "October" cinema and the "Tatiana" cafe bar. Public transport is accessible via the underground station "South," and there are kiosks available for quick purchases. The area also hosts a hotel named "Yuzhanka" for accommodation. On the outskirts, a park zone transitions into a small forest with a large, clean lake hidden beyond.
+choices:
+  - Go home
+  - Visit the kiosk
+  - Visit the local market
+  - Visit the bookstore
+  - Visit the grocery store
+  - Check into Hotel "Yuzhanka"
+  - Visit the cinema "October"
+  - Visit the cafe bar "Tatiana"
+  - Visit the barbershop "Lokon"
+  - Visit the public bath
+  - Visit the pharmacy
+  - Visit the communication store "MegaFon"
+  - Visit the pet shop
+  - Visit the slot machine hall
+  - Visit the pawnshop
+  - Go to the point of reception of recyclable materials
+  - Visit the sewing factory dormitory
+  - Visit the sewing factory
+  - Walk to the park zone and forest
+  - Look for work in this area
+  - Take a walk around the area
+  - Walk to another area of ​​the city
+
+================================================================================
+# Location from: rayonZapad.txt
+name: Western District of Town
+description: The Western district of town is a bustling area with a variety of attractions and establishments. It features a busy avenue known as Yamskoy Avenue, a hypermarket with modern design, office buildings including the high-rise ART film studio, and several large banks offering financial services. The area also hosts a car dealership displaying luxury car brands, a city registry office, and a popular fitness center and dance studio. There are sporting goods stores, a hotel with beautiful design, and a metro station for public transportation.
+choices:
+  - Wait in the area
+  - Go to the public transport stop
+  - Go to your car (if available)
+  - Visit the hypermarket building
+  - Explore the ART film studio
+  - Access large banks for financial services
+  - Visit the car dealership
+  - Check into one of the hotels
+  - Visit the city registry office
+  - Go to the fitness center and dance studio
+  - Shop at sporting goods stores
+  - Walk to another area of the city
+
+================================================================================
+# Location from: restoran.txt
+name: Restaurant
+description: A restaurant with a refined atmosphere. It features soft lighting, quality furnishings, and pleasant background music. Guests can enjoy drinks, alcohol, and culinary delights while sitting at a table or in a separate parlor for an extra fee. The establishment maintains a reputation system, and the staff is attentive to the guests' appearances and behaviors.
+choices:
+  - Occupy a table
+  - Occupy a separate parlor in the restaurant (5000 rubles)
+  - Look at the menu
+  - Drink a drink
+  - Drink alcohol
+  - Eat
+  - Rest
+  - Ask for the bill
+  - Leave the restaurant
+
+================================================================================
+# Location from: rinok.txt
+name: Market
+description: A bustling market area located in various parts of the city, including the southern, central, and eastern areas. The market features numerous stalls and pavilions selling a diverse range of products, from food to household goods. The atmosphere is lively with the sounds of vendors and shoppers.
+choices:
+  - Explore different stalls and pavilions
+  - Buy food or snacks like hot dogs or shawarma
+  - Purchase household items or cosmetics
+  - Shop for clothes, including dresses, jeans, and office wear
+  - Browse books and other literature
+  - Leave the market
+
+================================================================================
+# Location from: rublevka.txt
+name: Elite Holiday Village "Rublevka"
+description: A luxurious holiday village with country houses for wealthy individuals. The area is characterized by fresh air, cleanliness, and silence. The village offers various cottages for rent and sale, and is surrounded by scenic beauty ideal for leisurely strolls.
+choices:
+  - Search for accommodation in this area
+  - Wait
+  - Go to your car
+  - Walk around the neighborhood
+  - Go to the highway
+  - Continue walking
+  - Finish the walk
+  - Go to the next house
+  - Leave Rublevka
+
+================================================================================
+# Location from: salon.txt
+name: Beauty Salon
+description: A beauty salon with a welcoming atmosphere. The receptionist greets you with a smile and the walls are adorned with advertisements for various beauty services. The salon offers a range of services including haircuts, styling, manicures, pedicures, and more.
+choices:
+  - Have your hair dyed or cut
+  - Style your hair
+  - Hair extension
+  - Manicure
+  - Pedicure
+  - Solarium
+  - Massage
+  - Cream mask for skin
+  - Eyelash extensions
+  - Full hair removal
+  - Eyebrow tattoo
+  - Anti-cellulite program
+  - Lip augmentation
+  - Rejuvenation procedures
+  - Visit the toilet
+  - Leave the beauty salon
+
+================================================================================
+# Location from: sauna.txt
+name: Sauna
+description: A relaxing sauna environment where you can unwind and refresh. The sauna offers various amenities including a steam room, shower facilities, and a massage service. The warm air soothes your body, and the tranquil atmosphere helps you relax.
+choices:
+  - Use the mirror
+  - Go to the shower
+  - Take a steam bath
+  - Use the toilet
+  - Dress up and leave
+  - Book a massage
+  - Pay for more time
+  - Quench your thirst
+  - Eat to regain energy
+
+================================================================================
+# Location from: shop.txt
+name: Shop
+description: A bustling hypermarket with various departments offering a wide range of products. The aisles are filled with shoppers picking up groceries, household items, cosmetics, and more. Brightly lit and spacious, the store features distinct sections for different kinds of goods, providing a comprehensive shopping experience.
+choices:
+  - Buy food items such as groceries and snacks
+  - Purchase beverages, including water and energy drinks
+  - Explore the cosmetics department for beauty products
+  - Visit the household goods section for cleaning supplies
+  - Check out electronics and household appliances for tech needs
+  - Navigate to the clothing department for apparel and accessories
+  - Use the ATM for cash withdrawal
+  - Proceed to the checkout to pay for selected items
+
+================================================================================
+# Location from: shopdacha.txt
+name: Hypermarket "Everything for Home"
+description: This hypermarket offers a wide range of items for furnishing and renovating apartments or houses. The building is spacious and organized into various sections, each dedicated to different parts of a home such as kitchens, bathrooms, living rooms, bedrooms, and more. The hypermarket operates from 9:00 AM to 9:00 PM.
+choices:
+  - Enter the building
+  - Leave the building
+  - Visit the Hallways section
+  - Visit the Kitchens section
+  - Visit the Bathrooms section
+  - Visit the Living Rooms section
+  - Visit the Bedrooms section
+
+================================================================================
+# Location from: shopping.txt
+name: Shopping Mall
+description: A bustling shopping mall filled with various stores and boutiques. The mall is open from 10 AM to 10 PM. It offers a wide range of products including electronics, cosmetics, clothing, and more. The atmosphere is lively with shoppers exploring the latest trends and deals.
+choices:
+  - Visit electronics shops
+  - Explore cosmetics and perfume shops
+  - Browse brand women handbags
+  - Check out lingerie, stockings, and tights
+  - Look at sleepwear
+  - Shop for house clothes
+  - Find outfits with jeans, leggings, and pants
+  - Explore dresses and sundresses
+  - Look at clothing with skirts or shorts
+  - Shop for sportswear
+  - Browse coats
+  - Return to the hotel
+
+================================================================================
+# Location from: shveyfab.txt
+name: Sewing Factory
+description: The sewing factory named after the "Paris Commune" is one of the few large enterprises in the city. It operates with a rigorous schedule, offering employment opportunities to those interested in working as seamstresses or apprentices. The factory has distinct working hours from 8 AM to 6 PM on weekdays, and the entrance is closed outside these hours. Inside, there is a schedule of work on the wall, and workers can take shifts according to their role. The factory also offers dormitory accommodations based on availability.
+choices:
+  - Approach the front door to inquire about job opportunities
+  - Enter the factory to start a shift
+  - Inquire about dormitory accommodation
+  - Leave the factory and return to another location
+
+================================================================================
+# Location from: sitr.txt
+name: The Living Room
+description: The living room is a central part of the apartment. It serves as a comfortable and functional space where residents can relax, entertain guests, and manage daily activities. The room is furnished with essential items such as a sofa, a table, and a television. There are cleaning supplies available for maintaining the apartment's cleanliness. The room also includes a few personal electronics, such as a computer and a phone charging station.
+choices:
+  - Relax and wait for a specified amount of time
+  - Get dressed
+  - Admire the paintings
+  - Eat a pizza if available
+  - Do term paper if you are a student
+  - Charge or uncharge the phone
+  - Go to the balcony
+  - Move to the bedroom
+  - Move to the kitchen
+  - Move to the bathroom
+  - Move to the corridor
+
+================================================================================
+# Location from: sportShop.txt
+name: Sporting Goods Store
+description: A sporting goods store filled with a variety of sports equipment and attire. The interior features shelves displaying items such as hula hoops, jump ropes, and yoga tutorials. There's a section dedicated to sportswear, with various clothing options available for purchase. The atmosphere is commercial and active, with customers browsing through the merchandise.
+choices:
+  - Buy a hula hoop for 1500 rubles
+  - Buy a jump rope for 500 rubles
+  - Buy a yoga tutorial book for 1500 rubles
+  - Browse the department of sportswear
+  - Withdraw cash from a bank card
+  - Leave the store
+
+================================================================================
+# Location from: stiralka.txt
+name: Laundry Area
+description: A small laundry area with a basket for dirty laundry. A washing machine is present, capable of washing and drying clothes. The area is equipped to handle both machine and hand washing of clothes.
+choices:
+  - Load dirty clothes into the washing machine
+  - Wash clothes by hand
+  - Leave the laundry area
+
+================================================================================
+# Location from: street.txt
+name: Southwest District of Town
+description: You are in the southwest district of a bustling town, surrounded by various establishments. You can see a well-marked hypermarket, a prestigious university, and a university dormitory. Nearby, there's a city court, a law office, and a police station. The city polyclinic and a private clinic are also in this area. For cultural activities, there's the Central House of Culture and an art gallery. You notice a popular cafe called "Boulevard" and a cinema named "Butterfly." There's also the best sauna in the city, a laundry, and a 24-hour pharmacy. Other shops include a communication store, an atelier, a pet shop, and a pawnshop. A large city park and a river running through the city, with a seasonal skating rink or beach, complete the scene.
+choices:
+  - Wait
+  - Go to the hypermarket
+  - Visit the university
+  - Enter the university dormitory
+  - Go to the city court
+  - Visit the law office
+  - Go to the police station
+  - Visit the city polyclinic
+  - Visit the private clinic
+  - Enter the Central House of Culture
+  - Visit the art gallery
+  - Relax at the sauna
+  - Use the laundry
+  - Buy items at the 24-hour pharmacy
+  - Visit the communication store
+  - Go to the atelier
+  - Shop at the pet shop
+  - Visit the pawnshop
+  - Recycle materials at the reception point
+  - Walk to the park
+  - Visit the river or beach
+  - Walk to another area of the city
+
+================================================================================
+# Location from: studia.txt
+name: Film Studio ART
+description: The central office of the film studio ART, a bustling hub for film production activities. The environment is professional and geared towards the creation and development of films, with various offices, casting rooms, and filming sets.
+choices:
+  - Enter the film studio
+  - Leave the film studio
+  - Go to a modeling agency
+  - Meet with your producer
+  - Go to the movie set
+  - Go to the shooting of a commercial
+  - Find out if actresses are auditioning for roles
+  - Go to a casting
+  - Take part in the shooting as an extra
+  - Check ATM
+  - Pay a fine if applicable
+  - Wait for filming to start
+
+================================================================================
+# Location from: tatoosalon.txt
+name: Tattoo Salon
+description: A tattoo salon where you can choose to get a tattoo or remove an existing one. The salon has various sections displaying images of different tattoo options for various parts of the body.
+choices:
+  - Get a tattoo
+  - Remove a tattoo
+  - Leave
+
+================================================================================
+# Location from: univer.txt
+name: University
+description: The University is an academic institution where students can enroll, attend lectures, and participate in various academic activities. The atmosphere is bustling with students attending preparatory courses, taking exams, and visiting the library for study sessions. The University also features facilities such as a café for refreshments and a dean's office for administrative matters.
+choices:
+  - Take the entrance exam
+  - Attend preparatory courses
+  - Go to classes and lectures
+  - Visit the University café
+  - Visit the library to read and improve knowledge
+  - Go to the dean's office for administrative queries
+  - Leave the University
+
+================================================================================
+# Location from: vanr.txt
+name: Bathroom
+description: A bathroom, which can either be part of a hotel room or a private residence. The room is equipped with a washbasin, a washing machine, and a dryer. Items like razor blades and hair remover are available for personal grooming. There is a washing machine where clothes can be washed and dried, and a basket for dirty laundry. Renovations might be in progress if applicable.
+choices:
+  - Wash your face
+  - Get your clothes from the washing machine
+  - Hang wet clothes to dry
+  - Check the razor blade supply
+  - Check the hair remover supply
+  - Use the toilet
+  - Take a pregnancy test (if applicable)
+  - Drink water from the tap
+  - Shut off water
+  - Leave the bathroom
+
+================================================================================
+# Location from: vokzal.txt
+name: Railway Station
+description: The railway station is a bustling hub of activity in the city. Upon arrival, you find yourself in a place filled with people, some with luggage and others without. The station serves as a gateway to the city, offering opportunities for travel and exploration. The station building is busy with travelers from different walks of life, providing a vibrant atmosphere. Inside, there is a waiting hall, a buffet where you can grab a bite, left-luggage offices, and cash dispensers. The station area is lively, with various shops and facilities available for convenience.
+choices:
+  - Check the clothes in the travel bag
+  - Check the money in your wallet
+  - Go to the station building
+  - Visit the waiting hall
+  - Visit the left-luggage offices
+  - Go to the buffet
+  - Use the cash dispenser
+  - Use the toilet
+  - Exit the station
+
+================================================================================
+# Location from: workHotel.txt
+name: Hotel Workplace
+description: This location is a hotel where you work as a maid. You can perform various tasks such as cleaning the lobby, corridors, toilets, and hotel rooms. You also have the opportunity to sort linens and deliver food to rooms. The hotel has a reception area and various facilities for guests.
+choices:
+  - Leave
+  - Work a shift
+  - Clean the lobby and corridors
+  - Clean the toilets
+  - Sort linens in the storage
+  - Tidy up hotel rooms
+  - Change bed linens in rooms
+  - Deliver food to hotel rooms
+  - Take a break for a meal
+  - Communicate with hotel guests
+  - Ignore guest interactions
+  - Stay overnight in the hotel
+
+================================================================================
+# Location from: workMed.txt
+name: City Medical Facilities
+description: This location represents various medical facilities in the city where you can work as a nurse. Depending on the scenario, you may find yourself in a private clinic, a city clinic, or a city hospital. Each facility has its own environment and tasks, ranging from filling out documents and looking after patients to performing medical procedures under the supervision of doctors.
+choices:
+  - Apply for a job at a private clinic
+  - Work a shift at the city clinic
+  - Work a shift at the city hospital
+  - Leave the facility and return home
+  - Quit your job as a nurse
+  - Get your salary after completing multiple shifts
+
+================================================================================
+# Location from: workOffice.txt
+name: Office Building
+description: You stand before an office building where various jobs are available. The structure is bustling with activity during working hours, but is closed during weekends or late hours. Employees and job seekers often visit here to find employment or perform their daily tasks.
+choices:
+  - Seek employment as a specialist
+  - Seek work as a secretary
+  - Seek employment as an assistant
+  - Go to work as a cleaner (if applicable)
+  - Leave the premises
+
+================================================================================
+# Location from: workProdavec.txt
+name: The Store
+description: The store is where you work, engaging in various tasks such as arranging goods, maintaining order, advising, and serving customers. The environment is bustling with activity as you go about your duties during the working hours.
+choices:
+  - Work a shift at the store
+  - Leave the store
+
+name: The Market
+description: The market is another place where you work, performing similar tasks as in the store, including arranging goods and assisting customers. It's a lively place with a variety of stalls and vendors.
+choices:
+  - Work a shift at the market
+  - Leave the market
+
+================================================================================
+# Location from: yvelirshop.txt
+name: Jewelry Store
+description: A jewelry store filled with a sparkling abundance and variety of jewelry and gifts. The store has several departments showcasing earrings, chains, necklaces, wristbands, rings, watches, and gift items. The atmosphere is elegant, with well-organized displays and a wide array of options to choose from.
+choices:
+  - Buy earrings
+  - Buy chains and necklaces
+  - Buy wristbands
+  - Buy rings
+  - Buy watches
+  - Choose and buy a gift
+  - Withdraw cash from a bank card
+  - Leave the store
+
+================================================================================
+# Location from: zavod.txt
+name: Checkpoint of the Luch Production Association Plant
+description: The checkpoint of the Luch production association plant is where you can attempt to get a job. The plant operates on weekdays from 8 AM to 6 PM. The checkpoint is closed outside of these hours and on weekends. The personnel department can offer jobs with specific conditions, including a salary and working hours.
+choices:
+  - Try to get a job
+  - Leave
+  - Go to work at the Factory (if already employed)
+  - Find out about the dormitory (if relevant)
+  - Quit from your job (if employed)
+  - Get salary (if it's time for payment)
+  - Agree and go with a colleague (if offered a ride home)
+  - Leave the area
+
+================================================================================
+# Location from: zoomagazine.txt
+name: Pet Shop
+description: A pet shop where you can purchase food and medication for pets. The shop is a simple but cozy establishment, with shelves stocked with various pet supplies. There are advertisements displayed, encouraging customers to buy pet-related products.
+choices:
+  - Buy animal feed
+  - Buy medication for animals
+  - Withdraw cash from a bank card
+  - Get out of the store
+

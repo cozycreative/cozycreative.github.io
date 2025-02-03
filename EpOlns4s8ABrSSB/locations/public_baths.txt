@@ -1,0 +1,99 @@
+name: Public Baths
+description: A modest public bathhouse that serves as both a practical facility and social hub. Steam rises from the various bathing areas, and the sound of running water creates a soothing atmosphere. The tiled walls show signs of age but are well-maintained, and the air is warm and humid. Different sections offer various bathing and relaxation options.
+
+choices:
+  - description: Take Regular Bath
+    conditions:
+      money: 8
+      time_hour: 6-22
+    outcomes:
+      - type: trigger_event
+        event: regular_bath
+
+  - description: Take Regular Bath (Basic Member)
+    conditions:
+      has_inventory: bath_basic_membership
+      time_hour: 6-22
+    outcomes:
+      - type: trigger_event
+        event: member_regular_bath
+
+  - description: Take Regular Bath (Premium Member)
+    conditions:
+      has_inventory: bath_premium_membership
+      time_hour: 5-23
+    outcomes:
+      - type: trigger_event
+        event: premium_regular_bath
+
+  - description: Quick Wash
+    conditions:
+      money: 5
+      time_hour: 6-22
+    outcomes:
+      - type: trigger_event
+        event: quick_wash
+
+  - description: Use Steam Room
+    conditions:
+      money: 10
+      energy: 20
+      time_hour: 6-22
+    outcomes:
+      - type: trigger_event
+        event: steam_room
+
+  - description: Use Steam Room (Premium Member)
+    conditions:
+      has_inventory: bath_premium_membership
+      energy: 20
+      time_hour: 5-23
+    outcomes:
+      - type: trigger_event
+        event: premium_steam_room
+
+  - description: Get Massage Treatment
+    conditions:
+      money: 25
+      time_hour: 9-21
+    outcomes:
+      - type: trigger_event
+        event: massage_treatment_baths
+
+  - description: Get Massage Treatment (Premium Member)
+    conditions:
+      has_inventory: bath_premium_membership
+      money: 18
+      time_hour: 8-22
+    outcomes:
+      - type: trigger_event
+        event: massage_treatment_baths_premium
+
+  - description: Socialize in Common Area
+    outcomes:
+      - type: trigger_event
+        event: bathhouse_socializing
+
+  - description: Check Monthly Membership
+    outcomes:
+      - type: trigger_event
+        event: bath_membership
+
+  - description: Use Grooming Station
+    conditions:
+      money: 5
+    outcomes:
+      - type: trigger_event
+        event: use_grooming_station
+
+  - description: Rest in Cool-Down Area
+    conditions:
+      bath_used: true
+    outcomes:
+      - type: trigger_event
+        event: use_cooldown_area
+
+  - description: Go back to the Ashridge Main Street
+    outcomes:
+      - type: change_location
+        destination: ashridge_core_hub
