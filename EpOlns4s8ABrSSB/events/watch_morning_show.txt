@@ -20,7 +20,7 @@ screens:
     choices:
       - description: "Watch commercial break"
         conditions:
-          event_active: modeling_agency_commercial
+          modeling_agency_commercial: true
         next_screen: modeling_ad
       - description: "Learn about wellness tips"
         outcomes:
@@ -38,7 +38,7 @@ screens:
     choices:
       - description: "Watch commercial break"
         conditions:
-          event_active: modeling_agency_commercial
+          modeling_agency_commercial: true
         next_screen: modeling_ad
       - description: "Watch different segment"
         next_screen: start
@@ -48,7 +48,7 @@ screens:
     choices:
       - description: "Watch commercial break"
         conditions:
-          event_active: modeling_agency_commercial
+          modeling_agency_commercial: true
         next_screen: modeling_ad
       - description: "Learn about local events"
         outcomes:
@@ -56,8 +56,7 @@ screens:
             stat: knowledge
             value: +3
           - type: set_condition
-            condition: knows_entertainment_events
-            value: true
+            knows_entertainment_events: true
           - type: update_time
             minutes: 15
           - type: end_event
@@ -70,8 +69,7 @@ screens:
       - description: "Make note of the opportunity"
         outcomes:
           - type: set_condition
-            condition: modeling_interest
-            value: true
+            modeling_interest: true
           - type: update_time
             minutes: 5
           - type: end_event

@@ -62,7 +62,7 @@ choices:
   - description: Buy Used Electronics
     conditions:
       money: 50
-      event_active: electronics_deal
+      electronics_deal: true
     outcomes:
       - type: trigger_event
         event: buy_electronics_pawnshop
@@ -70,7 +70,7 @@ choices:
   - description: Purchase Tools
     conditions:
       money: 30
-      event_active: tools_deal
+      tools_deal: true
     outcomes:
       - type: trigger_event
         event: buy_tools_pawnshop

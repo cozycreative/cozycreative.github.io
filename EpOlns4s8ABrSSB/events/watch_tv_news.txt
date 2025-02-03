@@ -20,13 +20,12 @@ screens:
     choices:
       - description: "Watch commercial break"
         conditions:
-          event_active: modeling_agency_commercial
+          modeling_agency_commercial: true
         next_screen: modeling_ad
       - description: "Focus on community events"
         outcomes:
           - type: set_condition
-            condition: knows_local_events
-            value: true
+            knows_local_events: true
           - type: update_time
             minutes: 15
           - type: end_event
@@ -39,8 +38,7 @@ screens:
       - description: "Note the agency details"
         outcomes:
           - type: set_condition
-            condition: modeling_interest
-            value: true
+            modeling_interest: true
           - type: update_time
             minutes: 5
           - type: end_event
@@ -52,7 +50,7 @@ screens:
     choices:
       - description: "Watch commercial break"
         conditions:
-          event_active: modeling_agency_commercial
+          modeling_agency_commercial: true
         next_screen: modeling_ad
       - description: "Note tomorrow's weather"
         outcomes:
@@ -60,8 +58,7 @@ screens:
             stat: knowledge
             value: +3
           - type: set_condition
-            condition: knows_weather
-            value: true
+            knows_weather: true
           - type: update_time
             minutes: 10
           - type: end_event
@@ -71,8 +68,7 @@ screens:
             stat: knowledge
             value: +5
           - type: set_condition
-            condition: knows_weekly_weather
-            value: true
+            knows_weekly_weather: true
           - type: update_time
             minutes: 15
           - type: end_event
@@ -84,13 +80,12 @@ screens:
     choices:
       - description: "Watch commercial break"
         conditions:
-          event_active: modeling_agency_commercial
+          modeling_agency_commercial: true
         next_screen: modeling_ad
       - description: "Learn about new businesses"
         outcomes:
           - type: set_condition
-            condition: knows_new_businesses
-            value: true
+            knows_new_businesses: true
           - type: update_time
             minutes: 15
           - type: end_event

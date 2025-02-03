@@ -36,20 +36,18 @@ choices:
       - type: remove_from_inventory
         item: coat
       - type: set_condition
-        condition: coat_stored
-        value: true
+        coat_stored: true
       - type: message
         text: "You hang your coat on the rack."
 
   - description: Take Coat
     conditions:
-      condition: coat_stored: true
+      coat_stored: true
     outcomes:
       - type: add_to_inventory
         item: coat
       - type: set_condition
-        condition: coat_stored
-        value: false
+        coat_stored: false
       - type: message
         text: "You take your coat from the rack."
 
@@ -61,8 +59,7 @@ choices:
       - type: remove_from_inventory
         item: light_bulb
       - type: set_condition
-        condition: light_broken
-        value: false
+        light_broken: false
       - type: update_stat
         stat: apartment_maintenance
         value: +10
