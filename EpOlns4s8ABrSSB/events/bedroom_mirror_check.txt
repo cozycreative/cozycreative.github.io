@@ -1,50 +1,50 @@
 name: Check Full-Length Mirror
-description: You stand in front of the full-length mirror, getting a complete view of yourself.
+description: Take a good, hard look at yourself in the bedroom mirror.
 
 screens:
   - id: start
-    text: "The full-length mirror gives you a complete view. What would you like to focus on?"
+    text: "The cracked full-length mirror offers a slightly distorted reflection. What catches your eye first?"
     choices:
-      - description: "Check overall outfit"
+      - description: "Check out your outfit – does it make you look good?"
         next_screen: outfit_check
-      - description: "Practice poses"
+      - description: "Strike a few poses – gotta practice!"
         next_screen: posing
-      - description: "Check figure"
+      - description: "Assess your overall figure – are those weights paying off?"
         next_screen: figure_check
-      - description: "Step away from mirror"
+      - description: "Enough self-obsession – turn away from the mirror"
         outcomes:
           - type: end_event
 
   - id: outfit_check
-    text: "You examine how your clothes fit and coordinate. A good outfit can make all the difference in how you present yourself."
+    text: "You scrutinize your clothes, checking for stains, tears, and general presentability. In Ashridge, looking sharp can make all the difference."
     choices:
-      - description: "Consider modeling potential"
+      - description: "Wonder if you could make it as a model"
         conditions:
           knows_modeling_agency: true
         next_screen: modeling_thoughts
-      - description: "Make outfit adjustments"
+      - description: "Swap out a piece of clothing for something cleaner"
         conditions:
           has_inventory: clean_clothes
         outcomes:
           - type: trigger_event
             event: change_clothes
-      - description: "Step away from mirror"
+      - description: "Eh, good enough – step away from the mirror"
         outcomes:
           - type: end_event
 
   - id: modeling_thoughts
-    text: "Looking at your full reflection, you can better imagine yourself in a modeling context. The right outfit, the right pose..."
+    text: "Staring at your reflection, you try to picture yourself on a magazine cover. Maybe, just maybe, you've got what it takes..."
     choices:
-      - description: "Practice model poses"
+      - description: "Practice your best runway walk"
         next_screen: posing
-      - description: "Step away from mirror"
+      - description: "Snap out of it – back to reality"
         outcomes:
           - type: end_event
 
   - id: posing
-    text: "You try different poses in the mirror, seeing how they affect your appearance and presence."
+    text: "You experiment with different stances, trying to find the angle that makes you look your best. It's all about confidence, right?"
     choices:
-      - description: "Practice fashion poses"
+      - description: "Try out some high-fashion poses – fierce!"
         conditions:
           knows_modeling_agency: true
         outcomes:
@@ -54,7 +54,7 @@ screens:
           - type: update_time
             minutes: 15
           - type: end_event
-      - description: "Try casual poses"
+      - description: "Just try to look relaxed and natural"
         outcomes:
           - type: update_stat
             stat: appearance
@@ -62,20 +62,20 @@ screens:
           - type: update_time
             minutes: 5
           - type: end_event
-      - description: "Step away from mirror"
+      - description: "Give up – posing is harder than it looks"
         outcomes:
           - type: end_event
 
   - id: figure_check
-    text: "You examine your physique and posture in the mirror."
+    text: "You flex your muscles (or lack thereof) and assess your posture. Gotta stay in shape, even in Ashridge."
     choices:
-      - description: "Work on posture"
+      - description: "Try to stand up straighter – shoulders back, chest out"
         outcomes:
           - type: update_stat
             stat: appearance
           - type: update_time
             minutes: 5
           - type: end_event
-      - description: "Step away from mirror"
+      - description: "Forget it – slouching is more comfortable"
         outcomes:
           - type: end_event

@@ -1,5 +1,5 @@
 name: Apartment Entrance
-description: The entrance to the Affordable Apartment building. A simple doorway leading into a modest building.
+description: The entrance to the "Affordable Apartments" building. The doorway is framed by faded red brick, worn smooth by countless hands brushing past. A flickering fluorescent bulb casts a harsh light on the cracked linoleum just inside, hinting at the modest lives contained within. The air smells faintly of stale cigarettes and simmering cabbage.
 choices:
   - description: Enter the Apartment Hallway.
     outcomes:

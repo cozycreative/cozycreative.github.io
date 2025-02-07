@@ -1,5 +1,5 @@
 name: Laundry Room
-description: A communal laundry room in the basement with several washing machines and dryers lined against the walls. The air is warm and humid, filled with the scent of detergent. A folding table sits in the center, and there's a vending machine selling laundry supplies.
+The basement laundry room is a humid, echoing space filled with the rhythmic rumble and clatter of aging appliances. A row of mismatched washing machines and dryers lines the concrete walls, their surfaces scarred with rust and faded paint. The air is thick with the cloying scent of cheap detergent, mingling with the musty odor of damp concrete. A rickety folding table stands in the center of the room, its surface stained and warped. In one corner, a battered vending machine offers overpriced laundry supplies, its selections illuminated by a flickering fluorescent bulb.
 
 choices:
   - description: Go back to the Apartment Entrance

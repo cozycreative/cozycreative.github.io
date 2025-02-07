@@ -1,26 +1,26 @@
 name: Sell Items to Pawnshop
-description: You approach the counter to sell some items. The shopkeeper adjusts his glasses, ready to examine what you have.
+description: Try to pawn some of your belongings at the Ashridge Pawnshop – desperate times call for desperate measures.
 
 screens:
   - id: start
-    text: "The shopkeeper looks at you expectantly. 'What have you got for me today?'"
+    text: "The shopkeeper, his eyes magnified by thick glasses, peers at you over the counter. 'Alright, whatcha tryin' to get rid of today?'"
     choices:
-      - description: "Show jewelry"
+      - description: "Show him your jewelry – maybe it's worth something"
         conditions:
           has_inventory: jewelry
         next_screen: show_jewelry
-      - description: "Show tools"
+      - description: "See if he'll take your tools – you could always buy new ones later"
         conditions:
           has_inventory: tools
         next_screen: show_tools
-      - description: "Never mind"
+      - description: "Decide you can't part with anything after all"
         outcomes:
-      - type: end_event
+          - type: end_event
 
   - id: show_jewelry
-    text: "The shopkeeper pulls out a jeweler's loupe and examines your jewelry piece carefully."
+    text: "The shopkeeper takes the jewelry, squints at it through his loupe, and sighs. 'Costume jewelry, mostly. Not worth much, I'm afraid.'"
     choices:
-      - description: "Accept offer"
+      - description: "Take the measly offer – you need the cash"
         outcomes:
           - type: update_stat
             stat: money
@@ -28,14 +28,14 @@ screens:
           - type: remove_from_inventory
             item: jewelry
           - type: end_event
-      - description: "Decline offer"
+      - description: "Keep it – it's worth more than that to you"
         outcomes:
           - type: end_event
 
   - id: show_tools
-    text: "The shopkeeper tests the tools, checking their condition and functionality."
+    text: "The shopkeeper examines the tools with a practiced eye, testing their weight and sharpness. 'Used and abused, I see. Still, they might be good for somethin'.'"
     choices:
-      - description: "Accept offer"
+      - description: "Take what he's offering – beggars can't be choosers"
         outcomes:
           - type: update_stat
             stat: money
@@ -43,6 +43,6 @@ screens:
           - type: remove_from_inventory
             item: tools
           - type: end_event
-      - description: "Decline offer"
+      - description: "Hold onto them – you might need them later"
         outcomes:
           - type: end_event

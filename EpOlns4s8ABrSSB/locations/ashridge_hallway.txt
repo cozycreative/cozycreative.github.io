@@ -1,5 +1,5 @@
 name: Hallway
-description: A narrow corridor within the Affordable Apartment, connecting the rooms. A simple coat rack and shoe storage are placed against one wall.
+description: The hallway feels even narrower than it is, the walls closing in slightly. It connects all the rooms in your apartment. A flimsy coat rack, overflowing with jackets and scarves, and a small, overflowing shoe rack are crammed against one wall, further restricting the already limited space.
 choices:
   - description: Enter the Living Room.
     outcomes:

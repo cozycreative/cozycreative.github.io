@@ -1,28 +1,28 @@
 name: Change Clothes
-description: You open your wardrobe to change your outfit.
+description: Rifle through your wardrobe, trying to find the perfect outfit for the day.
 
 screens:
   - id: start
-    text: "You look through your available clean clothes. What kind of outfit would you like to wear?"
+    text: "You rummage through your limited selection of clean clothes, trying to decide what to wear. What kind of impression do you want to make today?"
     choices:
-      - description: "Casual outfit"
+      - description: "Go for a comfortable, casual look"
         next_screen: casual_options
-      - description: "Professional outfit"
+      - description: "Dress professionally – gotta look sharp for those job interviews"
         conditions:
           has_inventory: professional_clothes
         next_screen: professional_options
-      - description: "Fashionable outfit"
+      - description: "Try to put together a fashionable ensemble – even in Ashridge, style matters"
         conditions:
           has_inventory: fashionable_clothes
         next_screen: fashion_options
-      - description: "Close wardrobe"
+      - description: "Forget it – just grab whatever's closest"
         outcomes:
           - type: end_event
 
   - id: casual_options
-    text: "You look through your casual clothes."
+    text: "You sort through your everyday clothes – mostly worn jeans, faded t-shirts, and comfortable sweaters. Nothing fancy, but practical."
     choices:
-      - description: "Comfortable everyday wear"
+      - description: "Put together a comfortable, reliable outfit"
         outcomes:
           - type: update_stat
             stat: appearance
@@ -33,7 +33,7 @@ screens:
           - type: update_time
             minutes: 5
           - type: end_event
-      - description: "Sporty casual"
+      - description: "Throw on your sporty gear – gotta look like you're ready for anything"
         conditions:
           has_inventory: sporty_clothes
         outcomes:
@@ -46,13 +46,13 @@ screens:
           - type: update_time
             minutes: 5
           - type: end_event
-      - description: "Choose different style"
+      - description: "Nah, these options are too boring – try a different style"
         next_screen: start
 
   - id: professional_options
-    text: "You examine your professional attire options."
+    text: "You carefully examine your limited selection of professional clothes, trying to decide which outfit will make the best impression."
     choices:
-      - description: "Business casual"
+      - description: "Go with a business casual look – presentable but not too stuffy"
         outcomes:
           - type: update_stat
             stat: appearance
@@ -63,7 +63,7 @@ screens:
           - type: update_time
             minutes: 10
           - type: end_event
-      - description: "Full professional"
+      - description: "Pull out all the stops with your most formal attire"
         outcomes:
           - type: update_stat
             stat: appearance
@@ -74,13 +74,13 @@ screens:
           - type: update_time
             minutes: 15
           - type: end_event
-      - description: "Choose different style"
+      - description: "These clothes are too uncomfortable – try a different style"
         next_screen: start
 
   - id: fashion_options
-    text: "You look through your more fashionable pieces."
+    text: "You sift through your trendier clothes, hoping to create a look that's both stylish and appropriate for Ashridge."
     choices:
-      - description: "Trendy outfit"
+      - description: "Put together your most eye-catching outfit"
         outcomes:
           - type: update_stat
             stat: appearance
@@ -91,5 +91,5 @@ screens:
           - type: update_time
             minutes: 10
           - type: end_event
-      - description: "Choose different style"
+      - description: "These clothes are too flashy for Ashridge – try a different style"
         next_screen: start

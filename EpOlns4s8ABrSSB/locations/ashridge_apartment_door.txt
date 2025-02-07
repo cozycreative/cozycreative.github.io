@@ -1,5 +1,5 @@
 name: Apartment Door
-description: The door to your apartment on the first floor hallway.
+description: Your apartment door, number 104, sits flush against the faded wallpaper of the first-floor hallway. Scuff marks low to the ground suggest years of hurried exits and clumsy arrivals. A small, tarnished brass number hangs slightly askew, and the faint scent of your cooking wafts from beneath the door.
 choices:
   - description: Enter Your Apartment.
     outcomes:

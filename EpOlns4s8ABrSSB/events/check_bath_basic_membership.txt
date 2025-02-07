@@ -1,42 +1,42 @@
 name: Check Basic Bath Membership Status
-description: The receptionist looks up your basic membership details in the system.
+description: Ask the receptionist to check the status of your Basic Bath Membership.
 
 screens:
   - id: start
-    text: "'Let me check your basic membership status... Ah yes, here it is. Your membership includes unlimited basic baths and 20% off other services.'"
+    text: "The receptionist taps away at the keyboard, her brow furrowed in concentration. 'Let's see here... Ah, yes, found it. Your Basic Membership is active. That gets you unlimited regular baths and a 20% discount on the extras.'"
     choices:
-      - description: "Check remaining time"
+      - description: "How much longer is it valid for?"
         next_screen: time_remaining
-      - description: "Review benefits"
+      - description: "Remind me what the benefits are again"
         next_screen: benefits
-      - description: "Done checking"
+      - description: "That's all, thanks"
         outcomes:
           - type: end_event
 
   - id: time_remaining
-    text: "The receptionist checks your membership expiration. 'Your membership is valid for [X] more days. Would you like to know anything else?'"
+    text: "She squints at the screen. 'You've got [X] days left on your current membership. Thinking about renewing or upgrading?'"
     choices:
-      - description: "Review benefits"
+      - description: "What exactly do I get with the Basic Membership?"
         next_screen: benefits
-      - description: "Consider upgrading"
+      - description: "What would I get if I upgraded to Premium?"
         next_screen: upgrade_option
-      - description: "Done checking"
+      - description: "Just checking, thanks"
         outcomes:
           - type: end_event
 
   - id: benefits
-    text: "Basic membership benefits include:\n- Unlimited basic baths during standard hours (6 AM - 10 PM)\n- 20% discount on additional services\n- Access to member-only events"
+    text: "She rattles off the benefits with practiced ease: 'Unlimited regular baths during opening hours, a 20% discount on massages and other services, and access to special members-only events – usually just bingo night, to be honest.'"
     choices:
-      - description: "Consider upgrading"
+      - description: "Tell me more about the Premium Membership"
         next_screen: upgrade_option
-      - description: "Done checking"
+      - description: "Sounds good – thanks for the info"
         outcomes:
           - type: end_event
 
   - id: upgrade_option
-    text: "'Interested in upgrading to premium? You'll get extended hours, unlimited steam room access, and bigger discounts on massages.'"
+    text: "She leans in conspiratorially. 'For another 200 credits a month, you could upgrade to Premium. That gets you access to the steam room and sauna, bigger discounts on massages, and you can come in an hour earlier and stay an hour later.'"
     choices:
-      - description: "Upgrade to Premium"
+      - description: "Upgrade to Premium right now!"
         conditions:
           money: 200
         outcomes:
@@ -48,6 +48,6 @@ screens:
           - type: add_to_inventory
             item: bath_premium_membership
           - type: end_event
-      - description: "Maybe later"
+      - description: "I'll think about it"
         outcomes:
           - type: end_event

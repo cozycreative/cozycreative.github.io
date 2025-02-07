@@ -1,5 +1,5 @@
 name: Courtyard
-description: A small, shared courtyard behind the apartment building. It's a bit rundown but offers a breath of fresh air.
+description: The courtyard, tucked behind the apartment building, is a small, concrete patch struggling for life. Cracked paving stones are interspersed with stubborn weeds pushing through the gaps. A couple of tired-looking benches offer a place to sit, and a rusty clothesline sags between two poles. Despite its rundown appearance, it offers a welcome breath of relatively fresh air, a small escape from the confines of the building.
 choices:
   - description: Relax in the Courtyard.
     outcomes:

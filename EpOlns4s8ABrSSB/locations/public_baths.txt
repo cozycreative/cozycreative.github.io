@@ -1,5 +1,5 @@
 name: Public Baths
-description: A modest public bathhouse that serves as both a practical facility and social hub. Steam rises from the various bathing areas, and the sound of running water creates a soothing atmosphere. The tiled walls show signs of age but are well-maintained, and the air is warm and humid. Different sections offer various bathing and relaxation options.
+The Ashridge Public Baths are a haven of warmth and steam, a place for both practical hygiene and social connection. The air is thick with humidity, and the constant rush of water creates a soothing, if slightly overwhelming, backdrop. The tiled walls, though showing their age with cracks and faded patterns, are surprisingly well-maintained, a testament to the tireless efforts of the staff. Different sections cater to various needs, from the communal bathing areas to the slightly more private steam rooms and massage parlors. The baths are a melting pot of the community, a place where workers, retirees, and families come to cleanse their bodies and ease their weary souls.
 
 choices:
   - description: Take Regular Bath

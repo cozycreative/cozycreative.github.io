@@ -1,44 +1,44 @@
 name: Check Wardrobe
-description: You open your wardrobe to check your available clothes.
+description: Take a look inside your wardrobe to see what you've got to wear.
 
 screens:
   - id: start
-    text: "You examine the contents of your wardrobe. What would you like to check?"
+    text: "You open the door to your cramped wardrobe, the scent of mothballs and stale air wafting out. What are you looking for?"
     choices:
-      - description: "Check clean clothes"
+      - description: "See what clean clothes you have available"
         next_screen: clean_clothes
-      - description: "Check laundry needs"
+      - description: "Figure out how much laundry you need to do"
         next_screen: laundry_check
-      - description: "Close wardrobe"
+      - description: "Close the wardrobe – can't deal with this mess right now"
         outcomes:
           - type: end_event
 
   - id: clean_clothes
-    text: "You look through your clean clothes, taking inventory of what's available."
+    text: "You sift through the neatly (or not-so-neatly) folded clothes, trying to decide what's presentable enough to wear out."
     choices:
-      - description: "Count casual clothes"
+      - description: "Count your everyday casual clothes"
         outcomes:
           - type: add_to_inventory
             item: casual_clothes
           - type: update_time
             minutes: 2
           - type: end_event
-      - description: "Check professional wear"
+      - description: "Check if you have anything appropriate for a job interview"
         outcomes:
           - type: add_to_inventory
             item: professional_clothes
           - type: update_time
             minutes: 2
           - type: end_event
-      - description: "Check fashion pieces"
+      - description: "See if you can put together a fashionable outfit"
         next_screen: fashion_check
-      - description: "Check something else"
+      - description: "Look for something else"
         next_screen: start
 
   - id: laundry_check
-    text: "You sort through clothes that need washing."
+    text: "You pull out the overflowing laundry basket, bracing yourself for the task ahead."
     choices:
-      - description: "Count dirty clothes"
+      - description: "Count the dirty clothes – just how bad is it?"
         outcomes:
           - type: add_to_inventory
             item: dirty_clothes
@@ -46,7 +46,7 @@ screens:
           - type: update_time
             minutes: 2
           - type: end_event
-      - description: "Sort laundry"
+      - description: "Sort the laundry into whites, colors, and delicates"
         outcomes:
           - type: add_to_inventory
             item: sorted_laundry
@@ -54,18 +54,18 @@ screens:
           - type: update_time
             minutes: 5
           - type: end_event
-      - description: "Check something else"
+      - description: "Decide to deal with it later"
         next_screen: start
 
   - id: fashion_check
-    text: "You examine your more fashionable clothing pieces, considering what might work for modeling."
+    text: "You carefully examine your more stylish pieces, wondering if any of them could pass for 'high fashion' in Ashridge."
     choices:
-      - description: "Assess modeling outfits"
+      - description: "Try to assemble an outfit that might impress a modeling agent"
         outcomes:
           - type: add_to_inventory
             item: modeling_outfits
           - type: update_time
             minutes: 5
           - type: end_event
-      - description: "Check something else"
+      - description: "Give up – you're better off sticking to the basics"
         next_screen: start

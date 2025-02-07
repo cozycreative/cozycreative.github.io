@@ -1,5 +1,5 @@
 name: Ashridge Main Street
-description: The bustling heart of Ashridge, where residential and commercial areas converge. Street vendors call out their wares, while workers and residents hurry about their business. The air carries a mix of cooking aromas from the market. Weathered brick buildings line the street, their ground floors occupied by various shops and businesses.
+description: This is the chaotic heart of Ashridge Main Street, where the rhythms of daily life pulse strongest. A cacophony of sounds assaults your ears – the hawkers' cries advertising their wares, the rumble of passing buses, and the chatter of countless conversations blending into a constant hum. The air is thick with the mingled scents of street food – greasy fries, spicy sausages, and sweet pastries – a tempting, if slightly overwhelming, aroma. Weathered brick buildings, their facades stained with years of grime, line the street, their ground floors crammed with a motley assortment of shops, pawnshops, and greasy spoons.
 
 choices:
   - description: Visit the Affordable Apartment

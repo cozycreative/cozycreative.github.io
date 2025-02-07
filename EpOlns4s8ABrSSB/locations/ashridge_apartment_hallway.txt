@@ -1,5 +1,5 @@
 name: Hallway
-description: A narrow corridor within your apartment, connecting all the rooms. A small coat rack hangs on one wall, and there's a worn welcome mat by the entrance. The flickering overhead light could use a new bulb, and you can sometimes hear muffled sounds from neighboring apartments through the thin walls.
+description: A narrow hallway stretches before you, connecting the rooms of your small apartment. A cheap, metal coat rack leans against one wall, burdened with a couple of worn jackets. Beneath your feet, a faded welcome mat bears the ghost of a friendly greeting. The overhead light flickers intermittently, casting long, dancing shadows that accentuate the peeling paint. Muffled snippets of conversation and the rhythmic thump of a bassline drift in from the neighboring apartments, a constant reminder of the lives crammed into this building.
 
 choices:
   - description: Enter the Living Room

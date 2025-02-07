@@ -1,5 +1,5 @@
 name: Roof
-description: The rooftop of the Affordable Apartment building. From here, you can see a panoramic view of Ashridge.
+The rooftop of the Affordable Apartments is a flat, tar-covered expanse, exposed to the elements. From this vantage point, you can take in a panoramic, if somewhat bleak, view of Ashridge. A low brick wall surrounds the perimeter, offering a modicum of safety. Scattered across the surface are remnants of past gatherings – discarded cigarette butts, empty beer cans, and faded graffiti tags. The wind whips across the open space, carrying with it the distant sounds of the city.
 choices:
   - description: Smoke a Cigarette
     conditions:

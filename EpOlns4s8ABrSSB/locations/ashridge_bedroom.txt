@@ -1,5 +1,5 @@
 name: Bedroom
-description: Your bedroom is modestly furnished with a single bed covered in basic linens, a wooden wardrobe for your clothes, and a small bedside table. A small window provides some natural light, and there's a full-length mirror on the wall.
+description: The bedroom is small and sparsely furnished. A narrow single bed, covered with faded, mismatched linens, dominates the space. A sturdy, but scratched, wooden wardrobe stands against one wall, its door slightly ajar, revealing a jumble of clothes. A small, scarred bedside table holds a lamp with a cracked shade. A small window, its glass clouded with grime, offers a meager amount of daylight. A full-length mirror hangs on the back of the door, reflecting a slightly distorted version of the room.
 
 choices:
   - description: Sleep Through Night

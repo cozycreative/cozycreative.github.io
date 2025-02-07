@@ -1,17 +1,17 @@
 name: Sleep Through Night
-description: You get ready for bed and settle in for a full night's sleep.
+description: Finally, time to get some shut-eye and try to forget about the day's troubles.
 
 screens:
   - id: start
-    text: "You prepare for bed. Your body feels tired and ready for rest."
+    text: "You get ready for bed, the weight of the day finally settling on your shoulders. Your body aches for the sweet release of sleep."
     choices:
-      - description: "Go to sleep"
+      - description: "Just drift off already"
         next_screen: sleep
 
   - id: sleep
-    text: "You climb into bed and pull up the covers. The day's fatigue catches up with you as you drift off to sleep..."
+    text: "You crawl into bed, pulling the worn covers around you. The sounds of Ashridge slowly fade as you drift into the embrace of sleep..."
     choices:
-      - description: "Sleep until morning"
+      - description: "Sleep soundly until morning"
         outcomes:
           - type: update_stat
             stat: is_sleeping
@@ -25,8 +25,8 @@ screens:
             screen: morning
 
   - id: morning
-    text: "Sunlight filters through your window as you wake up. Your body feels rested after a full night's sleep."
+    text: "A sliver of sunlight peeks through the grimy window as you slowly wake up. You feel surprisingly refreshed, ready (or at least resigned) to face another day in Ashridge."
     choices:
-      - description: "Get up"
+      - description: "Get out of bed and face the music"
         outcomes:
           - type: end_event

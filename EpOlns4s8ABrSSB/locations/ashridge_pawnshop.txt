@@ -1,5 +1,5 @@
 name: Pawnshop
-description: A cramped but fascinating shop packed with shelves of second-hand treasures and oddities. Glass display cases hold more valuable items, while miscellaneous goods crowd every available space. The elderly shopkeeper watches over everything with keen eyes, ready to haggle or share stories about interesting items.
+The pawnshop is a dimly lit, claustrophobic space crammed with a chaotic assortment of second-hand goods. Dusty shelves groan under the weight of forgotten treasures and discarded oddities – chipped porcelain dolls, tarnished silverware, and stacks of yellowed paperbacks. Glass display cases, their surfaces smudged with fingerprints, showcase the shop's more "valuable" items – a collection of gaudy jewelry, outdated electronics, and dented musical instruments. The air is thick with the musty scent of age and forgotten dreams. Behind the counter, the elderly shopkeeper, his face etched with wrinkles and shrewdness, surveys his domain with watchful eyes, ever ready to haggle over a price or spin a yarn about the history of a particularly intriguing item.
 
 choices:
   - description: Browse Electronics

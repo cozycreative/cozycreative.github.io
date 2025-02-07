@@ -1,5 +1,5 @@
 name: First Floor Hallway
-description: A narrow hallway on the first floor of the Affordable Apartment building. Apartment doors line the corridor, and stairs lead up to the roof and down to the entrance.
+description: The first-floor hallway of the Affordable Apartments is a long, echoing space. Faded floral wallpaper peels away from the walls in strips, revealing patches of bare plaster. A row of identical apartment doors lines the corridor, each bearing its own unique scars and imperfections. A worn set of stairs leads upwards towards the roof, while another descends to the building's entrance. The air is thick with the smell of stale cooking and lingering dampness.
 choices:
   - description: Go to your Apartment Door.
     outcomes:

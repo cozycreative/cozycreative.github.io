@@ -1,5 +1,5 @@
 name: Bathroom
-description: A small but functional bathroom with a toilet, sink with mirror above it, and a shower stall. The white tiles are a bit worn but clean. Basic toiletries are arranged on a small shelf.
+description: The bathroom is small and strictly functional. Worn white tiles line the walls, their grout darkened with age and stubborn stains. A basic toilet stands beside a sink, above which hangs a slightly fogged mirror reflecting a tired face. A cramped shower stall completes the scene, its plastic curtain clinging damply to the sides. A small, metal shelf holds a collection of well-used toiletries – a testament to frugality and routine.
 
 choices:
   - description: Take a Shower

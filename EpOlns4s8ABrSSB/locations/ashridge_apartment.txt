@@ -1,5 +1,5 @@
 name: Your Apartment
-description: Your modest apartment in the Ashridge district. While small, it's a place to call your own. The rent is affordable, and the location is convenient. The walls could use a fresh coat of paint, and some of the fixtures are dated, but it's clean and functional. A small thermostat on the wall controls the heating, and a window AC unit helps during summer months.
+description: This is your apartment, a small haven in the Ashridge district. It's nothing fancy, but it's yours. The rent is manageable, and the location is hard to beat, close to everything you need. The walls are a faded beige, showing their age, and the fixtures are a mix of outdated styles. Still, it's relatively clean and everything works, most of the time. A small, plastic thermostat clings to the wall, a constant reminder of the fluctuating temperatures, and a rattling window AC unit promises some relief during the sweltering summer months.
 
 choices:
   - description: Check Apartment Status

@@ -1,59 +1,59 @@
 name: Watch TV News
-description: You turn on the TV to catch up on current events. The local news channel is running its regular programming.
+description: Tune into the local news, hoping to get a sense of what's happening in Ashridge and beyond.
 
 screens:
   - id: start
-    text: "The news program is in progress. Which segment interests you the most?"
+    text: "The local news channel flickers to life, the anchor's voice a familiar drone. What's on the agenda today?"
     choices:
-      - description: "Watch Local News"
+      - description: "Check out the Local News – see what's happening in Ashridge"
         next_screen: local_news
-      - description: "Watch Weather Forecast"
+      - description: "Get the Weather Forecast – gotta know what to expect"
         next_screen: weather
-      - description: "Watch Business News"
+      - description: "See what's happening in the Business World – always good to stay informed"
         next_screen: business
-      - description: "Turn off TV"
+      - description: "This is too depressing – turn off the TV"
         outcomes:
           - type: end_event
 
   - id: local_news
-    text: "The local news segment covers various stories about the city. There's a report about new businesses opening downtown and community events."
+    text: "The local news segment is a mix of the mundane and the tragic – a new bakery opening downtown, a string of petty thefts in the neighborhood, and a heated debate about the proposed rent increase."
     choices:
-      - description: "Watch commercial break"
+      - description: "Time for a commercial break – maybe something more interesting will come on"
         conditions:
           modeling_agency_commercial: true
         next_screen: modeling_ad
-      - description: "Watch different segment"
+      - description: "This is too depressing – switch to a different segment"
         next_screen: start
 
   - id: modeling_ad
-    text: "During the commercial break, a professional-looking advertisement appears: 'Downtown Modeling Agency - Now Recruiting New Talent! Our agency has launched the careers of top models in major fashion markets. Open castings this week at our downtown office. No prior experience required. Join us and be part of the next generation of fashion models.'"
+    text: "During the commercial break, a flashy ad for a modeling agency pops up: 'Downtown Modeling Agency – We Make Stars! Are you tired of being ordinary? Our agency can transform you into a top model! Open castings this week – no experience necessary! Visit our downtown office and start your journey to fame and fortune!'"
     choices:
-      - description: "Note the agency details"
+      - description: "Hmm, maybe you should check that out..."
         outcomes:
           - type: set_condition
             modeling_interest: true
           - type: update_time
             minutes: 5
           - type: end_event
-      - description: "Continue watching news"
+      - description: "Modeling? Not a chance – back to the news"
         next_screen: local_news
 
   - id: weather
-    text: "The meteorologist presents the weather forecast for the next few days, discussing temperature trends and precipitation chances."
+    text: "The meteorologist, looking slightly harried, delivers the forecast: 'Expect more of the same – overcast skies, a slight chance of drizzle, and temperatures hovering around chilly. In other words, typical Ashridge weather.'"
     choices:
-      - description: "Watch commercial break"
+      - description: "Commercial time – maybe there's something good on"
         conditions:
           modeling_agency_commercial: true
         next_screen: modeling_ad
-      - description: "Watch different segment"
+      - description: "Enough of this – switch to a different segment"
         next_screen: start
 
   - id: business
-    text: "The business segment discusses market trends, company announcements, and economic developments in the city."
+    text: "The business segment is full of jargon and statistics, mostly about companies you've never heard of. The only takeaway seems to be that the economy is still struggling."
     choices:
-      - description: "Watch commercial break"
+      - description: "Commercial break – fingers crossed for something entertaining"
         conditions:
           modeling_agency_commercial: true
         next_screen: modeling_ad
-      - description: "Watch different segment"
+      - description: "This is too boring – switch to a different segment"
         next_screen: start

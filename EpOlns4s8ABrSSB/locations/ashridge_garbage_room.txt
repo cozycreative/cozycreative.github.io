@@ -1,5 +1,5 @@
 name: Garbage Room
-description: A small, utilitarian room for waste disposal. It smells faintly of refuse.
+description: The garbage room is a cramped, dimly lit space dedicated to waste. The air hangs heavy with the unmistakable stench of decaying refuse, a pungent mix of stale food, damp cardboard, and unidentifiable grime. Piles of overflowing trash bags lean precariously against the walls, threatening to spill their contents onto the stained concrete floor.
 choices:
   - description: Go back to the Apartment Entrance.
     outcomes:

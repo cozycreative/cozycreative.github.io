@@ -1,30 +1,30 @@
 name: Massage Treatment at Public Baths
-description: You approach the massage area of the bathhouse. Several treatment options are available, each with different benefits.
+description: Treat yourself to a massage at the Ashridge Public Baths – a little self-care never hurt anyone.
 
 screens:
   - id: start
-    text: "The massage therapist greets you with a calm smile. 'Welcome. What type of massage would you prefer today?'"
+    text: "The massage therapist, a middle-aged woman with tired eyes, gives you a polite nod. 'Alright, love, what'll it be today? We've got a few options to choose from.'"
     choices:
-      - description: "Basic Relaxation Massage (25 credits)"
+      - description: "Basic Relaxation Massage (25 credits) – just need to unwind"
         conditions:
           money: 25
         next_screen: basic_massage
-      - description: "Deep Tissue Treatment (35 credits)"
+      - description: "Deep Tissue Treatment (35 credits) – gotta work out those knots"
         conditions:
           money: 35
         next_screen: deep_tissue
-      - description: "Luxury Full Body Treatment (50 credits)"
+      - description: "Luxury Full Body Treatment (50 credits) – might as well go all out"
         conditions:
           money: 50
         next_screen: luxury_treatment
-      - description: "Just browsing"
+      - description: "Just having a look, thanks"
         outcomes:
           - type: end_event
 
   - id: basic_massage
-    text: "The therapist prepares a simple massage table. 'This will help with basic tension and stress relief.'"
+    text: "The therapist gestures towards a simple massage table in a small, sparsely decorated room. 'This'll help you loosen up and forget your troubles for a bit.'"
     choices:
-      - description: "Accept treatment"
+      - description: "Sounds good – let's get started"
         outcomes:
           - type: update_stat
             stat: money
@@ -38,14 +38,14 @@ screens:
           - type: update_time
             minutes: 30
           - type: end_event
-      - description: "Change my mind"
+      - description: "Actually, I'm not sure this is what I need"
         outcomes:
           - type: end_event
 
   - id: deep_tissue
-    text: "The therapist brings out special oils. 'This will help work out deeper muscle tension and knots.'"
+    text: "The therapist cracks her knuckles. 'Alright, this one's gonna hurt a little, but it'll do you good.' She grabs a bottle of oil and starts applying firm pressure to your aching muscles."
     choices:
-      - description: "Accept treatment"
+      - description: "I'm ready – bring on the pain"
         outcomes:
           - type: update_stat
             stat: money
@@ -62,14 +62,14 @@ screens:
           - type: update_time
             minutes: 45
           - type: end_event
-      - description: "Change my mind"
+      - description: "Maybe something gentler would be better..."
         outcomes:
           - type: end_event
 
   - id: luxury_treatment
-    text: "The therapist leads you to a private room with aromatic oils and soft music. 'This is our premium treatment, combining multiple techniques for total relaxation.'"
+    text: "The therapist smiles faintly. 'Treating yourself, eh? Go on, you deserve it.' She leads you to a slightly more private room, complete with soft lighting and the faint scent of incense."
     choices:
-      - description: "Accept treatment"
+      - description: "Lay back and let the pampering begin"
         outcomes:
           - type: update_stat
             stat: money
@@ -89,6 +89,6 @@ screens:
           - type: update_time
             minutes: 60
           - type: end_event
-      - description: "Change my mind"
+      - description: "This is a bit too extravagant for me"
         outcomes:
           - type: end_event

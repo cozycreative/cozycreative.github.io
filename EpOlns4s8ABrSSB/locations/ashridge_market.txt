@@ -1,5 +1,5 @@
 name: Local Market
-description: A bustling market square filled with colorful stalls and the vibrant energy of commerce. Fresh produce displays create a rainbow of colors, while the aroma of street food fills the air. Vendors call out their daily specials, and hagglers engage in friendly negotiations. The market is especially busy in the morning when the produce is freshest.
+The Ashridge market square is a kaleidoscope of sights, sounds, and smells, a vibrant hub of daily commerce. Colorful stalls, their awnings faded and patched, jostle for space, creating a maze of narrow passageways. Displays of fresh produce – bruised apples, slightly wilted greens, and overripe tomatoes – offer a splash of color against the drab surroundings. The air is thick with the aroma of sizzling street food, competing with the earthy scent of vegetables and the lingering odor of fish. Vendors hawk their wares with practiced cries, their voices hoarse from hours of repetition, while shoppers engage in lively haggling, their voices rising and falling in a familiar rhythm. The market is particularly chaotic in the mornings, when the promise of the freshest produce draws the largest crowds.
 
 choices:
   - description: Browse Fresh Produce

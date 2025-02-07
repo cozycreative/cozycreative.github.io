@@ -1,24 +1,24 @@
 name: Set Alarm Clock
-description: You adjust your alarm clock settings for when you need to wake up.
+description: Set the alarm on your phone – gotta make sure you don't oversleep.
 
 screens:
   - id: start
-    text: "You look at your alarm clock. What would you like to set it for?"
+    text: "You stare at the glowing screen of your phone, trying to decide what time to drag yourself out of bed. What's it gonna be?"
     choices:
-      - description: "Early morning (6 AM)"
+      - description: "Crack of dawn (6 AM) – gotta get a head start"
         next_screen: early_reason
-      - description: "Standard time (7 AM)"
+      - description: "A reasonable hour (7 AM) – can't sleep the day away"
         next_screen: standard_reason
-      - description: "Late morning (8 AM)"
+      - description: "Late-ish (8 AM) – need all the sleep you can get"
         next_screen: late_reason
-      - description: "Cancel setting alarm"
+      - description: "Nah, no alarm today – gonna wing it"
         outcomes:
           - type: end_event
 
   - id: early_reason
-    text: "Setting an early alarm can help you make the most of your morning. Any particular reason?"
+    text: "Alright, 6 AM it is. What's the big rush?"
     choices:
-      - description: "Morning exercise"
+      - description: "Gotta squeeze in a workout before the day begins"
         outcomes:
           - type: set_condition
             condition: wake_time
@@ -29,7 +29,7 @@ screens:
           - type: update_time
             minutes: 1
           - type: end_event
-      - description: "Just being productive"
+      - description: "Just wanna get a jump on things – gotta hustle"
         outcomes:
           - type: set_condition
             condition: wake_time
@@ -39,9 +39,9 @@ screens:
           - type: end_event
 
   - id: standard_reason
-    text: "A 7 AM wake-up gives you a good start to the day. Any specific plans?"
+    text: "7 AM – a classic. What's on the agenda for today?"
     choices:
-      - description: "Normal routine"
+      - description: "Just the usual grind"
         outcomes:
           - type: set_condition
             condition: wake_time
@@ -51,9 +51,9 @@ screens:
           - type: end_event
 
   - id: late_reason
-    text: "Setting alarm for 8 AM. Any particular reason for the later start?"
+    text: "8 AM, eh? Treatin' yourself today?"
     choices:
-      - description: "Need extra rest"
+      - description: "Desperately need to catch up on sleep"
         outcomes:
           - type: set_condition
             condition: wake_time
@@ -61,7 +61,7 @@ screens:
           - type: update_time
             minutes: 1
           - type: end_event
-      - description: "Flexible schedule"
+      - description: "Got nothin' important planned for the morning"
         outcomes:
           - type: set_condition
             condition: wake_time

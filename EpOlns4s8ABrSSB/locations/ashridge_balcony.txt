@@ -1,5 +1,5 @@
 name: Balcony
-description: A small balcony overlooking the street below. You can see a bit of Ashridge from here.
+description: The small, concrete balcony offers a cramped view of the street below. From here, you can catch glimpses of Ashridge life unfolding – the distant rumble of a bus, the chatter of neighbors, and the ever-present haze of city smog clinging to the rooftops.
 choices:
   - description: Look at the view.
     outcomes:

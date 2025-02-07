@@ -1,24 +1,24 @@
 name: Socializing at Public Baths
-description: The common area of the bathhouse is a traditional place for locals to gather and chat. Various conversations are taking place.
+description: Strike up a conversation with some of the locals relaxing in the bathhouse's common area.
 
 screens:
   - id: start
-    text: "Several groups of people are relaxing and chatting in the common area. Who would you like to approach?"
+    text: "The common area buzzes with conversation. A few groups are huddled around tables, while others relax on benches, steam still rising from their skin. Who catches your eye?"
     choices:
-      - description: "Join the regulars discussing local news"
+      - description: "Join the old-timers gossiping about Ashridge"
         next_screen: local_news
-      - description: "Listen to work opportunities discussion"
+      - description: "Eavesdrop on a hushed discussion about job prospects"
         next_screen: work_talk
-      - description: "Chat with friendly elderly patron"
+      - description: "Chat with a kindly old woman knitting by the window"
         next_screen: elder_wisdom
-      - description: "Keep to yourself"
+      - description: "Keep to yourself and enjoy the peace"
         outcomes:
           - type: end_event
 
   - id: local_news
-    text: "A group of regulars are discussing recent happenings in Ashridge. They welcome you to join their conversation."
+    text: "A group of weathered men, their faces etched with the stories of Ashridge, are arguing good-naturedly about the latest happenings down at the docks. They nod a welcome as you approach."
     choices:
-      - description: "Ask about job opportunities"
+      - description: "Ask if they've heard of any jobs going around"
         outcomes:
           - type: update_stat
             stat: social
@@ -26,7 +26,7 @@ screens:
           - type: update_time
             minutes: 15
           - type: end_event
-      - description: "Discuss local events"
+      - description: "Ask what they think about the new market regulations"
         outcomes:
           - type: update_stat
             stat: social
@@ -34,14 +34,14 @@ screens:
           - type: update_time
             minutes: 15
           - type: end_event
-      - description: "Politely excuse yourself"
+      - description: "Politely excuse yourself – their voices are getting a bit loud"
         outcomes:
           - type: end_event
 
   - id: work_talk
-    text: "Two people are discussing various job openings they've heard about. They mention some downtown office positions."
+    text: "Two figures, their voices low and urgent, are huddled in a corner, poring over a crumpled newspaper. You catch snippets of conversation about 'office work' and 'decent wages'."
     choices:
-      - description: "Inquire about office positions"
+      - description: "Casually inquire about the office positions"
         outcomes:
           - type: update_stat
             stat: social
@@ -49,14 +49,14 @@ screens:
           - type: update_time
             minutes: 10
           - type: end_event
-      - description: "Move on"
+      - description: "Decide it's none of your business and move on"
         outcomes:
           - type: end_event
 
   - id: elder_wisdom
-    text: "An elderly patron who seems to know everyone in the neighborhood smiles warmly at you. 'New to Ashridge? I've lived here all my life.'"
+    text: "A wizened old woman, her hands gnarled with age, sits knitting by the window, a serene smile on her face. She looks up as you approach, her eyes twinkling with warmth. 'Come to Ashridge looking for something, dearie? I've seen it all in this neighborhood.'"
     choices:
-      - description: "Ask about the neighborhood's history"
+      - description: "Ask her about the best places to find work in Ashridge"
         outcomes:
           - type: update_stat
             stat: social
@@ -64,7 +64,7 @@ screens:
           - type: update_time
             minutes: 20
           - type: end_event
-      - description: "Ask for life advice"
+      - description: "Ask her what the secret to a long and happy life is"
         outcomes:
           - type: update_stat
             stat: social
@@ -72,6 +72,6 @@ screens:
           - type: update_time
             minutes: 20
           - type: end_event
-      - description: "Thank them and move on"
+      - description: "Thank her for her time and let her get back to her knitting"
         outcomes:
           - type: end_event

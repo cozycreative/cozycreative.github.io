@@ -1,30 +1,30 @@
 name: Premium Massage Treatment at Public Baths
-description: You approach the massage area of the bathhouse. As a premium member, you have access to discounted rates and priority booking.
+description: Treat yourself to a discounted massage, thanks to your Premium Bath Membership.
 
 screens:
   - id: start
-    text: "The massage therapist greets you warmly. 'Welcome back! As a premium member, you get 30% off all our treatments. What would you prefer today?'"
+    text: "The massage therapist, a burly woman with strong hands, greets you with a nod. 'Premium member, eh? That'll get you 30% off. What'll it be today – the usual?'"
     choices:
-      - description: "Basic Relaxation Massage (18 credits with discount)"
+      - description: "Give me the Basic Relaxation Massage (18 credits with discount)"
         conditions:
           money: 18
         next_screen: basic_massage
-      - description: "Deep Tissue Treatment (25 credits with discount)"
+      - description: "I'm feeling tense – let's do the Deep Tissue Treatment (25 credits with discount)"
         conditions:
           money: 25
         next_screen: deep_tissue
-      - description: "Luxury Full Body Treatment (35 credits with discount)"
+      - description: "I deserve the best – Luxury Full Body Treatment (35 credits with discount)"
         conditions:
           money: 35
         next_screen: luxury_treatment
-      - description: "Just browsing"
+      - description: "Just wanted to see what's on offer"
         outcomes:
           - type: end_event
 
   - id: basic_massage
-    text: "The therapist prepares a premium massage table in a private room. 'This will help with basic tension and stress relief.'"
+    text: "The therapist leads you to a small, dimly lit room. The air smells faintly of eucalyptus and sweat. 'Alright, hop up on the table and let's get to work on those knots,' she says, cracking her knuckles."
     choices:
-      - description: "Accept treatment"
+      - description: "Alright, let's do this"
         outcomes:
           - type: update_stat
             stat: money
@@ -38,14 +38,14 @@ screens:
           - type: update_time
             minutes: 30
           - type: end_event
-      - description: "Change my mind"
+      - description: "Actually, I changed my mind"
         outcomes:
           - type: end_event
 
   - id: deep_tissue
-    text: "The therapist brings out special aromatherapy oils. 'This will help work out deeper muscle tension and knots. Premium members get extra attention to problem areas.'"
+    text: "The therapist nods approvingly. 'Good choice. This'll really get into those problem areas.' She grabs a bottle of pungent-smelling oil and starts kneading your muscles with surprising force."
     choices:
-      - description: "Accept treatment"
+      - description: "Brace yourself and accept the treatment"
         outcomes:
           - type: update_stat
             stat: money
@@ -62,14 +62,14 @@ screens:
           - type: update_time
             minutes: 45
           - type: end_event
-      - description: "Change my mind"
+      - description: "This is too intense – I need something gentler"
         outcomes:
           - type: end_event
 
   - id: luxury_treatment
-    text: "The therapist leads you to a deluxe private room with premium aromatherapy oils and soothing music. 'This is our ultimate treatment, combining multiple techniques for total relaxation. Premium members get an extended session.'"
+    text: "The therapist smiles knowingly. 'Ah, treating yourself, eh? You deserve it.' She leads you to a slightly larger room, complete with soothing music and flickering candles. 'This is the works – hot stones, aromatherapy, the whole shebang.'"
     choices:
-      - description: "Accept treatment"
+      - description: "Lay back and enjoy the pampering"
         outcomes:
           - type: update_stat
             stat: money
@@ -89,6 +89,6 @@ screens:
           - type: update_time
             minutes: 75
           - type: end_event
-      - description: "Change my mind"
+      - description: "This is a bit much – I'm not that stressed"
         outcomes:
           - type: end_event

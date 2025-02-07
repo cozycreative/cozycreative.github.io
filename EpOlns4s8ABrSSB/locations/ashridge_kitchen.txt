@@ -1,5 +1,5 @@
 name: Kitchen
-description: A small but functional kitchen with basic appliances. The fridge hums quietly in the corner, next to a basic electric stove and countertop. Cabinets line the walls, and a small window above the sink lets in some natural light.
+The kitchen is cramped but functional, a space for basic sustenance. A small, scarred refrigerator hums unevenly in the corner, its door adorned with magnets holding up faded photos and grocery lists. Next to it, a basic electric stove shows signs of heavy use, its burners stained and scratched. A worn countertop provides limited space for food preparation. Faded cabinets line the walls, their doors slightly askew, and a small window above the sink offers a glimpse of the outside world, though often obscured by grime.
 
 choices:
   - description: Cook Simple Meal

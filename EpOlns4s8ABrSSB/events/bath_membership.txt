@@ -1,22 +1,22 @@
 name: Public Baths Membership
-description: Inquire about membership options at the bathhouse.
+description: Find out about the different membership options at the Ashridge Public Baths.
 
 screens:
   - id: start
-    text: "The receptionist smiles. 'Interested in our membership plans? We have two options: Basic and Premium.'"
+    text: "The woman behind the counter, her hair pulled back in a tight bun, gives you a practiced smile. 'Looking to become a member, are we? We've got two options to suit your needs: Basic and Premium.'"
     choices:
-      - description: "Ask about Basic Membership"
+      - description: "Tell me about the Basic Membership"
         next_screen: basic_info
-      - description: "Ask about Premium Membership"
+      - description: "Tell me about the Premium Membership"
         next_screen: premium_info
-      - description: "Not interested"
+      - description: "Maybe later"
         outcomes:
           - type: end_event
 
   - id: basic_info
-    text: "Basic membership costs 200 credits per month. It includes unlimited basic baths and a 20% discount on other services."
+    text: "'The Basic will set you back 200 credits a month,' she says, tapping a pen against a clipboard. 'Gets you unlimited access to the regular baths, plus a 20% discount on any of our other services.'"
     choices:
-      - description: "Purchase Basic Membership"
+      - description: "Sign up for Basic Membership"
         conditions:
           money: 200
         outcomes:
@@ -26,18 +26,18 @@ screens:
             stat: money
             value: -200
           - type: message
-            text: "You purchased a Basic Membership."
+            text: "You hand over the credits and receive a small, plastic membership card. 'Welcome to the club,' she says with a wink."
           - type: end_event
-      - description: "Ask about Premium Membership"
+      - description: "What about the Premium Membership?"
         next_screen: premium_info
-      - description: "Not interested"
+      - description: "That's too rich for my blood"
         outcomes:
           - type: end_event
 
   - id: premium_info
-    text: "Premium membership costs 350 credits per month. It includes unlimited access to all facilities (including steam room and sauna), a 30% discount on massages, and priority booking."
+    text: "'Now, the Premium is where it's at,' she says, leaning forward conspiratorially. '350 credits a month, and you get the works. Unlimited access to everything – the baths, the steam room, even the sauna. Plus, a 30% discount on massages and priority booking, so you never have to wait.'"
     choices:
-      - description: "Purchase Premium Membership"
+      - description: "Sign me up for Premium!"
         conditions:
           money: 350
         outcomes:
@@ -47,10 +47,10 @@ screens:
             stat: money
             value: -350
           - type: message
-            text: "You purchased a Premium Membership."
+            text: "You fork over the credits and receive a shiny, laminated membership card. 'You've got good taste,' she says with a knowing smile. 'Enjoy the VIP treatment.'"
           - type: end_event
-      - description: "Ask about Basic Membership"
+      - description: "Tell me more about the Basic Membership"
         next_screen: basic_info
-      - description: "Not interested"
+      - description: "Too expensive, thanks anyway"
         outcomes:
           - type: end_event

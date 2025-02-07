@@ -1,5 +1,5 @@
 name: Living Room
-description: Your living room is small but cozy. A worn but comfortable sofa sits against one wall, facing a small, old television. A coffee table with a few magazines sits in the center, and a small window lets in natural light. The walls could use a fresh coat of paint, but the space has potential.
+description: The living room is cramped, but you've made it your own. A lumpy, well-worn sofa dominates one wall, its floral pattern faded with age. Opposite it, a small, boxy television hums quietly, its screen perpetually dusty. A chipped coffee table holds a haphazard stack of magazines – mostly outdated, but comforting in their familiarity. A single window, grimy with city soot, offers a sliver of natural light, barely cutting through the gloom. The walls are a patchwork of peeling wallpaper and half-hearted paint jobs, a testament to years of neglect.
 
 choices:
   - description: Watch TV News

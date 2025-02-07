@@ -1,24 +1,24 @@
 name: Check Yourself in Mirror
-description: You stand in front of the bathroom mirror, examining your reflection carefully.
+description: Take a long, hard look at yourself in the bathroom mirror.
 
 screens:
   - id: start
-    text: "You look at yourself in the mirror. What would you like to focus on?"
+    text: "You stare at your reflection in the slightly grimy bathroom mirror. What are you focusing on today?"
     choices:
-      - description: "Check overall appearance"
+      - description: "Check your overall appearance – gotta make a good impression"
         next_screen: appearance_check
-      - description: "Style your hair"
+      - description: "Try to tame your unruly hair"
         next_screen: hair_styling
-      - description: "Check skin condition"
+      - description: "Examine your skin for any new blemishes"
         next_screen: skin_check
-      - description: "Step back from mirror"
+      - description: "Enough with the vanity – step away from the mirror"
         outcomes:
           - type: end_event
 
   - id: appearance_check
-    text: "You examine your overall appearance. Your features could work well in photos - high cheekbones, expressive eyes, and good proportions. Maybe those modeling agency ads weren't so far-fetched..."
+    text: "You scrutinize your features, searching for any sign of improvement. Maybe those high cheekbones and expressive eyes could actually get you somewhere..."
     choices:
-      - description: "Make minor adjustments"
+      - description: "Make a few minor adjustments – a little here, a little there"
         outcomes:
           - type: update_stat
             stat: appearance
@@ -26,14 +26,14 @@ screens:
           - type: update_time
             minutes: 5
           - type: end_event
-      - description: "Step back from mirror"
+      - description: "Step back and accept what you've got"
         outcomes:
           - type: end_event
 
   - id: hair_styling
-    text: "You focus on your hair, trying different styles and arrangements."
+    text: "You wrestle with your hair, trying to coax it into some semblance of order."
     choices:
-      - description: "Style carefully"
+      - description: "Spend some time carefully styling your hair – gotta look your best"
         outcomes:
           - type: update_stat
             stat: appearance
@@ -41,7 +41,7 @@ screens:
           - type: update_time
             minutes: 10
           - type: end_event
-      - description: "Quick fix"
+      - description: "Just give it a quick comb and hope for the best"
         outcomes:
           - type: update_stat
             stat: appearance
@@ -49,14 +49,14 @@ screens:
           - type: update_time
             minutes: 2
           - type: end_event
-      - description: "Step back from mirror"
+      - description: "Give up – it's a lost cause"
         outcomes:
           - type: end_event
 
   - id: skin_check
-    text: "You examine your skin closely in the mirror, checking its condition."
+    text: "You lean in close to the mirror, examining your skin for any signs of trouble – blemishes, wrinkles, the usual."
     choices:
-      - description: "Apply skincare products"
+      - description: "Apply some skincare products – gotta fight the good fight"
         conditions:
           has_inventory: skincare_products
         outcomes:
@@ -66,7 +66,7 @@ screens:
           - type: update_time
             minutes: 5
           - type: end_event
-      - description: "Wash face thoroughly"
+      - description: "Give your face a good scrub with soap and water"
         outcomes:
           - type: update_stat
             stat: appearance
@@ -76,6 +76,6 @@ screens:
           - type: update_time
             minutes: 3
           - type: end_event
-      - description: "Step back from mirror"
+      - description: "What's the point? Step back from the mirror"
         outcomes:
           - type: end_event

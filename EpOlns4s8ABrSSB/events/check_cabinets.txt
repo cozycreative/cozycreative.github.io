@@ -1,24 +1,24 @@
 name: Check Kitchen Cabinets
-description: You open the kitchen cabinets to check your dry goods and supplies.
+description: Take stock of what's in your kitchen cabinets – gotta make sure you're not running low on anything.
 
 screens:
   - id: start
-    text: "You open the kitchen cabinets. What would you like to check?"
+    text: "You swing open the creaky kitchen cabinets. What are you looking for today?"
     choices:
-      - description: "Check food storage"
+      - description: "See what's in the food cupboard"
         next_screen: food_storage
-      - description: "Check cooking supplies"
+      - description: "Check your pots, pans, and other cooking gear"
         next_screen: cooking_supplies
-      - description: "Check cleaning supplies"
+      - description: "Make sure you've got enough cleaning supplies"
         next_screen: cleaning_supplies
-      - description: "Close cabinets"
+      - description: "Close the cabinets – too much to think about right now"
         outcomes:
           - type: end_event
 
   - id: food_storage
-    text: "You examine your stored dry goods and non-perishables."
+    text: "You peer into the depths of the food cupboard, scanning the shelves for anything edible."
     choices:
-      - description: "Check basic ingredients"
+      - description: "See if you have enough basic ingredients for a decent meal"
         outcomes:
           - type: add_to_inventory
             item: basic_ingredients
@@ -27,7 +27,7 @@ screens:
           - type: update_time
             minutes: 2
           - type: end_event
-      - description: "Check snack foods"
+      - description: "Check your stash of snack foods – gotta have something to munch on"
         outcomes:
           - type: add_to_inventory
             item: snack_food
@@ -36,7 +36,7 @@ screens:
           - type: update_time
             minutes: 2
           - type: end_event
-      - description: "Check microwave meals"
+      - description: "Count your microwave meals – quick and easy is the name of the game"
         outcomes:
           - type: add_to_inventory
             item: microwave_meal
@@ -45,13 +45,13 @@ screens:
           - type: update_time
             minutes: 2
           - type: end_event
-      - description: "Check something else"
+      - description: "Look for something else"
         next_screen: start
 
   - id: cooking_supplies
-    text: "You look through your cooking equipment and supplies."
+    text: "You rummage through your collection of pots, pans, and other cooking essentials. Mostly mismatched and well-worn, but they get the job done."
     choices:
-      - description: "Check pots and pans"
+      - description: "Make sure you have all the basic cookware you need"
         outcomes:
           - type: add_to_inventory
             item: cookware
@@ -60,7 +60,7 @@ screens:
           - type: update_time
             minutes: 2
           - type: end_event
-      - description: "Check utensils"
+      - description: "Check your utensils – forks, spoons, knives, the whole shebang"
         outcomes:
           - type: add_to_inventory
             item: utensils
@@ -69,7 +69,7 @@ screens:
           - type: update_time
             minutes: 2
           - type: end_event
-      - description: "Check appliances"
+      - description: "Take stock of your kitchen appliances – toaster, kettle, the bare minimum"
         outcomes:
           - type: add_to_inventory
             item: kitchen_appliances
@@ -78,13 +78,13 @@ screens:
           - type: update_time
             minutes: 2
           - type: end_event
-      - description: "Check something else"
+      - description: "Look for something else"
         next_screen: start
 
   - id: cleaning_supplies
-    text: "You check your kitchen cleaning supplies."
+    text: "You survey your stash of cleaning products, hoping you have enough to keep the place from falling apart."
     choices:
-      - description: "Check dish soap"
+      - description: "Check your dish soap supply – gotta keep those dishes clean"
         outcomes:
           - type: add_to_inventory
             item: dish_soap
@@ -93,7 +93,7 @@ screens:
           - type: update_time
             minutes: 1
           - type: end_event
-      - description: "Check sponges"
+      - description: "Count your sponges – they disappear so fast!"
         outcomes:
           - type: add_to_inventory
             item: sponges
@@ -102,7 +102,7 @@ screens:
           - type: update_time
             minutes: 1
           - type: end_event
-      - description: "Check surface cleaner"
+      - description: "Make sure you have enough surface cleaner to wipe down the counters"
         outcomes:
           - type: add_to_inventory
             item: surface_cleaner
@@ -111,5 +111,5 @@ screens:
           - type: update_time
             minutes: 1
           - type: end_event
-      - description: "Check something else"
+      - description: "Look for something else"
         next_screen: start
