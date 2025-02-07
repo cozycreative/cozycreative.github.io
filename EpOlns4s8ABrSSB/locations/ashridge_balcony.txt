@@ -1,0 +1,33 @@
+name: Balcony
+description: A small balcony overlooking the street below. You can see a bit of Ashridge from here.
+choices:
+  - description: Look at the view.
+    outcomes:
+      - type: update_stat
+        stat: stress
+        value: -5
+      - type: update_time
+        minutes: 5
+      - type: message
+        text: You look at the view and take a deep breath of fresh air.
+  - description: Smoke a cigarette.
+    conditions:
+      has_inventory: cigarettes
+    outcomes:
+      - type: remove_from_inventory
+        item: cigarettes
+        quantity: 1
+      - type: update_stat
+        stat: stress
+        value: -10
+      - type: update_stat
+        stat: health
+        value: -1
+      - type: update_time
+        minutes: 5
+      - type: message
+        text: You light up a cigarette and smoke it on the balcony.
+  - description: Go back to the Living Room.
+    outcomes:
+      - type: change_location
+        destination: ashridge_living_room

@@ -7,7 +7,7 @@ choices:
         destination: ashridge_apartment_door
   - description: Knock on a Neighbor's Door.
     outcomes:
-      - type: text
+      - type: message
         text: A friendly elderly neighbor answers the door and smiles.
   - description: Take the Stairs to the Roof.
     outcomes:

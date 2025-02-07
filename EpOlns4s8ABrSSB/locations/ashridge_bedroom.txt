@@ -55,7 +55,6 @@ choices:
 
   - description: Organize Clothes
     conditions:
-      time_passed: 1440
       energy: 10
     outcomes:
       - type: update_stat
@@ -95,7 +94,6 @@ choices:
 
   - description: Clean Bedroom
     conditions:
-      time_passed: 1440
       energy: 15
     outcomes:
       - type: update_stat

@@ -164,7 +164,6 @@ choices:
 
   - description: Clean Kitchen
     conditions:
-      time_passed: 720
       energy: 10
     outcomes:
       - type: update_stat

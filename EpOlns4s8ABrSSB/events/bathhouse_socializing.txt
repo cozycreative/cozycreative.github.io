@@ -39,16 +39,8 @@ screens:
           - type: end_event
 
   - id: work_talk
-    text: "Two people are discussing various job openings they've heard about. One works at the factory, the other at a downtown office."
+    text: "Two people are discussing various job openings they've heard about. They mention some downtown office positions."
     choices:
-      - description: "Ask about factory work"
-        outcomes:
-          - type: update_stat
-            stat: social
-            value: +3
-          - type: update_time
-            minutes: 10
-          - type: end_event
       - description: "Inquire about office positions"
         outcomes:
           - type: update_stat

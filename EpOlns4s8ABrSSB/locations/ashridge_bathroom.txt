@@ -4,7 +4,6 @@ description: A small but functional bathroom with a toilet, sink with mirror abo
 choices:
   - description: Take a Shower
     conditions:
-      time_passed: 120
       has_inventory: towel
     outcomes:
       - type: update_stat
@@ -29,7 +28,6 @@ choices:
 
   - description: Quick Rinse
     conditions:
-      time_passed: 30
       has_inventory: towel
     outcomes:
       - type: update_stat

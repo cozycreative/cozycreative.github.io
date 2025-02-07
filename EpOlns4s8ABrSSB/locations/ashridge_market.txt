@@ -13,6 +13,10 @@ choices:
     outcomes:
       - type: trigger_event
         event: buy_fresh_ingredients
+      - type: add_to_inventory
+        item: fresh_ingredients
+        quantity: 1
+        at_home: true
 
   - description: Buy Basic Ingredients
     conditions:
@@ -20,14 +24,29 @@ choices:
     outcomes:
       - type: trigger_event
         event: buy_basic_ingredients
+      - type: add_to_inventory
+        item: basic_ingredients
+        quantity: 1
+        at_home: true
 
   - description: Get Street Food
     conditions:
       money: 5
       time_hour: 10-20
     outcomes:
-      - type: trigger_event
-        event: buy_street_food
+      - type: update_stat
+        stat: money
+        value: -5
+      - type: update_stat
+        stat: hunger
+        value: -15
+      - type: update_stat
+        stat: energy
+        value: +5
+      - type: update_time
+        minutes: 10
+      - type: message
+        text: "You buy some hot street food from a vendor and eat it. It's simple but satisfying."
 
   - description: Buy Cigarettes
     conditions:
@@ -48,6 +67,7 @@ choices:
     outcomes:
       - type: add_to_inventory
         item: towel
+        at_home: true
       - type: update_stat
         stat: money
         value: -5
@@ -60,6 +80,7 @@ choices:
     outcomes:
       - type: add_to_inventory
         item: jewelry
+        at_home: true
       - type: update_stat
         stat: money
         value: -50
@@ -72,6 +93,7 @@ choices:
     outcomes:
       - type: add_to_inventory
         item: professional_clothes
+        at_home: true
       - type: update_stat
         stat: money
         value: -100
@@ -84,6 +106,7 @@ choices:
     outcomes:
       - type: add_to_inventory
         item: fashionable_clothes
+        at_home: true
       - type: update_stat
         stat: money
         value: -120
@@ -96,6 +119,7 @@ choices:
     outcomes:
       - type: add_to_inventory
         item: sporty_clothes
+        at_home: true
       - type: update_stat
         stat: money
         value: -80
@@ -109,12 +133,12 @@ choices:
       - type: add_to_inventory
         item: skincare_products
         quantity: 1
+        at_home: true
       - type: update_stat
         stat: money
         value: -30
       - type: message
         text: "You purchase skincare products."
-
 
   - description: Buy Tools
     conditions:
@@ -122,6 +146,7 @@ choices:
     outcomes:
       - type: add_to_inventory
         item: tools
+        at_home: true
       - type: update_stat
         stat: money
         value: -60
@@ -134,6 +159,7 @@ choices:
     outcomes:
       - type: add_to_inventory
         item: phone
+        at_home: true
       - type: update_stat
         stat: money
         value: -150
@@ -146,6 +172,7 @@ choices:
     outcomes:
       - type: add_to_inventory
         item: laundry_detergent
+        at_home: true
       - type: update_stat
         stat: money
         value: -10
@@ -158,11 +185,77 @@ choices:
     outcomes:
       - type: add_to_inventory
         item: shampoo
+        at_home: true
       - type: update_stat
         stat: money
         value: -7
       - type: message
         text: "You purchase shampoo."
+
+  - description: Buy Toothbrush
+    conditions:
+      money: 3
+    outcomes:
+      - type: add_to_inventory
+        item: toothbrush
+        at_home: true
+      - type: update_stat
+        stat: money
+        value: -3
+      - type: message
+        text: "You purchase a toothbrush."
+
+  - description: Buy Cleaning Supplies
+    conditions:
+      money: 12
+    outcomes:
+      - type: add_to_inventory
+        item: cleaning_supplies
+        at_home: true
+      - type: update_stat
+        stat: money
+        value: -12
+      - type: message
+        text: "You purchase cleaning supplies."
+
+  - description: Buy Coat
+    conditions:
+      money: 30
+    outcomes:
+      - type: add_to_inventory
+        item: coat
+        at_home: true
+      - type: update_stat
+        stat: money
+        value: -30
+      - type: message
+        text: "You purchase a coat."
+
+  - description: Buy Light Bulb
+    conditions:
+      money: 5
+    outcomes:
+      - type: add_to_inventory
+        item: light_bulb
+        at_home: true
+      - type: update_stat
+        stat: money
+        value: -5
+      - type: message
+        text: "You purchase a light bulb."
+
+  - description: Buy Resume
+    conditions:
+      money: 10
+    outcomes:
+      - type: add_to_inventory
+        item: resume
+        at_home: true
+      - type: update_stat
+        stat: money
+        value: -10
+      - type: message
+        text: "You purchase a resume."
 
   - description: Go back to the Ashridge Main Street
     outcomes:

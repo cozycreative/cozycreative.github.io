@@ -1,5 +1,5 @@
 name: Ashridge Main Street
-description: The bustling heart of Ashridge, where residential, commercial, and industrial areas converge. Street vendors call out their wares, while workers and residents hurry about their business. The air carries a mix of cooking aromas from the market and the distant hum of the factory. Weathered brick buildings line the street, their ground floors occupied by various shops and businesses.
+description: The bustling heart of Ashridge, where residential and commercial areas converge. Street vendors call out their wares, while workers and residents hurry about their business. The air carries a mix of cooking aromas from the market. Weathered brick buildings line the street, their ground floors occupied by various shops and businesses.
 
 choices:
   - description: Visit the Affordable Apartment
@@ -16,16 +16,6 @@ choices:
     outcomes:
       - type: change_location
         destination: public_baths
-
-  - description: Go to the Factory Complex
-    outcomes:
-      - type: change_location
-        destination: factory_complex
-
-  - description: Visit the Pawnshop
-    outcomes:
-      - type: change_location
-        destination: ashridge_pawnshop
 
   - description: Watch Street Performance
     conditions:

@@ -44,7 +44,7 @@ Outcomes define the consequences of a player's choice.
     *   `value`: `true` or `false`.
 *   `add_to_inventory` / `remove_from_inventory`: Modifies the player's inventory.
     *   `item`: The ID of the item to add or remove.
-    *   `quantity` (optional): The number of items to add or remove. Defaults to 1.
+    *   `quantity` (optional): The number of items to add or remove. If not defined the item is treated as single instance.
     *   `at_home` (optional): A boolean indicating if the item is at home.
 *   `update_time`: Advances the game time.
     *   `minutes`: The number of minutes to advance.
@@ -58,7 +58,6 @@ Conditions determine whether a choice is available to the player.
 
 *   `has_inventory`: Checks if the player has a specific item in their inventory.
     *   `item`: The ID of the item to check for.
-    *   `quantity` (optional): The minimum quantity of the item required. Defaults to 1.
 *   `time_hour`: Checks if the current time is within a specific hour range.
     *   `time_hour`: A range of hours, e.g., `9-17`.
 *   `money`: Checks if the player has at least a certain amount of money.
@@ -68,8 +67,6 @@ Conditions determine whether a choice is available to the player.
     *   `value`: `true` or `false`.
 *   `event_active`: Checks if an event is currently active.
     *   `event`: The ID of the event to check for.
-*   `time_passed`: Checks if a certain amount of time has passed since a specific event.
-    *   `minutes`: The amount of time that must have passed.
 *   `energy`: Checks if the player has at least a certain amount of energy.
     *   `energy`: The minimum amount of energy required.
 *   `bed_made`: Checks if the bed is made.
@@ -84,7 +81,7 @@ Conditions determine whether a choice is available to the player.
 *   `dryer_available`: Checks if a dryer is available.
 *   `machine_available`: Checks if a machine is available.
 *   `bath_used`: Checks if a bath has been used.
-*   `electronics_deal`: Checks if there is an electronics deal.
-*   `tools_deal`: Checks if there is a tools deal.
+*   `electronics_deal`: Checks if there is a tools deal.
+*   `tools_deal`: Checks if there is collateral.
 *   `has_collateral`: Checks if there is collateral.
-*   `is_sleeping`: Checks if the player is sleeping.
+    *   `is_sleeping`: Checks if the player is sleeping.

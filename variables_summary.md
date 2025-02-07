@@ -37,7 +37,7 @@ Conditions are boolean flags that represent the game's state.
 
 *   `has_inventory`: Checks if the player has a specific item in their inventory.
     *   `item`: The ID of the item to check for.
-    *   `quantity` (optional): The minimum quantity of the item required. Defaults to 1.
+    *   `quantity` (optional): The minimum quantity of the item required. If not added, treated as 1 or single instance
 *   `time_hour`: Checks if the current time is within a specific hour range.
     *   `time_hour`: A range of hours, e.g., `9-17`.
 *   `money`: Checks if the player has at least a certain amount of money.
@@ -99,4 +99,3 @@ Inventory items are objects that the player can possess and use.
 *   `casual_clothes`: Casual clothes.
 *   `dirty_clothes`: Dirty clothes.
 *   `sorted_laundry`: Sorted laundry.
-*   `resume`: A resume.

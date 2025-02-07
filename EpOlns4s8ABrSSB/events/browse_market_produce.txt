@@ -1,0 +1,10 @@
+name: Browse Market Produce
+description: You browse the fresh produce stalls at the market.
+
+screens:
+  - id: start
+    text: "The market stalls are overflowing with colorful fruits and vegetables. The air is filled with the scent of ripe tomatoes, fresh herbs, and sweet berries. You see plump peaches, bright red peppers, leafy greens, and all sorts of seasonal produce."
+    choices:
+      - description: "Done browsing"
+        outcomes:
+          - type: end_event
