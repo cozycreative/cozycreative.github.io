@@ -33,7 +33,6 @@ choices:
   - description: Cook Healthy Meal
     conditions:
       has_inventory: fresh_ingredients
-      cooking_skill: 2
       energy: 15
     outcomes:
       - type: update_stat
@@ -51,9 +50,6 @@ choices:
       - type: update_stat
         stat: happiness
         value: +8
-      - type: update_stat
-        stat: cooking_skill
-        value: +2
       - type: update_time
         minutes: 30
       - type: remove_from_inventory
@@ -181,19 +177,6 @@ choices:
         minutes: 15
       - type: message
         text: "You clean the kitchen, washing dishes and wiping down surfaces. Everything looks much better."
-
-  - description: Make Shopping List
-    outcomes:
-
-  - description: Check Fridge
-    outcomes:
-      - type: trigger_event
-        event: check_fridge
-
-  - description: Check Cabinets
-    outcomes:
-      - type: trigger_event
-        event: check_cabinets
 
   - description: Go back to the Hallway
     outcomes:

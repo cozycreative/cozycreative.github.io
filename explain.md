@@ -1,210 +1,90 @@
-### **Internal Game Language Documentation**
+# Game Logic Language Structure
 
-This document explains how to read and write the internal game language for locations and events in the game system. It covers the structure, components, and purpose of each file type with examples. All files are YAML text files in current folder in Location and Events subfolders.
+The game uses a text-based, choice-driven system. Locations define places the player can visit, and events represent specific interactions within those locations. Choices within locations and events lead to different outcomes.
 
----
+## Locations
 
-### **File Types**
+Locations define places the player can visit.
 
-#### **1. Locations**
-- Represent static, persistent places the player can visit.
-- Contain:
-  - A description of the location.
-  - Choices available to the player, which may lead to:
-    - Another location.
-    - An event.
-    - A stat change or message.
+*   `name`: The name of the location.
+*   `description`: A description of the location.
+*   `choices`: A list of choices available to the player in this location. Each choice has:
+    *   `description`: The text displayed to the player for this choice.
+    *   `conditions` (optional): Conditions that must be met for this choice to be available.
+    *   `outcomes`: A list of outcomes that occur when the player selects this choice.
 
-#### **2. Events**
-- Represent transient interactions triggered by player actions.
-- Contain:
-  - A title and description.
-  - Choices leading to:
-    - Outcomes (e.g., stat changes).
-    - Transitions to other screens (for multi-screen events).
-    - The end of the event.
+## Events
 
----
+Events represent specific interactions within locations.
 
-### **File Structure**
+*   `name`: The name of the event.
+*   `description`: A description of the event.
+*   `screens`: A list of screens that make up the event. Each screen has:
+    *   `id`: A unique identifier for the screen.
+    *   `text`: The text displayed to the player on this screen.
+    *   `choices`: A list of choices available to the player on this screen. Each choice has:
+        *   `description`: The text displayed to the player for this choice.
+        *   `conditions` (optional): Conditions that must be met for this choice to be available.
+        *   `next_screen` (optional): The ID of the next screen to display if this choice is selected.
+        *   `outcomes`: A list of outcomes that occur when the player selects this choice.
 
-#### **Locations**
-**Structure**:
-```
-name: [Location Name]
-description: [Description of the location.]
+## Outcomes
 
-choices:
-  - description: [What the player sees for this choice.]
-    conditions: [Optional conditions to make the choice available.]
-    outcomes: [Results of the choice.]
-```
+Outcomes define the consequences of a player's choice.
 
-**Example: Bathroom**
-```
-name: Bathroom
-description: A small but functional bathroom with basic amenities.
+*   `change_location`: Changes the player's current location.
+    *   `destination`: The ID of the location to move the player to.
+*   `trigger_event`: Triggers another event.
+    *   `event`: The ID of the event to trigger.
+*   `update_stat`: Updates a player stat.
+    *   `stat`: The name of the stat to update.
+    *   `value`: The amount to add to (or subtract from) the stat.
+*   `set_condition`: Sets a condition to true or false.
+    *   `condition`: The name of the condition to set.
+    *   `value`: `true` or `false`.
+*   `add_to_inventory` / `remove_from_inventory`: Modifies the player's inventory.
+    *   `item`: The ID of the item to add or remove.
+    *   `quantity` (optional): The number of items to add or remove. Defaults to 1.
+    *   `at_home` (optional): A boolean indicating if the item is at home.
+*   `update_time`: Advances the game time.
+    *   `minutes`: The number of minutes to advance.
+*   `message`: Displays a message to the player.
+    *   `text`: The text of the message.
+*   `end_event`: Ends the current event.
 
-choices:
-  - description: Take a Shower
-    conditions:
-      time_passed: 120
-      has_inventory: towel
-    outcomes:
-      - type: update_stat
-        stat: dirtiness_level
-        value: -100
-      - type: update_stat
-        stat: lastShowerCycle
-        value: 0
-      - type: update_stat
-        stat: happiness
-        value: +10
-      - type: update_time
-        minutes: 20
-      - type: message
-        text: "The hot water feels great as you take a refreshing shower."
+## Conditions
 
-  - description: Use Toilet
-    outcomes:
-      - type: update_stat
-        stat: bladder_urgency
-        value: -100
-      - type: update_time
-        minutes: 10
-      - type: message
-        text: "You use the toilet, relieving your bladder urgency."
-```
+Conditions determine whether a choice is available to the player.
 
----
-
-#### **Events**
-**Structure**:
-1. **Simple Events**:
-   - Title, description, and choices.
-   - Ends after the first set of choices.
-2. **Multi-Screen Events**:
-   - Contain multiple screens, each identified by an `id`.
-   - Each screen contains:
-     - Text displayed to the player.
-     - Choices leading to outcomes, other screens, or the end of the event.
-
-**Sleep Event Example**
-```
-name: Sleep Through Night
-description: You get ready for bed and settle in for a full night's sleep.
-
-screens:
-  - id: start
-    text: "You prepare for bed. Your body feels tired and ready for rest."
-    choices:
-      - description: "Go to sleep"
-        next_screen: sleep
-
-  - id: sleep
-    text: "You climb into bed and pull up the covers."
-    choices:
-      - description: "Sleep until morning"
-        outcomes:
-          - type: update_stat
-            stat: is_sleeping
-            value: true
-          - type: update_stat
-            stat: sleep_quality
-            value: 100
-          - type: update_time
-            minutes: 480
-          - type: next_screen
-            screen: morning
-```
-
----
-
-### **Components**
-
-#### **Choices**
-- Allow players to act within a location or event.
-- Each choice has:
-  - `description`: Text shown to the player.
-  - `conditions`: (Optional) Criteria for the choice to be available.
-  - `outcomes`: Results of the choice.
-
-#### **Conditions**
-- Control when choices are available.
-- Common conditions:
-  - `money`: Required amount of money.
-  - `energy`: Required energy level (negative value means "less than").
-  - `time_hour`: Time of day (e.g., "9-17" for 9 AM to 5 PM).
-  - `has_inventory`: Check for items in inventory.
-  - `time_passed`: Time since last action (in minutes).
-  - `bowel_urgency`/`bladder_urgency`: Body need thresholds.
-
-#### **Outcomes**
-- Define what happens when a choice is made.
-- Each outcome must be ONE of these mutually exclusive types:
-  - `change_location`: Move to a new location.
-  - `trigger_event`: Start a specific event.
-  - `message`: Display a message to the player.
-  - `end_event`: End the current event and return to previous location.
-- Additional outcomes that can be combined with any of the above:
-  - `update_stat`: Change a player stat (see list below).
-  - `update_inventory`: Add/remove items.
-  - `update_time`: Advance game time (in minutes).
-  - `set_condition`: Set a game condition.
-
-#### **Common Stats for update_stat**
-Body Parameters:
-- `energy`: Physical energy level (0-100)
-- `sleepiness`: Separate from energy (0-100)
-- `hunger`: Food need (0-100)
-- `hydration_level`: Water need (0-100)
-- `bladder_urgency`: Need to urinate (0-100)
-- `bowel_urgency`: Need for bowel movement (0-100)
-- `dirtiness_level`: Body cleanliness (0-100)
-- `lastShowerCycle`: Minutes since last shower
-- `calories_today`: Daily calorie intake
-- `is_sleeping`: Sleep state (true/false)
-- `sleep_quality`: Quality of current sleep (0-100)
-
-Mental Parameters:
-- `happiness`: Overall mood (0-100)
-- `stress`: Mental pressure (0-100)
-- `grooming`: Personal care level (0-100)
-
-Example of stat updates:
-```yaml
-outcomes:
-  - type: update_stat
-    stat: dirtiness_level
-    value: -100  # Fully clean
-  - type: update_stat
-    stat: hydration_level
-    value: +20   # Drink water
-  - type: update_time
-    minutes: 5   # Time cost
-```
-
----
-
-### **File Placement**
-1. **Locations**: `/locations/`
-   - Example: `/locations/ashridge_bathroom.txt`, `/locations/ashridge_kitchen.txt`
-2. **Events**: `/events/`
-   - Example: `/events/sleep_through_night.txt`, `/events/check_fridge.txt`
-
----
-
-### **Guidelines for Writing**
-1. **Keep It Simple**:
-   - Avoid overly complex conditions or branching unless necessary.
-2. **Use Multi-Screen Events for Conversations**:
-   - Reserve multi-screen events for scenarios requiring multiple steps or dialogue exchanges.
-3. **Avoid Dead Ends**:
-   - Always provide a way for the player to return to a location or resolve the event.
-4. **Be Specific with Event Names**:
-   - Use descriptive names that include the location (e.g., check_fridge instead of just check).
-5. **Always Include Time Costs**:
-   - Every action should have a realistic time cost using update_time.
-6. **Consider Body Parameters**:
-   - Actions should affect relevant body stats (hunger, energy, etc.).
-   - Use appropriate time-based conditions (time_passed) for repeated actions.
+*   `has_inventory`: Checks if the player has a specific item in their inventory.
+    *   `item`: The ID of the item to check for.
+    *   `quantity` (optional): The minimum quantity of the item required. Defaults to 1.
+*   `time_hour`: Checks if the current time is within a specific hour range.
+    *   `time_hour`: A range of hours, e.g., `9-17`.
+*   `money`: Checks if the player has at least a certain amount of money.
+    *   `money`: The minimum amount of money required.
+*   `condition`: Checks the value of a boolean condition.
+    *   `condition`: The name of the condition to check.
+    *   `value`: `true` or `false`.
+*   `event_active`: Checks if an event is currently active.
+    *   `event`: The ID of the event to check for.
+*   `time_passed`: Checks if a certain amount of time has passed since a specific event.
+    *   `minutes`: The amount of time that must have passed.
+*   `energy`: Checks if the player has at least a certain amount of energy.
+    *   `energy`: The minimum amount of energy required.
+*   `bed_made`: Checks if the bed is made.
+*   `coat_stored`: Checks if the coat is stored.
+*   `light_broken`: Checks if the light is broken.
+*   `maintenance_needed`: Checks if maintenance is needed.
+*   `modeling_interest`: Checks if the player has a modeling interest.
+*   `saw_agency_updates`: Checks if the player saw agency updates.
+*   `planning_exercise`: Checks if the player is planning exercise.
+*   `laundry_in_progress`: Checks if laundry is in progress.
+*   `neighbor_present`: Checks if a neighbor is present.
+*   `dryer_available`: Checks if a dryer is available.
+*   `machine_available`: Checks if a machine is available.
+*   `bath_used`: Checks if a bath has been used.
+*   `electronics_deal`: Checks if there is an electronics deal.
+*   `tools_deal`: Checks if there is a tools deal.
+*   `has_collateral`: Checks if there is collateral.
+*   `is_sleeping`: Checks if the player is sleeping.

@@ -115,11 +115,8 @@ choices:
   - description: Clean Bathroom
     conditions:
       time_passed: 1440
-      has_inventory: cleaning_supplies
+      has_inventory: dish_soap
     outcomes:
-      - type: update_stat
-        stat: apartment_cleanliness
-        value: +20
       - type: update_stat
         stat: energy
         value: -10
@@ -127,6 +124,34 @@ choices:
         minutes: 15
       - type: message
         text: "You clean the bathroom, scrubbing the tiles and fixtures. The place looks much better now."
+
+  - description: Wash Clothes
+    conditions:
+      has_inventory: dirty_clothes, laundry_detergent
+    outcomes:
+      - type: remove_from_inventory
+        item: dirty_clothes
+      - type: remove_from_inventory
+        item: laundry_detergent
+      - type: add_to_inventory
+        item: wet_clothes
+      - type: update_time
+        minutes: 45
+      - type: message
+        text: "You load the dirty clothes into the washing machine, add detergent, and start the wash cycle."
+
+  - description: Dry Clothes
+    conditions:
+      has_inventory: wet_clothes
+    outcomes:
+      - type: remove_from_inventory
+        item: wet_clothes
+      - type: add_to_inventory
+        item: clean_clothes
+      - type: update_time
+        minutes: 60
+      - type: message
+        text: "You transfer the wet clothes to the dryer and start the drying cycle."
 
   - description: Go back to the Hallway
     outcomes:

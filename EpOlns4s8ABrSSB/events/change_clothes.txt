@@ -91,21 +91,5 @@ screens:
           - type: update_time
             minutes: 10
           - type: end_event
-      - description: "Model-worthy look"
-        conditions:
-          modeling_interest: true
-        outcomes:
-          - type: update_stat
-            stat: appearance
-            value: +20
-          - type: update_stat
-            stat: style
-            value: +15
-          - type: update_stat
-            stat: modeling_skill
-            value: +2
-          - type: update_time
-            minutes: 15
-          - type: end_event
       - description: "Choose different style"
         next_screen: start

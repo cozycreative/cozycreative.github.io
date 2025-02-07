@@ -48,7 +48,7 @@ choices:
 
   - description: Change Outfit
     conditions:
-      has_clean_clothes: true
+      has_inventory: clean_clothes
     outcomes:
       - type: trigger_event
         event: change_clothes
@@ -108,24 +108,6 @@ choices:
         minutes: 15
       - type: message
         text: "You clean the bedroom thoroughly, dusting surfaces and organizing your belongings."
-
-  - description: Study at Desk
-    conditions:
-      energy: 20
-    outcomes:
-      - type: update_stat
-        stat: knowledge
-        value: +10
-      - type: update_stat
-        stat: energy
-        value: -15
-      - type: update_stat
-        stat: sleepiness
-        value: +10
-      - type: update_time
-        minutes: 60
-      - type: message
-        text: "You spend some time studying and improving your knowledge."
 
   - description: Go back to the Hallway
     outcomes:

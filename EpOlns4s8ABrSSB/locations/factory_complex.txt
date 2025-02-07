@@ -16,7 +16,6 @@ choices:
 
   - description: Apply for Position
     conditions:
-      knows_job_openings: true
       has_inventory: resume
     outcomes:
       - type: trigger_event

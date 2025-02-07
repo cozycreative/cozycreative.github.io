@@ -9,8 +9,6 @@ screens:
         next_screen: messages
       - description: "Browse social media"
         next_screen: social_media
-      - description: "Check email"
-        next_screen: email
       - description: "Put phone down"
         outcomes:
           - type: end_event
@@ -48,9 +46,6 @@ screens:
         conditions:
           modeling_interest: true
         outcomes:
-          - type: update_stat
-            stat: modeling_skill
-            value: +2
           - type: update_time
             minutes: 10
           - type: end_event

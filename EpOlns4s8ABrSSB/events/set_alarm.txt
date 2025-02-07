@@ -29,30 +29,6 @@ screens:
           - type: update_time
             minutes: 1
           - type: end_event
-      - description: "Early job search"
-        outcomes:
-          - type: set_condition
-            condition: wake_time
-            value: 6
-          - type: set_condition
-            condition: planning_job_search
-            value: true
-          - type: update_time
-            minutes: 1
-          - type: end_event
-      - description: "Modeling casting"
-        conditions:
-          modeling_interest: true
-        outcomes:
-          - type: set_condition
-            condition: wake_time
-            value: 6
-          - type: set_condition
-            condition: preparing_for_casting
-            value: true
-          - type: update_time
-            minutes: 1
-          - type: end_event
       - description: "Just being productive"
         outcomes:
           - type: set_condition
@@ -73,30 +49,6 @@ screens:
           - type: update_time
             minutes: 1
           - type: end_event
-      - description: "Job hunting"
-        outcomes:
-          - type: set_condition
-            condition: wake_time
-            value: 7
-          - type: set_condition
-            condition: planning_job_search
-            value: true
-          - type: update_time
-            minutes: 1
-          - type: end_event
-      - description: "Beauty routine"
-        conditions:
-          modeling_interest: true
-        outcomes:
-          - type: set_condition
-            condition: wake_time
-            value: 7
-          - type: set_condition
-            condition: planning_beauty_routine
-            value: true
-          - type: update_time
-            minutes: 1
-          - type: end_event
 
   - id: late_reason
     text: "Setting alarm for 8 AM. Any particular reason for the later start?"
@@ -106,17 +58,6 @@ screens:
           - type: set_condition
             condition: wake_time
             value: 8
-          - type: update_time
-            minutes: 1
-          - type: end_event
-      - description: "Late night planned"
-        outcomes:
-          - type: set_condition
-            condition: wake_time
-            value: 8
-          - type: set_condition
-            condition: planning_late_night
-            value: true
           - type: update_time
             minutes: 1
           - type: end_event

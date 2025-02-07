@@ -25,21 +25,14 @@ screens:
             value: +5
           - type: update_time
             minutes: 15
-          - type: set_condition
-            knows_job_openings: true
           - type: end_event
       - description: "Discuss local events"
         outcomes:
           - type: update_stat
             stat: social
             value: +5
-          - type: update_stat
-            stat: knowledge
-            value: +5
           - type: update_time
             minutes: 15
-          - type: set_condition
-            knows_local_events: true
           - type: end_event
       - description: "Politely excuse yourself"
         outcomes:
@@ -55,8 +48,6 @@ screens:
             value: +3
           - type: update_time
             minutes: 10
-          - type: set_condition
-            knows_factory_jobs: true
           - type: end_event
       - description: "Inquire about office positions"
         outcomes:
@@ -65,8 +56,6 @@ screens:
             value: +3
           - type: update_time
             minutes: 10
-          - type: set_condition
-            knows_office_jobs: true
           - type: end_event
       - description: "Move on"
         outcomes:
@@ -80,21 +69,13 @@ screens:
           - type: update_stat
             stat: social
             value: +5
-          - type: update_stat
-            stat: knowledge
-            value: +10
           - type: update_time
             minutes: 20
-          - type: set_condition
-            knows_neighborhood_history: true
           - type: end_event
       - description: "Ask for life advice"
         outcomes:
           - type: update_stat
             stat: social
-            value: +5
-          - type: update_stat
-            stat: wisdom
             value: +5
           - type: update_time
             minutes: 20

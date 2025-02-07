@@ -22,13 +22,6 @@ screens:
         conditions:
           modeling_agency_commercial: true
         next_screen: modeling_ad
-      - description: "Focus on community events"
-        outcomes:
-          - type: set_condition
-            knows_local_events: true
-          - type: update_time
-            minutes: 15
-          - type: end_event
       - description: "Watch different segment"
         next_screen: start
 
@@ -52,26 +45,6 @@ screens:
         conditions:
           modeling_agency_commercial: true
         next_screen: modeling_ad
-      - description: "Note tomorrow's weather"
-        outcomes:
-          - type: update_stat
-            stat: knowledge
-            value: +3
-          - type: set_condition
-            knows_weather: true
-          - type: update_time
-            minutes: 10
-          - type: end_event
-      - description: "Check week's forecast"
-        outcomes:
-          - type: update_stat
-            stat: knowledge
-            value: +5
-          - type: set_condition
-            knows_weekly_weather: true
-          - type: update_time
-            minutes: 15
-          - type: end_event
       - description: "Watch different segment"
         next_screen: start
 
@@ -82,12 +55,5 @@ screens:
         conditions:
           modeling_agency_commercial: true
         next_screen: modeling_ad
-      - description: "Learn about new businesses"
-        outcomes:
-          - type: set_condition
-            knows_new_businesses: true
-          - type: update_time
-            minutes: 15
-          - type: end_event
       - description: "Watch different segment"
         next_screen: start

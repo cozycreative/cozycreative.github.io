@@ -27,7 +27,6 @@ choices:
   - description: Get Quick Cash Loan
     conditions:
       has_collateral: true
-      pawnshop_reputation: 5
     outcomes:
       - type: trigger_event
         event: quick_loan_pawnshop
@@ -41,7 +40,6 @@ choices:
 
   - description: Request Item Search
     conditions:
-      pawnshop_reputation: 10
     outcomes:
       - type: trigger_event
         event: request_item_pawnshop
@@ -50,14 +48,6 @@ choices:
     outcomes:
       - type: trigger_event
         event: shopkeeper_chat_pawnshop
-
-  - description: Negotiate Prices
-    conditions:
-      social: 5
-      haggling_skill: 2
-    outcomes:
-      - type: trigger_event
-        event: haggle_pawnshop
 
   - description: Buy Used Electronics
     conditions:

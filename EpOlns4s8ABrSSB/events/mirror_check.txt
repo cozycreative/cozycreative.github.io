@@ -18,10 +18,6 @@ screens:
   - id: appearance_check
     text: "You examine your overall appearance. Your features could work well in photos - high cheekbones, expressive eyes, and good proportions. Maybe those modeling agency ads weren't so far-fetched..."
     choices:
-      - description: "Consider modeling potential"
-        conditions:
-          modeling_interest: true
-        next_screen: modeling_thoughts
       - description: "Make minor adjustments"
         outcomes:
           - type: update_stat
@@ -31,22 +27,6 @@ screens:
             minutes: 5
           - type: end_event
       - description: "Step back from mirror"
-        outcomes:
-          - type: end_event
-
-  - id: modeling_thoughts
-    text: "You think about the modeling agency advertisements you've seen. Looking at yourself now, you can see the potential. With the right presentation and opportunity..."
-    choices:
-      - description: "Feel confident about chances"
-        outcomes:
-          - type: update_stat
-            stat: confidence
-            value: +10
-          - type: set_condition
-            condition: modeling_interest
-            value: true
-          - type: end_event
-      - description: "Remain uncertain"
         outcomes:
           - type: end_event
 
@@ -93,7 +73,6 @@ screens:
             value: +5
           - type: update_stat
             stat: hygiene
-            value: +5
           - type: update_time
             minutes: 3
           - type: end_event

@@ -15,7 +15,7 @@ screens:
         next_screen: show_tools
       - description: "Never mind"
         outcomes:
-          - type: end_event
+      - type: end_event
 
   - id: show_jewelry
     text: "The shopkeeper pulls out a jeweler's loupe and examines your jewelry piece carefully."
@@ -28,30 +28,7 @@ screens:
           - type: remove_from_inventory
             item: jewelry
           - type: end_event
-      - description: "Try to negotiate"
-        conditions:
-          haggling_skill: 2
-        next_screen: negotiate_jewelry
       - description: "Decline offer"
-        outcomes:
-          - type: end_event
-
-  - id: negotiate_jewelry
-    text: "You make a case for your jewelry's value. The shopkeeper listens intently."
-    choices:
-      - description: "Accept new offer"
-        outcomes:
-          - type: update_stat
-            stat: money
-            value: +75
-          - type: remove_from_inventory
-            item: jewelry
-            quantity: 1
-          - type: update_stat
-            stat: haggling_skill
-            value: +1
-          - type: end_event
-      - description: "Walk away"
         outcomes:
           - type: end_event
 
@@ -66,29 +43,6 @@ screens:
           - type: remove_from_inventory
             item: tools
           - type: end_event
-      - description: "Try to negotiate"
-        conditions:
-          haggling_skill: 2
-        next_screen: negotiate_tools
       - description: "Decline offer"
-        outcomes:
-          - type: end_event
-
-  - id: negotiate_tools
-    text: "You discuss the quality and value of your tools. The shopkeeper considers your points."
-    choices:
-      - description: "Accept new offer"
-        outcomes:
-          - type: update_stat
-            stat: money
-            value: +35
-          - type: remove_from_inventory
-            item: tools
-            quantity: 1
-          - type: update_stat
-            stat: haggling_skill
-            value: +1
-          - type: end_event
-      - description: "Walk away"
         outcomes:
           - type: end_event

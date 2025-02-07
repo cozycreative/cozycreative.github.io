@@ -22,14 +22,6 @@ screens:
         conditions:
           modeling_agency_commercial: true
         next_screen: modeling_ad
-      - description: "Learn about wellness tips"
-        outcomes:
-          - type: update_stat
-            stat: knowledge
-            value: +5
-          - type: update_time
-            minutes: 15
-          - type: end_event
       - description: "Watch different segment"
         next_screen: start
 
@@ -50,16 +42,6 @@ screens:
         conditions:
           modeling_agency_commercial: true
         next_screen: modeling_ad
-      - description: "Learn about local events"
-        outcomes:
-          - type: update_stat
-            stat: knowledge
-            value: +3
-          - type: set_condition
-            knows_entertainment_events: true
-          - type: update_time
-            minutes: 15
-          - type: end_event
       - description: "Watch different segment"
         next_screen: start
 

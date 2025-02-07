@@ -102,9 +102,6 @@ choices:
     conditions:
       event_active: lost_tourist
     outcomes:
-      - type: update_stat
-        stat: karma
-        value: +5
       - type: update_time
         minutes: 10
       - type: trigger_event

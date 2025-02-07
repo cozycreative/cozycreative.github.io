@@ -9,53 +9,7 @@ choices:
       - type: trigger_event
         event: watch_tv_news
 
-  - description: Watch TV Shows
-    conditions:
-      time_hour: 10-23
-    outcomes:
-      - type: update_stat
-        stat: happiness
-        value: +10
-      - type: update_stat
-        stat: energy
-        value: -5
-      - type: update_time
-        minutes: 60
-      - type: message
-        text: "You spend an hour watching your favorite shows. It's a nice way to unwind."
 
-  - description: Watch Morning Talk Shows
-    conditions:
-      time_hour: 9-12
-    outcomes:
-      - type: trigger_event
-        event: watch_morning_show
-
-  - description: Watch Late Night Movies
-    conditions:
-      time_hour: 20-23
-      energy: 20
-    outcomes:
-      - type: update_stat
-        stat: happiness
-        value: +15
-      - type: update_stat
-        stat: energy
-        value: -15
-      - type: update_time
-        minutes: 120
-      - type: message
-        text: "You settle in for a movie. It's a good way to end the day."
-
-  - description: Read Magazines
-    outcomes:
-      - type: update_stat
-        stat: knowledge
-        value: +3
-      - type: update_time
-        minutes: 20
-      - type: message
-        text: "You flip through some old magazines. There are articles about jobs, lifestyle tips, and local events."
 
   - description: Relax on Sofa
     outcomes:

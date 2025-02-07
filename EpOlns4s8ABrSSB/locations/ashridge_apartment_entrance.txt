@@ -5,10 +5,6 @@ choices:
     outcomes:
       - type: change_location
         destination: ashridge_apartment_hallway
-  - description: Go to the Laundry Room.
-    outcomes:
-      - type: change_location
-        destination: ashridge_laundry
   - description: Go to the Courtyard.
     outcomes:
       - type: change_location

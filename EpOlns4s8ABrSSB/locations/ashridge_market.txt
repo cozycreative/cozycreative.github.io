@@ -140,33 +140,29 @@ choices:
       - type: message
         text: "You purchase a phone."
 
-  - description: Haggle with Vendors
+  - description: Buy Laundry Detergent
     conditions:
-      social: 3
+      money: 10
     outcomes:
-      - type: trigger_event
-        event: haggle_market_prices
+      - type: add_to_inventory
+        item: laundry_detergent
+      - type: update_stat
+        stat: money
+        value: -10
+      - type: message
+        text: "You purchase laundry detergent."
 
-  - description: Chat with Regular Vendors
+  - description: Buy Shampoo
     conditions:
-      vendor_reputation: 5
+      money: 7
     outcomes:
-      - type: trigger_event
-        event: market_vendor_chat
-
-  - description: Look for Special Deals
-    conditions:
-      time_hour: 17-20
-    outcomes:
-      - type: trigger_event
-        event: market_end_day_deals
-
-  - description: Buy Household Items
-    conditions:
-      money: 12
-    outcomes:
-      - type: trigger_event
-        event: buy_household_items
+      - type: add_to_inventory
+        item: shampoo
+      - type: update_stat
+        stat: money
+        value: -7
+      - type: message
+        text: "You purchase shampoo."
 
   - description: Go back to the Ashridge Main Street
     outcomes:
